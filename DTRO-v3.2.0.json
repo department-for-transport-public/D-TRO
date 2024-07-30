@@ -1,0 +1,194 @@
+{
+    "schemaVersion": "3.2.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 1585,
+            "reference": "B2787FE2-AD74-432A-BB32-76FDB065F3E8",
+            "section": "All sections",
+            "traAffected": "1585,1599",
+            "traCreator": 1585,
+            "troName": "The Essex County Council (Braintree District) (Prohibition of Waiting, Loading and Stopping) and (on-Street Parking Places) (Civil Enforcement Area) Consolidation Order 2019",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoByNotice",
+                    "provisionDescription": "Prohibition of Waiting",
+                    "provisionIndex": 0,
+                    "reference": "A3448229-1DFA-48CD-A785-376ACB9F7C56",
+                    "regulations": [
+                        {
+                            "isDynamic": false,
+                            "regulationType": "bannedMovementNoEntry",
+                            "timeZone": "Europe/London",
+                            "overallPeriod": {
+                                "start": "2024-06-05T22:50:50.0Z",
+                                "end": "2024-09-05T22:50:50.0Z",
+                                "exceptionPeriod": [
+                                    {
+                                        "recurringSpecialDay": [
+                                            {
+                                                "intersectWithApplicableDays": true,
+                                                "specialDayType": "matchDay"
+                                            }
+                                        ],
+                                        "recurringTimePeriodOfDay": [
+                                            {
+                                                "startTimeOfPeriod": "17:00:00.0Z",
+                                                "endTimeOfPeriod": "18:00:00.0Z"
+                                            }
+                                        ],
+                                        "recurringDayWeekMonthPeriod": [
+                                            {
+                                                "applicableDay": [
+                                                    "monday"
+                                                ],
+                                                "applicableMonth": [
+                                                    "october"
+                                                ]
+                                            }
+                                        ],
+                                        "startOfPeriod": "2024-06-05T22:50:50.0Z",
+                                        "periodName": "adipisicing incididunt Lorem",
+                                        "endOfPeriod": "2024-06-17T16:47:01.0Z"
+                                    }
+                                ],
+                                "validPeriod": [
+                                    {
+                                        "recurringTimePeriodOfDay": [
+                                            {
+                                                "startTimeOfPeriod": "07:30:00.0Z",
+                                                "endTimeOfPeriod": "09:00:00.0Z"
+                                            },
+                                            {
+                                                "startTimeOfPeriod": "17:00:00.0Z",
+                                                "endTimeOfPeriod": "18:00:00.0Z"
+                                            }
+                                        ],
+                                        "startOfPeriod": "1985-07-01T21:12:04.0Z",
+                                        "recurringSpecialDay": [
+                                            {
+                                                "intersectWithApplicableDays": true,
+                                                "specialDayType": "eventDay"
+                                            }
+                                        ],
+                                        "periodName": "ea et eiusmod",
+                                        "recurringDayWeekMonthPeriod": [
+                                            {
+                                                "applicableDay": [
+                                                    "tuesday"
+                                                ]
+                                            },
+                                            {
+                                                "applicableMonth": [
+                                                    "june"
+                                                ],
+                                                "applicableDay": [
+                                                    "monday"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "conditions": [
+                                {
+                                    "validityCondition": {
+                                        "conditionSet": [
+                                            {
+                                                "operator": "and",
+                                                "negate": false,
+                                                "conditions": [
+                                                    {
+                                                        "vehicleCharacteristics": {
+                                                            "vehicleType": [
+                                                                "anyVehicle"
+                                                            ]
+                                                        },
+                                                        "negate": false
+                                                    },
+                                                    {
+                                                        "vehicleCharacteristics": {
+                                                            "vehicleType": [
+                                                                "taxi"
+                                                            ]
+                                                        },
+                                                        "negate": true
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "rateTable": {
+                                            "rateLineCollection": [
+                                                {
+                                                    "rateLine": [
+                                                        {
+                                                            "relativeTimes": false,
+                                                            "sequence": 0,
+                                                            "type": "flatRateTier",
+                                                            "value": 15,
+                                                            "durationEnd": "19:00:00.0Z"
+                                                        },
+                                                        {
+                                                            "relativeTimes": true,
+                                                            "sequence": 1,
+                                                            "type": "flatRate",
+                                                            "value": 20,
+                                                            "maxValue": 40,
+                                                            "durationStart": "19:00:00.0Z",
+                                                            "incrementPeriod": "PT1H",
+                                                            "durationEnd": "19:30:00.0Z",
+                                                            "usageCondition": "unlimited",
+                                                            "description": "eiusmod nisi",
+                                                            "minValue": 10
+                                                        }
+                                                    ],
+                                                    "applicableCurrency": "GBP",
+                                                    "sequence": 0,
+                                                    "startValidUsagePeriod": "13:00:00.0Z"
+                                                }
+                                            ],
+                                            "type": "hourly",
+                                            "additionalInformation": "id"
+                                        }
+                                    },
+                                    "vehicleCharacteristics": {
+                                        "vehicleType": [
+                                            "taxi"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "regulatedPlaces": [
+                        {
+                            "description": "Zone 5, Kenworthy Road, All Odd, All Even",
+                            "geometry": {
+                                "version": 1,
+                                "geometryType": "polygon",
+                                "coordinates": {
+                                    "type": "Polygon",
+                                    "coordinates": "((30 10, 40 40, 20 40, 10 20, 30 10))"
+                                }
+                            },
+                            "externalReference": [
+                                {
+                                    "lastUpdateDate": "2024-02-08T11:30:43.0Z",
+                                    "uniqueStreetReferenceNumber": {
+                                        "nsgStreetName": "Main Street",
+                                        "nsgStreetNumber": "A20",
+                                        "usrn": 824775526841240,
+                                        "elementaryStreetUnit": {
+                                            "esu": 155904989972953
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
