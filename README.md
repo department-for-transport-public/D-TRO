@@ -19,4 +19,4 @@ https://youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ&si=8laegCFW
 
 The Private Beta participant list is available at:
 
-https://github.com/department-for-transport-public/D-TRO/blob/main/Beta-01-DfT-D-TRO-Participants-List-2024-09-23.pdf
+https://github.com/department-for-transport-public/D-TRO/blob/main/Beta-01-DfT-D-TRO-Participants-List.pdf
