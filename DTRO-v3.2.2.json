@@ -139,16 +139,16 @@
                 "ChangeableTimePeriod": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ChangeableTimePeriod"
+                        "$ref": "#/$defs/ChangeableTimePeriod"
                     },
                     "minItems": 1
                 },
                 "SpecialDay": {
-                    "$ref": "#/definitions/SpecialDay"
+                    "$ref": "#/$defs/SpecialDay"
                 },
                 "endType": {
                     "description": "indicates the type of non-precise characteristic time measure used",
-                    "$ref": "#/definitions/ChangeableTimeType",
+                    "$ref": "#/$defs/ChangeableTimeType",
                     "definition": "Time period begins with a fuzzy time or the duration is a fuzzy time"
                 }
             },
