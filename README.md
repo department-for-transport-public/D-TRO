@@ -1,18 +1,19 @@
-The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway with enhancements proposed to the Data Specification, being conducted by Harrod Booth Consulting Ltd and PA Consulting, working alongside the DfT. Welcome to our new Public External GitHub repository.
+The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway with enhancements proposed to the Data Specification, being conducted by Harrod Booth Consulting Ltd and PA Consulting, working alongside the DfT. Welcome to our Public External GitHub repository.
  
-The latest release of the Data Specification is 3.2.2 as part of the D-TRO Beta project for your input and feedback on.  V3.2.2 was intended to address a small number of inconsistencies that were identified in the data model, JSON schema and documentation, through user feedback. However, we are aware that it didn't address these inconsistencies and therefore we are working on v3.2.3 in order to address them. 
- 
+The latest release of the Data Specification is 3.2.3 as part of the D-TRO Beta project for your input and feedback on. Version 3.2.3 addresses the inconsistencies in the data model, JSON schema, documentation and example files that were introduced in v3.2.2. 
+
 This GitHub will be the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
  
-As part of the current release of the Data Specification (version 3.2.2), we are providing the following:
+As part of the current release of the Data Specification (version 3.2.3), we are providing the following:
  
 - User Guide detailing the content and structure of the D-TRO data model
 - Data Model - QEA and XMI extracts
 - JSON schema
 - Validation rules
-- Interface Control Documents for Publishers and Consumers (specifying the API interface for data extraction, supply and publication)
 - Example JSON D-TRO files
- 
+
+Please note that the Interface Control Documents for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) will be updated later in the week commencing 7 October 2024. 
+
 Please also see the Digital Traffic Regulation Orders (D-TRO) Beta YouTube playlist for videos of webinars (including technical ones discussing the Data Specification) at:
  
 https://youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ&si=8laegCFW74156t9q
