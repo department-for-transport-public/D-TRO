@@ -14,6 +14,10 @@ As part of the current release of the Data Specification (version 3.2.3), we are
 
 Please note that the Interface Control Documents for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) will be updated later in the week commencing 7 October 2024. 
 
+See Issue #1 for more details:
+
+https://github.com/department-for-transport-public/D-TRO/issues/1
+
 Please also see the Digital Traffic Regulation Orders (D-TRO) Beta YouTube playlist for videos of webinars (including technical ones discussing the Data Specification) at:
  
 https://youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ&si=8laegCFW74156t9q
