@@ -12,7 +12,7 @@ As part of the current release of the Data Specification (version 3.2.3), we are
 - Validation rules
 - Example JSON D-TRO files
 
-Please note that the Interface Control Documents for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) will be updated later in the week commencing 7 October 2024. 
+Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) were updated on 10 October 2024. 
 
 See Issue #1 for more details:
 
