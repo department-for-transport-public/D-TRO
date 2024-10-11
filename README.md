@@ -18,6 +18,10 @@ See Issue #1 for more details:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
 
+The list of SWA codes is available at:
+
+https://www.geoplace.co.uk/local-authority-resources/street-works-managers/view-swa-codes
+
 Please also see the Digital Traffic Regulation Orders (D-TRO) Beta YouTube playlist for videos of webinars (including technical ones discussing the Data Specification) at:
  
 https://youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ&si=8laegCFW74156t9q
