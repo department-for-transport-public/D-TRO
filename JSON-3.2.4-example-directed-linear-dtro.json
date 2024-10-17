@@ -1,0 +1,202 @@
+{
+    "schemaVersion": "3.2.4",
+    "data": {
+        "Source": {
+            "actionType": "new",
+            "currentTraOwner": 1000,
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoByNotice",
+                    "provisionDescription": "Prohibition of Waiting",
+                    "reference": "A3448229-1DFA-48CD-A785-376ACB9F7C56",
+                    "regulation": [
+                        {
+                            "isDynamic": false,
+                            "timeZone": "Europe/London",
+                            "generalRegulation": {
+                                "regulationType": "kerbsideLimitedWaiting"
+                            },
+                            "condition": [
+                                {
+                                    "vehicleCharacteristics": {
+                                        "vehicleType": [
+                                            "taxi"
+                                        ],
+                                        "fuelType": [
+                                            "petrol"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "timeValidity": {
+                                        "validityCondition": {
+                                            "conditionSet": [
+                                                {
+                                                    "operator": "and",
+                                                    "negate": false,
+                                                    "conditions": [
+                                                        {
+                                                            "vehicleCharacteristics": {
+                                                                "vehicleType": [
+                                                                    "anyVehicle"
+                                                                ]
+                                                            },
+                                                            "negate": false
+                                                        },
+                                                        {
+                                                            "vehicleCharacteristics": {
+                                                                "vehicleType": [
+                                                                    "taxi"
+                                                                ]
+                                                            },
+                                                            "negate": true
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "rateTable": {
+                                                "rateLineCollection": [
+                                                    {
+                                                        "rateLine": [
+                                                            {
+                                                                "sequence": 0,
+                                                                "type": "flatRateTier",
+                                                                "value": 15,
+                                                                "durationEnd": "19:00:00"
+                                                            },
+                                                            {
+                                                                "sequence": 1,
+                                                                "type": "flatRate",
+                                                                "value": 20,
+                                                                "maxValue": 40,
+                                                                "durationStart": "19:00:00",
+                                                                "incrementPeriod": "PT1H",
+                                                                "durationEnd": "19:30:00",
+                                                                "usageCondition": "unlimited",
+                                                                "description": "eiusmod nisi",
+                                                                "minValue": 10
+                                                            }
+                                                        ],
+                                                        "applicableCurrency": "GBP",
+                                                        "sequence": 0,
+                                                        "startValidUsagePeriod": "13:00:00"
+                                                    }
+                                                ],
+                                                "type": "hourly",
+                                                "additionalInformation": "id"
+                                            }
+                                        },
+                                        "start": "1983-01-05 22:50:50",
+                                        "exceptionPeriod": [
+                                            {
+                                                "recurringSpecialDay": [
+                                                    {
+                                                        "intersectWithApplicableDays": true,
+                                                        "specialDayType": "matchDay"
+                                                    },
+                                                    {
+                                                        "intersectWithApplicableDays": false,
+                                                        "specialDayType": "matchDay",
+                                                        "publicEvent": "footballMatch"
+                                                    }
+                                                ],
+                                                "recurringTimePeriodOfDay": [
+                                                    {
+                                                        "startTimeOfPeriod": "17:00:00",
+                                                        "endTimeOfPeriod": "18:00:00"
+                                                    }
+                                                ],
+                                                "recurringDayWeekMonthPeriod": [
+                                                    {
+                                                        "applicableDay": [
+                                                            "monday"
+                                                        ],
+                                                        "applicableMonth": [
+                                                            "october"
+                                                        ]
+                                                    }
+                                                ],
+                                                "startOfPeriod": "1983-01-05 22:50:50",
+                                                "periodName": "adipisicing incididunt Lorem",
+                                                "endOfPeriod": "1983-03-17 16:47:01"
+                                            }
+                                        ],
+                                        "validPeriod": [
+                                            {
+                                                "recurringTimePeriodOfDay": [
+                                                    {
+                                                        "startTimeOfPeriod": "07:30:00",
+                                                        "endTimeOfPeriod": "09:00:00"
+                                                    },
+                                                    {
+                                                        "startTimeOfPeriod": "17:00:00",
+                                                        "endTimeOfPeriod": "18:00:00"
+                                                    }
+                                                ],
+                                                "startOfPeriod": "1985-07-01 21:12:04",
+                                                "recurringSpecialDay": [
+                                                    {
+                                                        "intersectWithApplicableDays": true,
+                                                        "specialDayType": "eventDay"
+                                                    },
+                                                    {
+                                                        "intersectWithApplicableDays": true,
+                                                        "specialDayType": "eventDay"
+                                                    }
+                                                ],
+                                                "periodName": "ea et eiusmod",
+                                                "recurringDayWeekMonthPeriod": [
+                                                    {
+                                                        "applicableDay": [
+                                                            "tuesday"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "applicableMonth": [
+                                                            "june"
+                                                        ],
+                                                        "applicableDay": [
+                                                            "monday"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "end": "1996-01-05 22:50:50"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "regulatedPlace": [
+                        {
+                            "description": "Zone 5, Kenworthy Road, All Odd, All Even",
+                            "geometry": {
+                                "version": 1,
+                                "DirectedLinear": {
+                                    "directedLineString": "SRID=27700;LINESTRING(529050 178750, 529157 178805, 529250 178860)"
+                                },
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "1981-02-08 11:30:43",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 96854586
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "reference": "B2787FE2-AD74-432A-BB32-76FDB065F3E8",
+            "section": "All sections",
+            "traAffected": [
+                1000
+            ],
+            "traCreator": 1000,
+            "troName": "The Sample County Council (Prohibition of Waiting, Loading and Stopping) and (on-Street Parking Places) (Civil Enforcement Area) Consolidation Order 2019"
+        }
+    }
+}
