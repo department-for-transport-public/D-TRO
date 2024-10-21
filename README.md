@@ -1,10 +1,12 @@
 The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway with enhancements proposed to the Data Specification, being conducted by Harrod Booth Consulting Ltd and PA Consulting, working alongside the DfT. Welcome to our Public External GitHub repository.
- 
-The latest release of the Data Specification is 3.2.3 as part of the D-TRO Beta project for your input and feedback on. Version 3.2.3 addresses the inconsistencies in the data model, JSON schema, documentation and example files that were introduced in v3.2.2. 
 
-This GitHub will be the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
+Private Beta was launched on Tuesday 15 October 2024. 
  
-As part of the current release of the Data Specification (version 3.2.3), we are providing the following:
+The latest release of the Data Specification is 3.2.4 as part of the D-TRO Beta project for your input and feedback on. Version 3.2.4 addresses further inconsistencies including typographical errors in the data model, JSON schema, documentation and example files. 
+
+GitHub is the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
+ 
+As part of the current release of the Data Specification (version 3.2.4), we are providing the following:
  
 - User Guide detailing the content and structure of the D-TRO data model
 - Data Model - QEA and XMI extracts
@@ -12,7 +14,7 @@ As part of the current release of the Data Specification (version 3.2.3), we are
 - Validation rules
 - Example JSON D-TRO files
 
-Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) were updated on 10 October 2024. 
+Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) were updated on 10 October 2024 and are applicable to v3.2.4.
 
 See Issue #1 for more details:
 
