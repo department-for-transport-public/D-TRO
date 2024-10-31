@@ -7,7 +7,7 @@ The latest release of the Data Specification is 3.2.4 as part of the D-TRO Beta 
 **Service Announcements
 **
 
-Please our service announcements detailed in https://github.com/department-for-transport-public/D-TRO/issues/23 and https://github.com/department-for-transport-public/D-TRO/issues/24
+Please our service announcement detailed in https://github.com/department-for-transport-public/D-TRO/issues/24 - this will be implemented at 12:00 GMT on Friday 1 November 2024. 
 
 **GitHub
 **
