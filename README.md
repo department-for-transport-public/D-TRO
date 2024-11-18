@@ -4,6 +4,8 @@ Private Beta was launched on Tuesday 15 October 2024.
  
 The latest release of the Data Specification is 3.2.4 as part of the D-TRO Beta project for your input and feedback on. Version 3.2.4 addresses further inconsistencies including typographical errors in the data model, JSON schema, documentation and example files. 
 
+We will be upgrading the D-TRO Service in line with the v3.3.0 release of the D-TRO Data Specification on 28 November 2024. Documentation and artefacts for v3.3.0 will be posted to GitHub when they are available, shortly, in advance of the upgrade. Although we are finalising v3.3.0 of the D-TRO Data Specification the following modifications are expected to be included are detailed in https://github.com/department-for-transport-public/D-TRO/issues/42. 
+
 **GitHub
 **
 
