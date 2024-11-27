@@ -4,20 +4,20 @@
         "Source": {
             "actionType": "new",
             "currentTraOwner": 3300,
-            "provision": [
+            "Provision": [
                 {
                     "actionType": "new",
                     "orderReportingPoint": "ttroTtmoNoticeOfIntention",
-                    "provisionDescription": "Temporary full road closure, for combined utility works and carriageway repair, with diversion route.",
+                    "provisionDescription": "Temporary full road closure, for combined utility works and carriageway repair",
                     "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
-                    "regulation": [
+                    "Regulation": [
                         {
                             "isDynamic": false,
                             "timeZone": "Europe/London",
                             "GeneralRegulation": {
                                 "regulationType": "miscRoadClosure"
                             },
-                            "condition": [
+                            "Condition": [
                                 {
                                     "TimeValidity": {
                                         "start": "2024-10-22T06:00:00",
@@ -27,14 +27,14 @@
                             ]
                         }
                     ],
-                    "regulatedPlace": [
+                    "RegulatedPlace": [
                         {
                             "description": "East Reach, Taunton, both directions",
                             "type": "regulationLocation",
                             "DirectedLinear": {
                                 "version": 1,
                                 "directedLineString": "SRID=27700;LINESTRING(323544 124622, 323464 124595)",
-                                "externalReference": [
+                                "ExternalReference": [
                                     {
                                         "lastUpdateDate": "2024-10-01T00:00:00",
                                         "UniqueStreetReferenceNumber": {
@@ -53,8 +53,68 @@
                                 "representation": "linear",
                                 "direction": "bidirectional",
                                 "lateralPosition": "centreline",
-                                "externalReference": [
+                                "ExternalReference": [
                                     {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39609331
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39605119
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39609519
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39609406
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39605180
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39609179
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39605082
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39605158
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39607389
+                                        }
+                                    },
+									{
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39605156
+                                        }
+                                    },
+									{
                                         "lastUpdateDate": "2024-10-01T00:00:00",
                                         "UniqueStreetReferenceNumber": {
                                             "usrn": 39606013

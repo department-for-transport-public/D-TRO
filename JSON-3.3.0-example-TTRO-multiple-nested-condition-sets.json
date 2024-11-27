@@ -4,26 +4,26 @@
         "Source": {
             "actionType": "new",
             "currentTraOwner": 3300,
-            "provision": [
+            "Provision": [
                 {
                     "actionType": "new",
                     "orderReportingPoint": "ttroTtmoNoticeOfIntention",
                     "provisionDescription": "Temporary height and length restriction",
                     "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
-                    "regulation": [
+                    "Regulation": [
                         {
                             "isDynamic": false,
                             "timeZone": "Europe/London",
                             "GeneralRegulation": {
                                 "regulationType": "dimensionMaximumHeightWithTRO"
                             },
-                            "conditionSet": [
+                            "ConditionSet": [
                                 {
                                     "operator": "and",
-                                    "conditionSet": [
+                                    "ConditionSet": [
                                         {
                                             "operator": "or",
-                                            "condition": [
+                                            "Condition": [
                                                 {
                                                     "negate": false,
                                                     "VehicleCharacteristics": {
@@ -40,7 +40,7 @@
                                                 },
                                                 {
                                                     "operator": "and",
-                                                    "condition": [
+                                                    "Condition": [
                                                         {
                                                             "negate": false,
                                                             "VehicleCharacteristics": {
@@ -68,7 +68,7 @@
                             ]
                         }
                     ],
-                    "regulatedPlace": [
+                    "RegulatedPlace": [
                         {
                             "description": "East Reach - Taunton",
                             "type": "regulationLocation",
@@ -76,7 +76,7 @@
                                 "version": 1,
                                 "point": "SRID=27700;POINT(323544 124622)",
                                 "representation": "centreLinePoint",
-                                "externalReference": [
+                                "ExternalReference": [
                                     {
                                         "lastUpdateDate": "2024-08-01T00:00:00",
                                         "UniqueStreetReferenceNumber": {

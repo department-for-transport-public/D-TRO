@@ -2,9 +2,9 @@
     "schemaVersion": "3.3.0",
     "data": {
         "Source": {
-            "provision": [
+            "Provision": [
                 {
-                    "regulatedPlace": [
+                    "RegulatedPlace": [
                         {
 							"type": "regulationLocation",
                             "LinearGeometry": {
@@ -13,7 +13,7 @@
                                 "lateralPosition": "onKerb",
                                 "linestring": "SRID=27700;LINESTRING(444284 333253, 444284 333253)",
                                 "representation": "linear",
-                                "externalReference": [
+                                "ExternalReference": [
                                     {
                                         "lastUpdateDate": "2024-10-01T08:00:00",
                                         "UniqueStreetReferenceNumber": {
@@ -24,14 +24,14 @@
                             }
                         }
                     ],
-                    "regulation": [
+                    "Regulation": [
                         {
                             "isDynamic": false,
                             "timeZone": "Europe/London",
                             "GeneralRegulation": {
                                 "regulationType": "kerbsideLimitedWaiting"
                             },
-                            "condition": [
+                            "Condition": [
                                 {
                                     "TimeValidity": [
                                         {
