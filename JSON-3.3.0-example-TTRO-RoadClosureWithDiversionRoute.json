@@ -10,23 +10,6 @@
                     "orderReportingPoint": "ttroTtmoNoticeOfIntention",
                     "provisionDescription": "Temporary full road closure, for combined utility works and carriageway repair",
                     "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
-                    "Regulation": [
-                        {
-                            "isDynamic": false,
-                            "timeZone": "Europe/London",
-                            "GeneralRegulation": {
-                                "regulationType": "miscRoadClosure"
-                            },
-                            "Condition": [
-                                {
-                                    "TimeValidity": {
-                                        "start": "2024-10-22T06:00:00",
-                                        "end": "2024-10-24T20:00:00"
-                                    }
-                                }
-                            ]
-                        }
-                    ],
                     "RegulatedPlace": [
                         {
                             "description": "East Reach, Taunton, both directions",
@@ -123,7 +106,24 @@
                                 ]
                             }
                         }
-                    ]
+                    ],
+					"Regulation": [
+                        {
+                            "Condition": [
+                                {
+                                    "TimeValidity": {
+                                        "start": "2024-10-22T06:00:00",
+                                        "end": "2024-10-24T20:00:00"
+                                    }
+                                }
+                            ],
+							"GeneralRegulation": {
+                                "regulationType": "miscRoadClosure"
+                            },
+							"isDynamic": false,
+                            "timeZone": "Europe/London"                            
+                        }
+                    ]                    
                 }
             ],
             "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",

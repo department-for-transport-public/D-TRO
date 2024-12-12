@@ -4,45 +4,18 @@
         "Source": {
             "actionType": "new",
             "currentTraOwner": 3300,
+            
             "Provision": [
                 {
                     "actionType": "new",
                     "orderReportingPoint": "ttroTtmoNoticeOfIntention",
                     "provisionDescription": "Temporary height restriction (2.5m)",
-                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
-                    "Regulation": [
-                        {
-                            "isDynamic": false,
-                            "timeZone": "Europe/London",
-                            "GeneralRegulation": {
-                                "regulationType": "dimensionMaximumHeightWithTRO"
-                            },
-                            "ConditionSet": [
-                                {
-                                    "operator": "and",
-                                    "Condition": {
-                                        "TimeValidity": {
-                                            "start": "2024-08-22T08:00:00",
-                                            "end": "2024-08-22T20:00:00"
-                                        },
-                                        "VehicleCharacteristics": {
-                                            "MaximumHeightCharacteristic": {
-                                                "vehicleHeight": 2.5
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ],
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
                     "RegulatedPlace": [
                         {
                             "description": "East Reach - Taunton",
                             "type": "regulationLocation",
                             "PointGeometry": {
-                                "version": 1,
-                                "point": "SRID=27700;POINT(323544 124622)",
-                                "representation": "centreLinePoint",
                                 "ExternalReference": [
                                     {
                                         "lastUpdateDate": "2024-08-01T00:00:00",
@@ -50,14 +23,48 @@
                                             "usrn": 39608173
                                         }
                                     }
-                                ]
+                                ],
+								"point": "SRID=27700;POINT(323544 124622)",
+                                "representation": "centreLinePoint",
+								"version": 1
                             }
+                        }
+                    ],
+                    "Regulation": [
+                        {
+                            "ConditionSet": [
+                                {
+                                    "operator": "and",
+                                    "conditions": [
+                                        {
+                                            "negate": false,
+                                            "TimeValidity": {
+                                                "start": "2024-08-22T08:00:00",
+                                                "end": "2024-08-22T20:00:00"
+                                            }
+                                        },
+                                        {
+                                            "negate": false,
+                                            "VehicleCharacteristics": {
+                                                "MaximumHeightCharacteristic": {
+                                                    "vehicleHeight": 2.5
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+							"GeneralRegulation": {
+                                "regulationType": "dimensionMaximumHeightWithTRO"
+                            },
+							"isDynamic": false,
+                            "timeZone": "Europe/London"                            
                         }
                     ]
                 }
             ],
             "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
-            "section": "All sections",
+			"section": "All sections",
             "traAffected": [
                 3300
             ],
