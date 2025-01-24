@@ -1,0 +1,101 @@
+{
+    "schemaVersion": "3.3.1",
+    "data": {
+        "Source": {
+            "actionType": "new",
+            "currentTraOwner": 3300,
+            "Provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+                    "provisionDescription": "Temporary height and length restriction",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
+                    "Regulation": [
+                        {
+                            "isDynamic": false,
+                            "timeZone": "Europe/London",
+                            "GeneralRegulation": {
+                                "regulationType": "dimensionMaximumHeightWithTRO"
+                            },
+                            "ConditionSet": [
+                                {
+                                    "operator": "and",
+                                    "ConditionSet": [
+                                        {
+                                            "operator": "or",
+                                            "Condition": [
+                                                {
+                                                    "negate": false,
+                                                    "VehicleCharacteristics": {
+                                                        "MaximumHeightCharacteristic": {
+                                                            "vehicleHeight": 2.5
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "negate": true,
+                                                    "VehicleCharacteristics": {
+                                                        "vehicleType": "bus"
+                                                    }
+                                                },
+                                                {
+                                                    "operator": "and",
+                                                    "Condition": [
+                                                        {
+                                                            "negate": false,
+                                                            "VehicleCharacteristics": {
+                                                                "vehicleType": "taxi"
+                                                            }
+                                                        },
+                                                        {
+                                                            "negate": false,
+                                                            "VehicleCharacteristics": {
+                                                                "vehicleUsage": "access"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "condition": {
+                                        "TimeValidity": {
+                                            "start": "2024-08-22T08:00:00",
+                                            "end": "2024-08-22T20:00:00"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RegulatedPlace": [
+                        {
+                            "description": "East Reach - Taunton",
+                            "type": "regulationLocation",
+                            "PointGeometry": {
+                                "version": 1,
+                                "point": "SRID=27700;POINT(323544 124622)",
+                                "representation": "centreLinePoint",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-08-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": {
+                                            "usrn": 39608173
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                3300
+            ],
+            "traCreator": 3300,
+            "troName": "DfT Example - TTRO height restriction and length with multiple conditions v2, Nov. 2024"
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "schemaVersion": "3.3.1",
+    "data": {
+        "Source": {
+            "actionType": "new",
+            "currentTraOwner": 1050,
+            "Provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "provisionDescription": "Schedule 1: No Waiting Monday to Saturday, 8am to 6pm",
+                    "reference": "A3448229-1DFA-48CD-A785-376ACB9F7C56",
+                    "RegulatedPlace": [
+                        {
+                            "description": "West side, Market Street, Draycott",
+                            "type": "regulationLocation",
+                            "LinearGeometry": {
+                                "direction": "bidirectional",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T08:00:00",
+                                        "UniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 14000759
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "onKerb",
+                                "linestring": "SRID=27700;LINESTRING(444284 333253, 444284 333253)",
+                                "representation": "linear",
+                                "version": 1
+                            }
+                        }
+                    ],
+                    "Regulation": [
+                        {
+                            "Condition": [
+                                {
+                                    "TimeValidity": {
+                                        "start": "2024-08-01T08:00:00",
+                                        "validPeriod": [
+                                            {
+                                                "recurringDayWeekMonthPeriod": [
+                                                    {
+                                                        "applicableDay": [
+                                                            "friday",
+                                                            "monday",
+                                                            "saturday",
+                                                            "thursday",
+                                                            "tuesday",
+                                                            "wednesday"
+                                                        ]
+                                                    }
+                                                ],
+                                                "recurringTimePeriodOfDay": [
+                                                    {
+                                                        "endTimeOfPeriod": "18:00:00T00:00:00",
+                                                        "startTimeOfPeriod": "08:00:00T00:00:00"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "GeneralRegulation": {
+                                "regulationType": "kerbsideLimitedWaiting"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "B2787FE2-AD74-432A-BB32-76FDB065F3E8",
+            "section": "Schedule 1",
+            "traAffected": [
+                1050
+            ],
+            "traCreator": 1050,
+            "troName": "DfT Example - Oct. 2024 - partial extract of THE DERBYSHIRE COUNTY COUNCIL (MARKET STREET AND TOWN END ROAD, DRAYCOTT) (RESTRICTION AND LIMITED WAITING) TRAFFIC REGULATION ORDER 2024 (DfT mockup, v2)"
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "schemaVersion": "3.3.1",
+    "data": {
+        "Source": {
+            "actionType": "new",
+            "currentTraOwner": 3300,
+            "Provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+                    "provisionDescription": "Temporary one way",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
+                    "RegulatedPlace": [
+                        {
+                            "description": "Bishops Hull Road, between Waterfield Drive and Quartly Drive",
+                            "DirectedLinear": {
+                                "version": 1,
+                                "directedLineString": "SRID=27700;LINESTRING(320317 124226, 320319 124259)",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": [
+											{
+												"usrn": 39605548
+											}
+										]	
+                                    }
+                                ]
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "Regulation": [
+                        {
+                            "Condition": [
+                                {
+                                    "RoadCondition": {
+                                        "roadType": "other"
+                                    }
+                                }
+                            ],
+                            "GeneralRegulation": {
+                                "regulationType": "mandatoryDirectionOneWay"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                3300
+            ],
+            "traCreator": 3300,
+            "troName": "DfT Example - TTRO temporary one way v2, Jan. 2025"
+        }
+    }
+}

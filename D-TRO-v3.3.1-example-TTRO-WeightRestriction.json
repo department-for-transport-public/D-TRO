@@ -1,0 +1,87 @@
+{
+    "schemaVersion": "3.3.1",
+    "data": {
+        "Source": {
+            "actionType": "new",
+            "currentTraOwner": 3300,
+            "Provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+                    "provisionDescription": "Temporary weight restriction Netherclay Bridge (2 tonnes)",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
+                    "RegulatedPlace": [
+                        {
+                            "description": "Netherclay Bridge, Bishops Hull, Taunton",
+                            "type": "regulationLocation",
+                            "LinearGeometry": {
+                                "direction": "bidirectional",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-08-01T00:00:00",
+                                        "UniqueStreetReferenceNumber": [
+											{
+												"usrn": 39605836
+											}
+										]	
+                                    }
+                                ],
+								"lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(320620 124993, 320621 124997, 320625 125007)",
+                                "representation": "representingZone",
+								"version": 1                                
+                            }
+                        }
+                    ],
+					"Regulation": [
+                        {
+                            "ConditionSet": [
+                                {
+                                    "operator": "and",
+                                    "conditions": [
+                                        {
+                                            "negate": false,
+                                            "TimeValidity": {
+                                                "start": "2024-08-01T08:00:00",
+                                                "end": "2024-11-29T18:00:00"
+                                            }
+                                        },
+                                        {
+                                            "negate": false,
+                                            "VehicleCharacteristics": {
+                                                "MaximumGrossWeightCharacteristic": {
+                                                    "grossVehicleWeight": 2,
+                                                    "typeOfWeight": "maximumPermitted"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+							"GeneralRegulation": {
+                                "regulationType": "dimensionMaximumWeightStructural"
+                            },
+							"isDynamic": false,
+                            "TemporaryRegulation": {
+                                "TemporaryOverriddenProvision": {
+                                    "actionType": "new",
+                                    "orderReportingPoint": "permanentNoticeOfMaking",
+                                    "provisionDescription": "3 Tonnes Structural Weight Limit, Netherclay Bridge",
+                                    "reference": "DA3C3631-7710-4EA5-B654-62CD316D487A"
+                                }
+                            },
+							"timeZone": "Europe/London"                            
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                3300
+            ],
+            "traCreator": 3300,
+            "troName": "DfT Example - TTRO weight restriction v2, Jan. 2025"
+        }
+    }
+}
