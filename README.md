@@ -20,7 +20,7 @@ https://ttf.uk.net/2025/01/24/dft-has-issued-a-consultation-on-draft-regulations
 
 GitHub is the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
  
-As part of the current release of the Data Specification (version 3.2.4), we are providing the following:
+As part of the current release of the Data Specification (version 3.3.1), we are providing the following:
  
 - User Guide detailing the content and structure of the D-TRO data model
 - Data Model - QEA and XMI extracts
@@ -28,11 +28,13 @@ As part of the current release of the Data Specification (version 3.2.4), we are
 - Validation rules
 - Example JSON D-TRO files
 
-Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) were updated on 10 October 2024 and are applicable to v3.2.4.
+Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) are applicable to v3.3.1.
 
 See Issue #1 for more details:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
+
+Our GitHub folder structure has been updated to make it easier to find documents relating to the latest and other supported versions of the Data Specification. 
 
 The list of SWA codes is available at:
 
