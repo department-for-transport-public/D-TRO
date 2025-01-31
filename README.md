@@ -46,7 +46,7 @@ https://youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ&si=8laegCFW
 
 The Private Beta participant list is available at:
 
-https://github.com/department-for-transport-public/D-TRO/blob/main/Beta-01-DfT-D-TRO-Participants-List.pdf
+[https://github.com/department-for-transport-public/D-TRO/blob/main/Beta-01-DfT-D-TRO-Participants-List.pdf](https://github.com/department-for-transport-public/D-TRO/blob/main/Various%20Misc/D-TRO-z-Participants-List.pdf)
 
 If you are from a Traffic Regulation Authority, please complete our short survey about the creation and publication of digital TROs:
 
