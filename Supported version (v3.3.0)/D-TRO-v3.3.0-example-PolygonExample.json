@@ -1,0 +1,117 @@
+{
+    "schemaVersion": "3.3.1",
+    "data": {
+        "Source": {
+            "_comment": "DfT example D-TRO, multiple provisions, multiple conditions, TemporaryRegulation, OffListRegulation, Permits, Rates",
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "Provision": [
+ 				{
+                    "_comment": "cut down version of TfL's New Year's Special Events Order - does not contain the correct polygons or usrns",
+					"actionType": "new",
+                    "orderReportingPoint": "specialEventOrderNoticeOfMaking",
+                    "provisionDescription": "Temporary Closure for Event - Westminster",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbde",
+                    "RegulatedPlace": [
+                        {
+                            "type":"regulationLocation",
+                            "description": "Covers part of Charing Cross Road (between Shaftesbury Avenue and Trafalgar Square), West Street, Litchfield Street, Upper St Martin’s Lane, Shelton Street, Mercer Street, Langley Street, Neal Street, Endell Street, Arne Street, Long Acre, Cranbourne Street, Great Newport Street...)",
+                            "Polygon": {
+                                "version": 1,
+                                "polygon": "SRID=27700;POLYGON((529911 181033, 529939 181053, 530057 180979, 530067 181078, 530190 181108, 530079 181229, 530116 181315, 530252 181164, 530342 181251, 530405 181183, 530406 181183, 530226 180989, 529974 180816,529911 181033))",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "1981-02-08T11:30:43",
+                                        "UniqueStreetReferenceNumber": [
+											{
+												"usrn": 8400626
+											},
+											{
+												"usrn": 8400702
+											},
+											{
+												"usrn": 8400995
+											},
+											{
+												"usrn": 8400627
+											},
+											{
+												"usrn": 8401192
+											},
+											{
+												"usrn": 20401218
+											},
+											{
+												"usrn": 20401223
+											},
+											{
+												"usrn": 20401226
+											},
+											{
+												"usrn": 840322
+											},
+											{
+												"usrn": 8400849
+											}
+										]	
+                                    }
+                                ]
+                            }
+                        },
+						{
+                            "type":"regulationLocation",
+                            "description": "Second offset polygon - Covers part of Charing Cross Road (between Shaftesbury Avenue and Trafalgar Square), West Street, Litchfield Street, Upper St Martin’s Lane, Shelton Street, Mercer Street, Langley Street, Neal Street, Odhams Walk, Endell Street, Arne Street, Dryden Street, Drury Lane, Long Acre, Great Queen Street, Wild Street, Kemble Street, Kean Street, Kingsway, Sardinia Street, Lincoln’s Inn Fields, Serle Street, Portugal Street, Portsmouth Street, St Clement’s Lane, Carey Street, Chancery Lane, Strand, Bell Yard, Aldwych, Melbourne Place, Russel Street, Tavistock Street, Catherine Street, Wellington Street, Exeter Street, Burleigh Street, Martlett Court, Crown Court, Bow Street, Broad Court, Flora Street, James Street, Hanover Place, Langley Court, Garrick Street, New Row, Rose Street, King Street, Henrietta Street, Southampton Street, Bedford Street, Maiden Lane, Chandos Place, Agar Street, William IV Street, Bedfordbury, Adelaide Street, Ducannon Street, Trafalgar Square, Bedford Court, St Martin’s Lane, Cranbourne Street, Great Newport Street, Gerrard Place, Gerrard Street, Newport Place, Little Newport Street, Lisle Street, Bear Street, Leicester Square, Irving Street, Orange Street, St Martin’s Street, Whitcomb Street, Suffolk Place, Suffolk Street, Cockspur Street, Pall Mall East, Spring Gardens, Cockspur Court, Oxendon Street, Panton Street, Wardour Street (between Coventry Street and Shaftesbury Avenue), Macclesfield Street, Dansey Place, Rupert Street (between Coventry Street and Shaftesbury Avenue), Coventry Street, Haymarket (between Jermyn Street and Pall Mall), Pall Mall, Waterloo Place, Carlton House Terrace, Carlton Gardens, Charles II Street, Carlton Street, Regent Street Saint James’s, St James’s Market, Jermyn Street (between Regent Street Saint James’s and St James’s Street), Duke Street Saint James’s, Babmaes Street, St James’s Square, Duke of York Street, Apple Tree yard, Ormond Yard, Masons Yard, King Street, Cleveland Row, Little St James’s Street, St James’s Place, Park Place, Bennet Street, Arlington Street, St James’s Street, Buckingham Palace Road (between Bressenden Place and Buckingham Gate), Buckingham Gate, Victoria Street (between Bressenden Place and Broad Sanctuary), Palace Street, Stafford Place, Catherine Place, Warwick Row, Wilfred Street, Castle Lane, Buckingham Place, Cardinal Walk, Back Kingsgate Parade, Petty France, Caxton Street, Palmer Street, St Ermin’s Court, Broadway, St Ermin’s Hill, Queen Anne’s Gate, Carteret Street, Old Queen Street, Dartmouth Street, Matthew Parker Street, Tothill Street, Dean Farrar Street, Dacre Street, Marsham Street (between Horseferry Road and John Islip Street), Abbey Orchard Street, St Ann’s Street, Old Pye Street, Artillery Row, Howick Place, Strutton Ground, Perkin’s Rents, Great Peter Street (between Marsham Street and Horseferry Road), St Matthew’s Street, Greycoat Place, Greycoat Lane, Horseferry Road, Greycoat Street, Chadwick Street, Monck Street, Medway Street, Arneway Street, Carlisle Place, Ashley Place, Morpeth Terrace, King’s Scholar’s Passage, Thirleby Road, Ambrosden Avenue, Francis Street, Willow Place, Stillington Street, Greencoat Place, Rochester Row, Coburg Close, Emery Hill Street, Greencoat Row, Vincent Square, Hatherley Street, Udall Street, Bloomburg Street, Stanford Street, Osbert Street, Douglas Street, Chapter Street, Regency Street, Rampayne Street (between Vauxhall Bridge Road and Regency Street), Hide Place, Esterbrooke Street, Fynes Street, Rutherford Street, Maunsel Street, Elverton Street, Page Street, Vincent Street, Thorney Street, Dean Ryle Street, John Islip Street, Erasmus Street, St Oswulf Street, Bulinga Street, Henrick Street, Cureton Street, Causton Street, Atterbury Street, Ponsonby Street, Ponsonby Place, Millbank (between Vauxhall Bridge Road and Horseferry Road)",
+                            "Polygon": {
+                                "version": 1,
+                                "polygon": "SRID=27700;POLYGON((519890 181046, 520070 181059, 520070 180606, 519890 180606, 519890 181046))",
+                                "ExternalReference": [
+                                    {
+                                        "lastUpdateDate": "1981-02-08T11:30:43",
+                                        "UniqueStreetReferenceNumber": [
+											{
+												"usrn": 8400626
+											},
+											{
+												"usrn": 8400702
+											},
+											{
+												"usrn": 8400995
+											},
+											{
+												"usrn": 8400627
+											}
+										]	
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "Regulation": [
+                        {
+                            "Condition": [
+                                {
+                                    "TimeValidity": {
+                                        "start": "2023-12-31T20:00:00",
+                                        "end": "2024-01-01T06:00:00"
+                                    }
+                                }
+                            ],
+                            "GeneralRegulation": {
+                                "regulationType": "miscRoadClosure"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                },
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example - More complex v1, Dec. 2024"
+        }
+    }
+}
