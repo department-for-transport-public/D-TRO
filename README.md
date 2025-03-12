@@ -6,12 +6,16 @@ The latest release of the Data Specification in PROD is 3.3 as part of the D-TRO
 
 Version 3.3.1, which introduces improved validation of D-TROs, is available in INT. Subject to successful testing it will be rolled out to PROD. 
 
-Documentation and artefacts for v3.3 will be posted to GitHub when they are available, shortly, in advance of the upgrade. The details are v3.3 are contained in https://github.com/department-for-transport-public/D-TRO/issues/42. 
+Documentation and artefacts for v3.3 are on GitHub. The details are v3.3 are contained in https://github.com/department-for-transport-public/D-TRO/issues/42. 
+
+Version 3.4 has been announced and will launch at the end of March 2025 in Integration and at the end of April 2025 in Production. More details are available at:
+
+https://github.com/department-for-transport-public/D-TRO/issues/78
 
 **Consultation on Secondary Legislation
 **
 
-The statutory consultation was launched on Thursday 23 January 2025 for a period of 8 weeks. More details are available at:
+The statutory consultation, which launched on Thursday 23 January 2025, closes on Friday 21 March 2025. More details are available at:
 
 https://ttf.uk.net/2025/01/24/dft-has-issued-a-consultation-on-draft-regulations/
 
