@@ -40,6 +40,18 @@ https://github.com/department-for-transport-public/D-TRO/issues/1
 
 Our GitHub folder structure has been updated to make it easier to find documents relating to the latest and other supported versions of the Data Specification. 
 
+---
+
+Code GitHubs
+
+We operate two public code GitHub repositories at:
+
+https://github.com/pa-digital/dft-dtro-beta/
+
+https://github.com/pa-digital/dft-dtro-infra-beta
+
+---
+
 The list of SWA codes is available at:
 
 https://www.geoplace.co.uk/local-authority-resources/street-works-managers/view-swa-codes
