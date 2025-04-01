@@ -1,0 +1,914 @@
+{
+  "schemaVersion": "3.4.0",
+  "data": {
+    "source": {
+      "actionType": "new",
+      "currentTraOwner": 9001,
+      "madeDate": "2025-01-01",
+      "comingIntoForceDate": "2025-01-01",
+      "provision": [
+        {
+          "actionType": "new",
+          "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+          "provisionDescription": "Temporary full road closure, for combined utility works and carriageway repair",
+          "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
+          "comingIntoForceDate": "2025-01-01",
+          "regulatedPlace": [
+            {
+              "description": "East Reach, Taunton, bi-directional",
+              "directedLinear": {
+                "directedLineString": "SRID=27700;LINESTRING(323544 124622, 323464 124595)",
+                "origin": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39608173
+                      }
+                    ]
+                  }
+                ],
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "Diversion Route - through traffic - Toneway Wickes roundabout (A38) - Priory Avenue (A3038) - Trenchard Way (A3087) - Staplegrove Road (A3027/A338) - Silk Mills Road (A3065) - Galmington Roundabout (A38) - bi-directional",
+              "type": "diversionRoute",
+              "linearGeometry": {
+                "direction": "bidirectional",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39609331
+                      },
+                      {
+                        "usrn": 39605119
+                      },
+                      {
+                        "usrn": 39609519
+                      },
+                      {
+                        "usrn": 39609406
+                      },
+                      {
+                        "usrn": 39605180
+                      },
+                      {
+                        "usrn": 39609179
+                      },
+                      {
+                        "usrn": 39605082
+                      },
+                      {
+                        "usrn": 39605158
+                      },
+                      {
+                        "usrn": 39607389
+                      },
+                      {
+                        "usrn": 39605156
+                      },
+                      {
+                        "usrn": 39606013
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323589 125149, 323340 125227, 321986 125569, 320737 126347, 320715 124191)",
+                "representation": "linear",
+                "version": 1
+              }
+            }
+          ],
+          "regulation": [
+            {
+              "condition": [
+                {
+                  "timeValidity": {
+                    "end": "2024-10-24T20:00:00",
+                    "start": "2024-10-22T06:00:00"
+                  }
+                }
+              ],
+              "generalRegulation": {
+                "regulationType": "miscRoadClosure"
+              },
+              "isDynamic": false,
+              "temporaryProvision": [
+                {
+                  "temporaryOverriddenProvision": {
+                    "reference": "DA3C3631-7710-4EA5-B654-62CD316D487A"
+                  }
+                }
+              ],
+              "timeZone": "Europe/London"
+            }
+          ]
+        },
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Parking restrictions, East Reach, Pay & Display Parking Places - Monday to Sunday 9.00 am to 8.00 pm",
+          "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+          "regulatedPlace": [
+            {
+              "description": "East Reach, Taunton, northside / eastbound, between 10 metres east from the junction with Tancred Street to 15 metres west of the junction with South Street {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "directedLinear": {
+                "directedLineString": "SRID=27700;LINESTRING(323158 124529,323252 124546)",
+                "origin": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39608173
+                      }
+                    ]
+                  }
+                ],
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "East Reach, Taunton, northside / eastbound, between 10 metres east from the junction with Tancred Street to 15 metres west of the junction with South Street {approximate - polygon}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "polygon": {
+                "polygon": "SRID=27700;POLYGON((323158 124529, 323156 124529, 323587 125149,323589 125149,323158 124529))",
+                "version": 2,
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39608173
+                      }
+                    ]
+                  }
+                ]
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "East Reach, Taunton, southside / westbound, between 15 metres west from the junction with Victoria Street to 23 metres east of the junction with Haydon Road {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "elementaryStreetUnit": [
+                          {
+                            "esu": 3235350124617
+                          },
+                          {
+                            "esu": 3235700124630
+                          }
+                        ],
+                        "nsgStreetName": "East Reach",
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39608173
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "onKerb",
+                "linestring": "SRID=27700;LINESTRING(323549 124618,323478 124594,323381 124569)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "condition": [
+                {
+                  "negate": false,
+                  "timeValidity": {
+                    "start": "2024-12-10T09:00:00",
+                    "validPeriod": [
+                      {
+                        "recurringDayWeekMonthPeriod": [
+                          {
+                            "applicableDay": [
+                              "friday",
+                              "monday",
+                              "saturday",
+                              "sunday",
+                              "thursday",
+                              "tuesday",
+                              "wednesday"
+                            ]
+                          }
+                        ],
+                        "recurringTimePeriodOfDay": [
+                          {
+                            "endTimeOfPeriod": "20:00:00",
+                            "startTimeOfPeriod": "09:00:00"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "rateTable": {
+                    "additionalInformation": "http://www.somewhere.something.gov.uk",
+                    "type": "hourly",
+                    "rateLineCollection": [
+                      {
+                        "applicableCurrency": "GBP",
+                        "maxTime": "PT11H",
+                        "maxValueCollection": 7.2,
+                        "minTime": "PT1H",
+                        "minValueCollection": 1.0,
+                        "rateLine": [
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 58,
+                            "maxValue": 7.2,
+                            "minValue": 1.0,
+                            "sequence": 1,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 1.0
+                          },
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 59,
+                            "maxValue": 7.2,
+                            "minValue": 2.0,
+                            "sequence": 2,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 1.0
+                          },
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 540,
+                            "maxValue": 7.2,
+                            "minValue": 2.02,
+                            "sequence": 3,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 5.2
+                          }
+                        ],
+                        "resetTime": "23:59:59",
+                        "sequence": 1,
+                        "startValidUsagePeriod": "2024-08-10T09:00:00",
+                        "endValidUsagePeriod": "2024-12-31T20:00:00"
+                      },
+                      {
+                        "applicableCurrency": "GBP",
+                        "maxTime": "PT11H",
+                        "maxValueCollection": 7.2,
+                        "minTime": "PT1H",
+                        "minValueCollection": 1.0,
+                        "rateLine": [
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 58,
+                            "maxValue": 7.3,
+                            "minValue": 1.0,
+                            "sequence": 1,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 1.0
+                          },
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 59,
+                            "maxValue": 7.3,
+                            "minValue": 2.0,
+                            "sequence": 2,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 1.0
+                          },
+                          {
+                            "durationEnd": "00:00:00",
+                            "durationStart": "00:30:00",
+                            "incrementPeriod": 540,
+                            "maxValue": 7.3,
+                            "minValue": 2.0,
+                            "sequence": 3,
+                            "type": "flatRateTier",
+                            "usageCondition": "fixedDuration",
+                            "value": 5.3
+                          }
+                        ],
+                        "resetTime": "23:59:59",
+                        "sequence": 2,
+                        "startValidUsagePeriod": "2025-01-01T09:00:00"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "generalRegulation": {
+                "regulationType": "kerbsidePaymentParkingPlace"
+              },
+              "isDynamic": false,
+              "timeZone": "Europe/London"
+            }
+          ]
+        },
+        {
+          "actionType": "fullAmendment",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Speed limit, Toneway, Taunton",
+          "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c089",
+          "regulatedPlace": [
+            {
+              "description": "Toneway Eastbound (A38, A358) {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Toneway",
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39612030
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Dual Carriageway",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39686520
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Roundabout",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39604745
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323628 125167,325437 124895)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "Toneway Westbound (A38, A358) {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "endToStart",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Toneway",
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39612030
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Dual Carriageway",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39686520
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Roundabout",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39604745
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323634 125151,325393 124859)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "condition": [
+                {
+                  "negate": false,
+                  "timeValidity": {
+                    "start": "2024-12-01T00:00:00"
+                  }
+                }
+              ],
+              "isDynamic": false,
+              "speedLimitValueBased": {
+                "type": "maximumSpeedLimit",
+                "mphValue": 40,
+                "nature": "permanent"
+              },
+              "timeZone": "Europe/London"
+            }
+          ]
+        },
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Speed limit, national speed limit, A38 between Boome Lane and 147 metres north of the northern boundary of Bell House {approximate}",
+          "reference": "c962b51f-e1aa-416e-8f0b-bcfe39a4d089",
+          "regulatedPlace": [
+            {
+              "description": "A38 between Boome Lane and 147 metres north of the northern boundary of Bell House {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39604805
+                      },
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 34004899
+                      },
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 34000991
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(327506 128646,325437 124895)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "Toneway Westbound (A38, A358) {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "endToStart",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Toneway",
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39612030
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Dual Carriageway",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39686520
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Roundabout",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39604745
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323634 125151,325393 124859)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "condition": [
+                {
+                  "negate": false,
+                  "timeValidity": {
+                    "start": "2024-12-12T00:00:00"
+                  }
+                }
+              ],
+              "isDynamic": false,
+              "speedLimitProfileBased": {
+                "type": "nationalSpeedLimitSingleCarriageway"
+              },
+              "timeZone": "Europe/London"
+            }
+          ]
+        },
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Bus Lane restriction, Collett Road, Norton Fitzwarren {approximate} with fictitious time restrictions",
+          "reference": "c962b51f-e1aa-416e-8f0b-bcfd09a4d089",
+          "regulatedPlace": [
+            {
+              "description": "Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Collett Road",
+                        "usrn": 39609232
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(320336 126142,320315 126172)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - notational point of effect}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "pointGeometry": {
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39609234
+                      }
+                    ]
+                  }
+                ],
+                "point": "SRID=27700;POINT(320329 126155)",
+                "representation": "centreLinePoint",
+                "version": 2
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "conditionSet": [
+                {
+                  "operator": "and",
+                  "conditionSet": [
+                    {
+                      "operator": "or",
+                      "conditions": [
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "anyVehicle"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "bus"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "pedalCycle"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "occupantCondition": {
+                            "disabledWithPermit": true
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "occupantCondition": {
+                            "numberOfOccupants": [
+                              {
+                                "operator": "greaterThan",
+                                "value": 2
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "permitCondition": {
+                            "schemeIdentifier": "ABC123",
+                            "type": "resident",
+                            "authority": {
+                              "name": "Somerset Council"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "condition": [
+                    {
+                      "negate": false,
+                      "timeValidity": {
+                        "start": "2024-09-22T08:00:00",
+                        "validPeriod": [
+                          {
+                            "recurringDayWeekMonthPeriod": [
+                              {
+                                "applicableDay": [
+                                  "monday",
+                                  "tuesday",
+                                  "wednesday",
+                                  "thursday",
+                                  "friday"
+                                ]
+                              }
+                            ],
+                            "recurringTimePeriodOfDay": [
+                              {
+                                "startTimeOfPeriod": "08:00:00",
+                                "endTimeOfPeriod": "09:30:00"
+                              },
+                              {
+                                "startTimeOfPeriod": "16:30:00:00",
+                                "endTimeOfPeriod": "18:30:00"
+                              }
+                            ]
+                          }
+                        ],
+                        "exceptionPeriod": [
+                          {
+                            "recurringSpecialDay": [
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "publicHoliday"
+                              },
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "matchDay"
+                              }
+                            ]
+                          },
+                          {
+                            "periodStart": {
+                              "startType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of start of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          },
+                          {
+                            "periodEnd": {
+                              "endType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of end of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generalRegulation": {
+                "regulationType": "miscBusGate"
+              },
+              "isDynamic": false,
+              "timeZone": "Europe/London"
+            }
+          ]
+        },
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Use of e-scooter restriction, Collett Road, Norton Fitzwarren",
+          "reference": "c962b51f-e1aa-416e-8f0b-bcfd09a4d060",
+          "regulatedPlace": [
+            {
+              "description": "Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Collett Road",
+                        "usrn": 39609232
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(320336 126142,320315 126172)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "conditionSet": [
+                {
+                  "operator": "and",
+                  "conditionSet": [
+                    {
+                      "operator": "or",
+                      "conditions": [
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "maximumWidthCharacteristic": {
+                              "vehicleWidth": 12.1
+                            }
+                          }
+                        },
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "maximumHeightCharacteristic": {
+                              "vehicleHeight": 15.19
+                            }
+                          }
+                        },
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "maximumLengthCharacteristic": {
+                              "vehicleLength": 55.2
+                            }
+                          }
+                        },
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "maximumGrossWeightCharacteristic": {
+                              "grossVehicleWeight": 78.0,
+                              "typeOfWeight": "actual"
+                            }
+                          }
+                        },
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "heaviestAxleWeightCharacteristic": {
+                              "heaviestAxleWeight": 72.5
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "condition": [
+                    {
+                      "negate": false,
+                      "timeValidity": {
+                        "end": "2024-10-30T20:00:00",
+                        "start": "2024-09-22T08:00:00",
+                        "validPeriod": [
+                          {
+                            "recurringDayWeekMonthPeriod": [
+                              {
+                                "applicableDay": [
+                                  "monday",
+                                  "tuesday",
+                                  "wednesday",
+                                  "thursday",
+                                  "friday"
+                                ]
+                              }
+                            ],
+                            "recurringTimePeriodOfDay": [
+                              {
+                                "startTimeOfPeriod": "08:00:00",
+                                "endTimeOfPeriod": "09:30:00"
+                              },
+                              {
+                                "startTimeOfPeriod": "16:30:00:00",
+                                "endTimeOfPeriod": "18:30:00"
+                              }
+                            ]
+                          }
+                        ],
+                        "exceptionPeriod": [
+                          {
+                            "recurringSpecialDay": [
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "publicHoliday"
+                              },
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "matchDay"
+                              }
+                            ]
+                          },
+                          {
+                            "periodStart": {
+                              "startType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of start of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          },
+                          {
+                            "periodEnd": {
+                              "endType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of end of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "offListRegulation": {
+                "legislationCrossReference": [
+                  "regulation no.1",
+                  "regulation no.2"
+                ],
+                "regulationFullText": "e-scooter regs",
+                "regulationShortName": "Regulations for the use of e-scooters in Anytown"
+              },
+              "isDynamic": false,
+              "timeZone": "Europe/London"
+            }
+          ]
+        }
+      ],
+      "reference": "abc",
+      "section": "All sections",
+      "traAffected": [
+        9001
+      ],
+      "traCreator": 9001,
+      "troName": "DfT Example - More complex v2, Jan. 2025",
+      "statementDescription": "Some description"
+    }
+  }
+}
