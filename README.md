@@ -8,7 +8,7 @@ Version 3.3.1, which introduces improved validation of D-TROs, is available in I
 
 Documentation and artefacts for v3.3 are on GitHub. The details are v3.3 are contained in https://github.com/department-for-transport-public/D-TRO/issues/42. 
 
-Version 3.4 has been announced and will launch at the end of March 2025 in Integration and at the end of April 2025 in Production. More details are available at:
+Version 3.4 has been launched in Integration as of 31 March 2025 and will launch in Production at the end of April 2025. More details are available at:
 
 https://github.com/department-for-transport-public/D-TRO/issues/78
 
