@@ -4,26 +4,15 @@ let currentMatchIndex = -1;
 let matchElements = [];
 let matches = [];
 
+// DOM loaded setup
 document.addEventListener("DOMContentLoaded", function () {
   setupFigures();
   setupLinks();
   setupDocumentSearch();
   setupLightbox();
   generateTOC();
-
-  // Ensure these elements exist in your HTML
-  const searchInput = document.getElementById('site-search');
-  const searchButton = document.getElementById('searchButton');
-  const prevMatchButton = document.getElementById('prevMatch');
-  const nextMatchButton = document.getElementById('nextMatch');
-  const clearSearchButton = document.getElementById('clearSearch');
-
-  if (searchInput && searchButton && prevMatchButton && nextMatchButton && clearSearchButton) {
-    searchButton.addEventListener('click', searchText);
-    prevMatchButton.addEventListener('click', prevMatch);
-    nextMatchButton.addEventListener('click', nextMatch);
-    clearSearchButton.addEventListener('click', resetSearch);
-  }
+  setupSectionHighlight();
+  setupMainSearchControls();
 });
 
 // === Auto-insert figure images based on paragraph labels ===
@@ -46,7 +35,7 @@ function setupFigures() {
     }
   });
 
-  // Center and style figure titles
+  // Style figure titles
   paragraphs.forEach(p => {
     if (/^Figure\s*\d+\s*[-–]/i.test(p.textContent.trim())) {
       p.style.textAlign = "center";
@@ -56,8 +45,7 @@ function setupFigures() {
   });
 
   // Fix Figure2 to Figure 2 and unwrap anchor tags
-  const anchors = document.querySelectorAll("p a");
-  anchors.forEach(anchor => {
+  document.querySelectorAll("p a").forEach(anchor => {
     const parent = anchor.parentElement;
     anchor.textContent = anchor.textContent.replace(/Figure(\d+)/, 'Figure $1');
     if (parent && /^Figure\s*\d+/i.test(parent.textContent.trim())) {
@@ -68,10 +56,10 @@ function setupFigures() {
   });
 }
 
-// === Convert [https://...] text into links and ensure all external links open in a new tab ===
+// === Convert [https://...] text into links ===
 function setupLinks() {
   document.querySelectorAll("p").forEach(p => {
-    for (const node of [...p.childNodes]) {
+    [...p.childNodes].forEach(node => {
       if (node.nodeType === Node.TEXT_NODE) {
         const text = node.textContent;
         const urlPattern = /\[(https?:\/\/[^\]]+)\]/g;
@@ -86,7 +74,7 @@ function setupLinks() {
           p.replaceChild(wrapper, node);
         }
       }
-    }
+    });
   });
 
   document.querySelectorAll("a[href]").forEach(link => {
@@ -131,7 +119,79 @@ function closeLightbox() {
   if (lightbox) lightbox.style.display = "none";
 }
 
-// === Live document-wide search with highlight + navigation ===
+// === Document search using #document-body ===
+function setupMainSearchControls() {
+  const mainContent = document.getElementById('document-body');
+  const input = document.getElementById('site-search');
+  const btnNext = document.getElementById('nextMatch');
+  const btnPrev = document.getElementById('prevMatch');
+  const btnClear = document.getElementById('clearSearch');
+  const btnSearch = document.getElementById('searchButton');
+  const counter = document.getElementById('matchCounter');
+
+  if (!mainContent || !input || !btnSearch) return;
+
+  function clearSearchHighlights() {
+    mainContent.innerHTML = mainContent.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
+    matches = [];
+    currentMatchIndex = -1;
+    counter.textContent = '';
+  }
+
+  function updateSearchCounter() {
+    counter.textContent = matches.length > 0 ? `${currentMatchIndex + 1} / ${matches.length}` : '0 / 0';
+  }
+
+  function scrollToCurrentMatch() {
+    matches.forEach(m => m.classList.remove('active'));
+    if (matches[currentMatchIndex]) {
+      matches[currentMatchIndex].classList.add('active');
+      matches[currentMatchIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function runSearch() {
+    const term = input.value.trim();
+    if (!term) return clearSearchHighlights();
+    const regex = new RegExp(`(${term})`, 'gi');
+    clearSearchHighlights();
+    mainContent.innerHTML = mainContent.innerHTML.replace(regex, '<mark class="highlight">$1</mark>');
+    matches = Array.from(mainContent.querySelectorAll('mark.highlight'));
+    if (matches.length > 0) {
+      currentMatchIndex = 0;
+      updateSearchCounter();
+      scrollToCurrentMatch();
+    } else {
+      counter.textContent = 'No matches found';
+    }
+  }
+
+  function nextMatch() {
+    if (matches.length > 0) {
+      currentMatchIndex = (currentMatchIndex + 1) % matches.length;
+      updateSearchCounter();
+      scrollToCurrentMatch();
+    }
+  }
+
+  function prevMatch() {
+    if (matches.length > 0) {
+      currentMatchIndex = (currentMatchIndex - 1 + matches.length) % matches.length;
+      updateSearchCounter();
+      scrollToCurrentMatch();
+    }
+  }
+
+  btnSearch.addEventListener('click', runSearch);
+  btnClear.addEventListener('click', () => {
+    input.value = '';
+    clearSearchHighlights();
+  });
+  btnNext.addEventListener('click', nextMatch);
+  btnPrev.addEventListener('click', prevMatch);
+}
+
+// === Live document-wide background search (optional) ===
 function setupDocumentSearch() {
   const input = document.getElementById("search-input");
   const btnPrev = document.getElementById("search-prev");
@@ -159,7 +219,6 @@ function setupDocumentSearch() {
 
   input.addEventListener("keydown", function (e) {
     if (!matchElements.length) return;
-
     if (e.key === "ArrowDown" || e.key === "Enter") {
       e.preventDefault();
       currentMatchIndex = (currentMatchIndex + 1) % matchElements.length;
@@ -171,38 +230,24 @@ function setupDocumentSearch() {
     }
   });
 
-  if (btnNext) {
-    btnNext.addEventListener("click", () => {
-      if (!matchElements.length) return;
-      currentMatchIndex = (currentMatchIndex + 1) % matchElements.length;
-      updateCurrentHighlight();
-    });
-  }
-
-  if (btnPrev) {
-    btnPrev.addEventListener("click", () => {
-      if (!matchElements.length) return;
-      currentMatchIndex = (currentMatchIndex - 1 + matchElements.length) % matchElements.length;
-      updateCurrentHighlight();
-    });
-  }
-
-  if (btnClear) {
-    btnClear.addEventListener("click", () => {
-      input.value = "";
-      clearHighlights();
-      matchElements = [];
-      currentMatchIndex = -1;
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  if (btnNext) btnNext.addEventListener("click", () => nextMatchHighlight());
+  if (btnPrev) btnPrev.addEventListener("click", () => prevMatchHighlight());
+  if (btnClear) btnClear.addEventListener("click", () => {
+    input.value = "";
+    clearHighlights();
+    matchElements = [];
+    currentMatchIndex = -1;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 function updateCurrentHighlight() {
   matchElements.forEach(el => el.classList.remove("highlight-current"));
   const current = matchElements[currentMatchIndex];
-  current.classList.add("highlight-current");
-  current.scrollIntoView({ behavior: "smooth", block: "center" });
+  if (current) {
+    current.classList.add("highlight-current");
+    current.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 }
 
 function clearHighlights() {
@@ -215,132 +260,38 @@ function clearHighlights() {
 
 function highlightMatches(root, query) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-
   let node;
   while ((node = walker.nextNode())) {
     const text = node.nodeValue;
     const lower = text.toLowerCase();
     const index = lower.indexOf(query);
-
     if (index !== -1 && node.parentNode.nodeName !== "SCRIPT") {
       const before = text.slice(0, index);
       const match = text.slice(index, index + query.length);
       const after = text.slice(index + query.length);
-
       const highlight = document.createElement("span");
       highlight.className = "highlight";
       highlight.textContent = match;
-
       const fragment = document.createDocumentFragment();
       if (before) fragment.appendChild(document.createTextNode(before));
       fragment.appendChild(highlight);
       if (after) fragment.appendChild(document.createTextNode(after));
-
       node.parentNode.replaceChild(fragment, node);
     }
   }
 }
 
-// === (Optional) Generate TOC from headings ===
-function generateTOC() {
-  const tocList = document.getElementById("toc-list");
-  if (!tocList) return;
-
-  const headers = document.querySelectorAll("h1, h2, h3");
-  headers.forEach((header, index) => {
-    if (!header.id) {
-      header.id = `section-${index}`;
-    }
-
-    const link = document.createElement("a");
-    link.href = `#${header.id}`;
-    link.textContent = header.textContent;
-
-    const li = document.createElement("li");
-    li.appendChild(link);
-    tocList.appendChild(li);
-  });
-}
-
-document.getElementById('searchButton').addEventListener('click', searchText);
-document.getElementById('prevMatch').addEventListener('click', prevMatch);
-document.getElementById('nextMatch').addEventListener('click', nextMatch);
-document.getElementById('clearSearch').addEventListener('click', resetSearch);
-
-function searchText() {
-    const searchTerm = document.getElementById('site-search').value.toLowerCase();
-    const mainContent = document.querySelector('main');
-    const regex = new RegExp(`(${searchTerm})`, 'gi');
-    
-    // Clear previous highlights
-    mainContent.innerHTML = mainContent.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
-
-    if (!searchTerm) {
-        resetSearch();
-        return;
-    }
-
-    // Highlight matches
-    mainContent.innerHTML = mainContent.innerHTML.replace(regex, '<mark class="highlight">$1</mark>');
-    matches = Array.from(mainContent.querySelectorAll('mark.highlight'));
-
-    if (matches.length > 0) {
-        currentMatchIndex = 0;
-        updateMatchInfo();
-        scrollToMatch();
-    } else {
-        document.getElementById('matchCounter').textContent = 'No matches found';
-    }
-}
-
-function scrollToMatch() {
-    if (matches.length > 0) {
-        matches.forEach(match => match.classList.remove('active'));
-        matches[currentMatchIndex].classList.add('active');
-        matches[currentMatchIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
-function nextMatch() {
-    if (matches.length > 0) {
-        currentMatchIndex = (currentMatchIndex + 1) % matches.length;
-        updateMatchInfo();
-        scrollToMatch();
-    }
-}
-
-function prevMatch() {
-    if (matches.length > 0) {
-        currentMatchIndex = (currentMatchIndex - 1 + matches.length) % matches.length;
-        updateMatchInfo();
-        scrollToMatch();
-    }
-}
-
-function resetSearch() {
-    const mainContent = document.querySelector('main');
-    mainContent.innerHTML = mainContent.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
-    document.getElementById('site-search').value = '';
-    document.getElementById('matchCounter').textContent = '';
-    matches = [];
-    currentMatchIndex = -1;
-}
-
-function updateMatchInfo() {
-    document.getElementById('matchCounter').textContent = `${currentMatchIndex + 1} / ${matches.length}`;
-}
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("main section[id]");
+// === Highlight active section in nav ===
+function setupSectionHighlight() {
+  const sections = document.querySelectorAll("#document-body section[id]");
   const navLinks = document.querySelectorAll(".main-nav a");
 
   window.addEventListener("scroll", () => {
-    const scrollPos = window.scrollY + 150; // Offset for fixed header/hero
-
+    const scrollPos = window.scrollY + 150;
     sections.forEach(section => {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
       const id = section.getAttribute("id");
-
       if (scrollPos >= top && scrollPos < bottom) {
         navLinks.forEach(link => {
           link.classList.remove("active");
@@ -351,4 +302,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
+}

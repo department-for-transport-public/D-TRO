@@ -8,18 +8,20 @@
   <meta name="description" content="User guide for the D-TRO Data Model Release 3.4.0 – Version 1.0 (March 2025)" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
   <!-- Header -->
   <header class="header">
     <div class="header-logo">
-      <img src="images/dft_images/dftlogo.png"alt="Department for Transport Logo" />
+      <img src="images/dft_images/dftlogo.png" alt="Department for Transport Logo" />
     </div>
     <div class="header-search">
-      <form action="/search" method="get">
-        <input type="text" name="q" placeholder="Search..." aria-label="Search" style="width: 400px; height: 40px; font-size: 16px;" />
-        <button type="submit" style="height: 40px; padding: 0 20px; font-size: 16px;">Search</button>
+      <form id="searchForm">
+        <input type="text" id="site-search" placeholder="Search the document..." />
+        <button type="button" id="searchButton">Search</button>
+        <button type="button" id="prevMatch">Prev</button>
+        <button type="button" id="nextMatch">Next</button>
+        <button type="button" id="clearSearch">Clear</button>
+        <span id="matchCounter" style="margin-left: 1rem;"></span>
       </form>
     </div>
   </header>
@@ -3068,136 +3070,8 @@
         'bidirectional', 'startToEnd', and 'endToStart'. Note this can be used
         to support the definition of the direction of a direction sensitive
         regulation on, say, a single road section (e.g. a northbound direction
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D-TRO Data Model – User Guide 3.4.0</title>
-  <meta name="author" content="Department for Transport" />
-  <meta name="description" content="User guide for the D-TRO Data Model Release 3.4.0 – Version 1.0 (March 2025)" />
-  <link rel="stylesheet" href="style.css" />
-</head>
 
-<body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="header-logo">
-      <img src="images/dft_images/dftlogo.png" alt="Department for Transport Logo" />
-    </div>
-    <div class="header-search">
-      <form action="/search" method="get">
-        <input type="text" name="q" placeholder="Search..." aria-label="Search" />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-title">Digital Traffic Regulation Orders</div>
-      <div class="hero-subtitle">Data Model – User Guide</div>
-      <div class="release-note">Release 3.4.0 – Version 1.0 (March 2025)</div>
-    </div>
-  </section>
-
-  <!-- Navigation (now beneath hero image) -->
-  <nav role="navigation" aria-label="Main navigation">
-    <ul class="main-nav">
-      <!-- Section 1 -->
-      <li>
-        <a href="#_Toc190681329">1. Digital Traffic Regulation Orders</a>
-        <ul class="dropdown">
-          <li><a href="#_Toc190681330">1.1. Introduction</a></li>
-          <li><a href="#_Toc190681331">1.2. About this document</a></li>
-          <li><a href="#_Toc190681332">1.3. TROs in context</a></li>
-          <li><a href="#_Toc190681333">1.4. High-level outline of the D-TRO Service</a></li>
-          <li><a href="#_Toc190681334">1.5. Other documents and artefacts</a></li>
-          <li><a href="#_Toc190681335">1.6. Acknowledgements</a></li>
-          <li><a href="#_Toc190681336">1.7. Non-proprietary terms</a></li>
-          <li><a href="#_Toc190681337">1.8. Disclaimer</a></li>
-          <li><a href="#_Toc190681338">1.9. Licensing</a></li>
-        </ul>
-      </li>
-
-      <!-- Section 2 -->
-      <li>
-        <a href="#_Toc190681339">2. TRO Modelling Key Concepts</a>
-        <ul class="dropdown">
-          <li><a href="#_Toc190681340">2.1. Background</a></li>
-          <li><a href="#_Toc190681341">2.2. General concepts</a></li>
-          <li><a href="#_Toc190681342">2.3. Design principles</a></li>
-          <li><a href="#_Toc190681343">2.4. User- and Policy-driven needs</a></li>
-          <li><a href="#_Toc190681344">2.5. Choice of Technologies</a></li>
-          <li><a href="#_Toc190681345">2.6. Alignment with other standards</a></li>
-          <li><a href="#_Toc190681346">2.7. Location Referencing</a></li>
-          <li><a href="#_Toc190681347">2.8. Standardised Terms and Definitions</a></li>
-          <li><a href="#_Toc190681348">2.9. About Data Types in the Data Model and JSON Schema</a></li>
-        </ul>
-      </li>
-
-      <!-- Section 3 -->
-      <li>
-        <a href="#_Toc190681349">3. A tour of the Data Model</a>
-        <ul class="dropdown">
-          <li><a href="#_Toc190681350">3.2. Navigating the HTML Interactive Specification for the Data Model</a></li>
-          <li><a href="#_Toc190681351">3.3. About the TRO and its Provisions</a></li>
-          <li><a href="#_Toc190681352">3.4. Defining Regulations</a></li>
-          <li><a href="#_Toc190681353">3.5. Managing records for TROs and corresponding provisions</a></li>
-          <li><a href="#_Toc190681354">3.6. Specifying Locations for TROs</a></li>
-          <li><a href="#_Toc190681355">3.7. Times relating to Regulations</a></li>
-        </ul>
-      </li>
-
-      <!-- Section 4 -->
-      <li>
-        <a href="#_Toc190681356">4. What is a ‘full’ D-TRO Record?</a>
-        <ul class="dropdown">
-          <li><a href="#_Toc190681357">4.1. Validation Rules</a></li>
-        </ul>
-      </li>
-
-      <!-- Section 5 -->
-      <li>
-        <a href="#_Toc190681358">5. The Data Model UML Class Diagrams</a>
-      </li>
-
-      <!-- Section 6 -->
-      <li>
-        <a href="#_Toc190681359">6. Change log</a>
-      </li>
-
-      <!-- Section 7 -->
-      <li>
-        <a href="#_Toc190681360">7. Document Control</a>
-      </li>
-    </ul>
-  </nav>
-
-<div>
-    <table cellpadding="0" cellspacing="0" width="100%">
-        <tbody>
-            <tr>
-                <td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <br clear="ALL"/>
-</div>
-<br clear="all"/>
-<br clear="all"/>
-
-<br clear="all"/>
-<div>
-    <h1>
-        <a name="_Toc9505486"></a><a name="_Toc135824183"></a><a name="_Toc167778813"></a><a name="_Toc168303598"></a>
-        <a name="_Toc190681329">
-            1.                    Digital Traffic Regulation Orders
-        </a>
-    </h1>
+     
     <h2>
         <a name="_Toc135824184"></a><a name="_Toc167778814"></a><a name="_Toc168303599"></a>
         <a name="_Toc190681330">1.1.    Introduction</a>
@@ -8949,7 +8823,6 @@
     <span class="lightbox-close" onclick="closeLightbox()">×</span>
     <img id="lightbox-img" src="" alt="Full size image">
   </div>
-  <script src="search.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
