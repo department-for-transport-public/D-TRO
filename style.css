@@ -408,3 +408,7 @@ main {
   padding-right: 20px;
   padding-bottom: 20px;
 }
+/* Apply scroll offset to all anchor-linked headers */
+h1[id], h2[id], h3[id], h4[id] {
+  scroll-margin-top: 220px; /* Adjust to match your fixed header + hero height */
+}
