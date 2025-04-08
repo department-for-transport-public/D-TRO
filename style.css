@@ -1,0 +1,416 @@
+/* Reset basics */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Body Styles */
+  body {
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    margin: 0;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    color: #003366;
+  }
+  
+  /* Links */
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  /* ─────────── HEADER ─────────── */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .header-logo img {
+    height: 150px;
+  }
+  
+  .header-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+  }
+  
+  .header-search form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-search input[type="text"] {
+    height: 40px;
+    padding: 0 0.5rem;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .header-search button {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .header-search button:hover {
+    background-color: #003366;
+  }
+  
+  /* ─────────── HERO ─────────── */
+  .hero {
+    position: fixed;
+    top: 170px; /* header height (~150px) + spacing */
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-image: url('images/dft_images/dftheader.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 900;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .release-note {
+    font-size: 1.2rem;
+    color: #ffd700;
+  }
+  
+  /* ─────────── NAVIGATION ─────────── */
+  nav {
+    position: fixed;
+    top: 470px; /* header + hero height */
+    left: 0;
+    width: 100%;
+    background: #003a69;
+    padding: 10px 0;
+    z-index: 800;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;     /* center the nav items */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    position: relative;          /* allows dropdowns to position correctly */
+    overflow: visible;           /* don't clip dropdowns */
+    z-index: 1001;               /* ensure nav is above content */
+    background-color: #003a69;   /* preserve nav background */
+  }
+  
+  
+  .main-nav > li {
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1em;
+  }
+  
+  .main-nav a:hover {
+    background: #002847;
+  }
+  .main-nav a.active {
+    border-bottom: 2px solid #ffd700;
+    background-color: #002847;
+  }
+  
+  /* Dropdown styling */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #003a69;
+    min-width: 250px;
+    z-index: 9999; /* Make sure it's above the nav and hero */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .main-nav li:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown li {
+    list-style: none;
+  }
+  
+  .dropdown a {
+    padding: 12px 25px;
+    white-space: nowrap;
+  }
+  
+  /* ─────────── MAIN CONTENT ─────────── */
+  .content {
+    padding-top: 600px; /* Adjusted to ensure content is not hidden under the nav */
+    margin: 0 20px;
+  }
+  
+  /* Highlighting for search */
+  .highlight {
+    background-color: yellow;
+  }
+  .highlight.active {
+    background-color: orange;
+  }
+  
+  /* Buttons */
+  .gov-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1d70b8;
+    border: 2px solid #1d70b8;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gov-button:hover {
+    background-color: #003078;
+  }
+  
+  /* Center button wrapper */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive image */
+  .figure,
+  .figure-center {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .figure img,
+  .figure-center img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Lightbox */
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 20px #000;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Table of contents */
+  #toc-container {
+    background-color: #f3f2f1;
+    border-bottom: 2px solid #b1b4b6;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Floating doc search */
+  #doc-search {
+    position: fixed;
+    top: 1rem;
+    right: 3rem;
+    background-color: #f3f2f1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #b1b4b6;
+    border-radius: 8px;
+    z-index: 10000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Active section highlight */
+  .main-nav a.active {
+    border-bottom: 2px solid #ffd700;
+  }
+  
+  /* ─────────── Responsive ─────────── */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-logo img {
+      height: 100px;
+    }
+  
+    .header-search {
+      justify-content: flex-start;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .hero-title {
+      font-size: 1.8rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .release-note {
+      font-size: 1rem;
+    }
+  
+    .main-nav {
+      justify-content: flex-start;
+    }
+  
+    .main-nav > li {
+      flex: 1 0 100%;
+    }
+  }
+  
+  /* Add styles for the search bar and buttons */
+  #site-search {
+    height: 40px;
+    padding: 0 0.5rem;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #searchButton, #prevMatch, #nextMatch, #clearSearch {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  #searchButton:hover, #prevMatch:hover, #nextMatch:hover, #clearSearch:hover {
+    background-color: #003366;
+  }
+  
+  main {
+    padding-top: 300px; /* Adjusted to ensure content is not hidden under the nav */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
