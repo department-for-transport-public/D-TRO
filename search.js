@@ -1,7 +1,8 @@
-// === Modular Document Search ===
+// === Modular Document Search with original content restore ===
 
 let currentMatchIndex = -1;
 let matches = [];
+let originalContent = "";
 
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("site-search");
@@ -14,13 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!input || !mainContent) return;
 
+  // Cache the original content once
+  originalContent = mainContent.innerHTML;
+
   btnSearch?.addEventListener("click", () => searchText(input.value.trim()));
   btnClear?.addEventListener("click", clearSearch);
   btnNext?.addEventListener("click", () => updateMatch("next"));
   btnPrev?.addEventListener("click", () => updateMatch("prev"));
 
   function searchText(query) {
-    clearHighlights();
     matches = [];
 
     if (!query || query.length < 2) {
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
-    mainContent.innerHTML = mainContent.innerHTML.replace(
+    mainContent.innerHTML = originalContent.replace(
       regex,
       '<mark class="highlight">$1</mark>'
     );
@@ -47,21 +50,25 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateMatch(direction) {
     if (!matches.length) return;
 
-    matches.forEach(m => m.classList.remove("active"));
+    matches.forEach((m) => m.classList.remove("active"));
 
     if (direction === "next") {
       currentMatchIndex = (currentMatchIndex + 1) % matches.length;
     } else if (direction === "prev") {
-      currentMatchIndex = (currentMatchIndex - 1 + matches.length) % matches.length;
+      currentMatchIndex =
+        (currentMatchIndex - 1 + matches.length) % matches.length;
     }
 
     matches[currentMatchIndex].classList.add("active");
-    matches[currentMatchIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+    matches[currentMatchIndex].scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
     counter.textContent = `${currentMatchIndex + 1} / ${matches.length}`;
   }
 
   function clearSearch() {
-    clearHighlights();
+    mainContent.innerHTML = originalContent;
     input.value = "";
     resetState();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -73,11 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     counter.textContent = "";
   }
 
-  function clearHighlights() {
-    mainContent.innerHTML = mainContent.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
-  }
-
   function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 });
