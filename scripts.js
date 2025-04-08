@@ -1,9 +1,5 @@
 // === Master script for D-TRO HTML User Guide ===
 
-// let currentMatchIndex = -1;
-// let matchElements = [];
-// let matches = [];
-
 // DOM loaded setup
 document.addEventListener("DOMContentLoaded", function () {
   setupFigures();
@@ -12,31 +8,49 @@ document.addEventListener("DOMContentLoaded", function () {
   setupSectionHighlight();
 });
 
-// === Auto-insert figure images based on paragraph labels ===
+// figure images added
 function setupFigures() {
   const paragraphs = document.querySelectorAll("p");
 
   paragraphs.forEach((p) => {
-    // Flexible match: handles "Figure 1", "Figure 2 –", "Figure 3:", etc.
-    const match = p.textContent.match(/Figure\s*(\d+)[\s:–-]?/i);
+    // Skip if image already inserted
+    if (p.dataset.figureInserted === "true") return;
+
+    // Get plain text with link included
+    const text = p.textContent.trim();
+
+    // Match "Figure 1" at beginning, possibly with anchor inside <a>
+    const match =
+      text.match(/^Figure\s*(\d+)[\s:–-]?/i) ||
+      text.match(/^.*Figure\s*(\d+)[\s:–-]?/i);
 
     if (match) {
       const figNum = match[1];
       const imgPath = `images/data_model_images/fig${figNum}.png`;
 
+      // Create wrapper
+      const wrapper = document.createElement("div");
+      wrapper.className = "figure-wrapper";
+
+      // Clone the paragraph and center it
+      const caption = p.cloneNode(true);
+      caption.classList.add("figure-caption");
+
+      // Create image
       const img = document.createElement("img");
       img.src = imgPath;
       img.alt = `Figure ${figNum}`;
       img.style.width = "600px";
       img.style.height = "auto";
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "figure-center";
+      // Assemble and replace
+      wrapper.appendChild(caption);
       wrapper.appendChild(img);
+      p.parentNode.replaceChild(wrapper, p);
 
-      p.parentNode.insertBefore(wrapper, p.nextSibling);
+      // Mark to prevent reprocessing
+      wrapper.dataset.figureInserted = "true";
 
-      // Debugging: log matches and image paths
       console.log(`✅ Inserted Figure ${figNum}: ${imgPath}`);
     }
   });
@@ -98,7 +112,8 @@ function setupLinks() {
 
 // === Fullscreen lightbox for figure images ===
 function setupLightbox() {
-  const imgs = document.querySelectorAll(".figure-center img");
+  const imgs = document.querySelectorAll(".figure-wrapper img");
+
   imgs.forEach((img) => {
     img.style.cursor = "zoom-in";
     img.addEventListener("click", () => openLightbox(img.src, img.alt));
