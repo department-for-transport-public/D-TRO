@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("0.4.1:1", "", "VehicleCharacteristicsEnumerations", "EARoot/EA4/EA1/EA172.htm", "175.png", "8", "0", "", "Logical diagram0","{D00E683F-DB21-4eaf-8A3B-9D03635CDC7D}");
+tocTab[tocTab.length] = new Array("0.4.1:2", "", "«JSON_Datatype» ComparisonOperatorType", "EARoot/EA4/EA1/EA175.htm", "247.png", "E17", "0", "", "Enumeration0","{78023328-5488-4916-828B-6C2DEF23A23A}");
+tocTab[tocTab.length] = new Array("0.4.1:3", "", "«JSON_Datatype» EmissionClassificationEuroType", "EARoot/EA4/EA1/EA176.htm", "247.png", "E20", "0", "", "Enumeration0","{D41453CA-87C2-4754-9723-D784EC7FBC01}");
+tocTab[tocTab.length] = new Array("0.4.1:4", "", "«JSON_Datatype» FuelType", "EARoot/EA4/EA1/EA177.htm", "247.png", "E109", "0", "", "Enumeration0","{A998FE4A-134E-4dee-9490-BA30CEE6A4E7}");
+tocTab[tocTab.length] = new Array("0.4.1:5", "", "«JSON_Datatype» PayloadType", "EARoot/EA4/EA1/EA178.htm", "247.png", "E29", "0", "", "Enumeration0","{056E4F59-91C5-4337-A7BC-18EB9DAE5DAF}");
+tocTab[tocTab.length] = new Array("0.4.1:6", "", "«JSON_Datatype» VehicleEquipmentType", "EARoot/EA4/EA1/EA179.htm", "247.png", "E83", "0", "", "Enumeration0","{FC5A7057-006F-4201-9890-CBE5A1F3FB6C}");
+tocTab[tocTab.length] = new Array("0.4.1:7", "", "«JSON_Datatype» VehicleType", "EARoot/EA4/EA1/EA180.htm", "247.png", "E33", "0", "", "Enumeration0","{11DF0A2E-A42E-437f-825B-3CF700DF9FCF}");
+tocTab[tocTab.length] = new Array("0.4.1:8", "", "«JSON_Datatype» VehicleUsageType", "EARoot/EA4/EA1/EA181.htm", "247.png", "E102", "0", "", "Enumeration0","{9A2FE4E0-BDF9-47b8-BEE2-37E320838059}");
+tocTab[tocTab.length] = new Array("0.4.1:9", "", "«JSON_Datatype» WeightType", "EARoot/EA4/EA1/EA182.htm", "247.png", "E19", "0", "", "Enumeration0","{5DE66887-1019-402d-B5AB-1C79A4DBFB7C}");

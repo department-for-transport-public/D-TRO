@@ -1,8 +1,7 @@
-// === Modular Document Search with original content restore ===
+// === Document Search Without Overwriting Content ===
 
 let currentMatchIndex = -1;
 let matches = [];
-let originalContent = "";
 
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("site-search");
@@ -15,27 +14,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!input || !mainContent) return;
 
-  // Cache the original content once
-  originalContent = mainContent.innerHTML;
-
   btnSearch?.addEventListener("click", () => searchText(input.value.trim()));
   btnClear?.addEventListener("click", clearSearch);
   btnNext?.addEventListener("click", () => updateMatch("next"));
   btnPrev?.addEventListener("click", () => updateMatch("prev"));
 
   function searchText(query) {
-    matches = [];
+    clearSearch();
 
     if (!query || query.length < 2) {
-      resetState();
+      counter.textContent = "";
       return;
     }
 
-    const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
-    mainContent.innerHTML = originalContent.replace(
-      regex,
-      '<mark class="highlight">$1</mark>'
+    const regex = new RegExp(escapeRegExp(query), "gi");
+
+    const walker = document.createTreeWalker(
+      mainContent,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) =>
+          node.parentNode &&
+          node.nodeValue.match(regex) &&
+          node.parentNode.nodeName !== "SCRIPT"
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_SKIP,
+      }
     );
+
+    const nodes = [];
+
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+      const span = document.createElement("span");
+      span.innerHTML = node.nodeValue.replace(
+        regex,
+        (match) => `<mark class="highlight">${match}</mark>`
+      );
+      node.parentNode.replaceChild(span, node);
+    });
 
     matches = Array.from(mainContent.querySelectorAll("mark.highlight"));
 
@@ -68,16 +88,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function clearSearch() {
-    mainContent.innerHTML = originalContent;
-    input.value = "";
-    resetState();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+    // 1. Remove highlights
+    const highlights = mainContent.querySelectorAll("mark.highlight");
+    highlights.forEach((mark) => {
+      const parent = mark.parentNode;
+      parent.replaceChild(document.createTextNode(mark.textContent), mark);
+      parent.normalize();
+    });
 
-  function resetState() {
+    // 2. Reset state
     matches = [];
     currentMatchIndex = -1;
     counter.textContent = "";
+    input.value = "";
+
+    // 3. Scroll to top of welcome section with offset
+    const welcomeSection = document.getElementById("welcome-section");
+    const offset = 200; // Adjust this to match your fixed nav height
+
+    // Scroll to top position minus offset (so content is visible)
+    const topPos =
+      welcomeSection.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: topPos,
+      behavior: "smooth",
+    });
   }
 
   function escapeRegExp(string) {

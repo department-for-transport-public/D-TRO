@@ -1,408 +1,428 @@
 /* Reset basics */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Global Body Styles */
-body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Body Styles */
+  body {
   padding-top: 50px;
-  font-family: Arial, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #333;
-  background: #fff;
-  margin: 0;
-}
-
-/* Headings */
-h1, h2, h3 {
-  color: #0066cc;
-}
-
-/* Links */
-a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
-}
-
-th, td {
-  padding: 0.5rem;
-  text-align: left;
-}
-
-/* ─────────── HEADER ─────────── */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-.header-logo img {
-  height: 150px;
-}
-
-.header-search {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 20px;
-}
-
-.header-search form {
-  display: flex;
-  align-items: center;
-}
-
-.header-search input[type="text"] {
-  height: 40px;
-  padding: 0 0.5rem;
-  font-size: 16px;
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.header-search button {
-  height: 40px;
-  padding: 0 20px;
-  font-size: 16px;
-  background-color: #1d70b8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin-left: 0.5rem;
-  cursor: pointer;
-}
-
-.header-search button:hover {
-  background-color: #003366;
-}
-
-/* ─────────── HERO ─────────── */
-.hero {
-  position: fixed;
-  top: 170px;
-  left: 0;
-  width: 100%;
-  height: 300px;
-  background-image: url('images/dft_images/dftheader.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 900;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.release-note {
-  font-size: 1.2rem;
-  color: #ffd700;
-}
-
-/* ─────────── NAVIGATION ─────────── */
-nav {
-  position: fixed;
-  top: 470px;
-  left: 0;
-  width: 100%;
-  background: #003a69;
-  padding: 10px 0;
-  z-index: 800;
-  display: flex;
-  justify-content: center;
-}
-
-.main-nav {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: visible;
-  z-index: 1001;
-  background-color: #003a69;
-}
-
-.main-nav > li {
-  flex: 1 1 auto;
-  text-align: center;
-  position: relative;
-}
-
-.main-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-  font-size: 1em;
-}
-
-.main-nav a:hover {
-  background: #002847;
-}
-/* Dropdown styling */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #003a69;
-  min-width: 250px;
-  z-index: 9999;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.main-nav li:hover .dropdown {
-  display: block;
-}
-
-.dropdown li {
-  list-style: none;
-}
-
-.dropdown a {
-  padding: 12px 25px;
-  white-space: nowrap;
-}
-
-/* ─────────── MAIN CONTENT ─────────── */
-.content {
-  padding-top: 600px;
-  margin: 0 20px;
-}
-
-/* Highlighting for search */
-.highlight {
-  background-color: yellow;
-  font-weight: bold;
-  border-radius: 3px;
-  padding: 0 2px;
-}
-
-.highlight.active,
-.highlight.highlight-current {
-  background-color: orange;
-}
-
-/* Buttons */
-.gov-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #1d70b8;
-  border: 2px solid #1d70b8;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.gov-button:hover {
-  background-color: #003078;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-}
-
-.figure,
-.figure-center {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.figure img,
-.figure-center img {
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-}
-
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border: 4px solid #fff;
-  box-shadow: 0 0 20px #000;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-#toc-container {
-  background-color: #f3f2f1;
-  border-bottom: 2px solid #b1b4b6;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-#doc-search {
-  position: fixed;
-  top: 1rem;
-  right: 3rem;
-  background-color: #f3f2f1;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #b1b4b6;
-  border-radius: 8px;
-  z-index: 10000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.main-nav a.active {
-  border-bottom: 2px solid #ffd700;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-logo img {
-    height: 100px;
-  }
-
-  .header-search {
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
+    font-family: Arial, sans-serif;
     font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    margin: 0;
   }
-
-  .release-note {
-    font-size: 1rem;
+  
+  /* Headings */
+  h1, h2, h3 {
+  color: #0066cc;
   }
-
-  .main-nav {
-    justify-content: flex-start;
+  
+  /* Links */
+  a {
+  color: #0066cc;
+    text-decoration: none;
   }
-
-  .main-nav > li {
-    flex: 1 0 100%;
+  
+  a:hover {
+  text-decoration: underline;
   }
-}
-
-#site-search {
-  height: 40px;
-  padding: 0 0.5rem;
-  font-size: 16px;
-  width: 250px;
+  
+  /* Tables */
+  table {
+  width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  table, th, td {
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#searchButton, #prevMatch, #nextMatch, #clearSearch {
+  }
+  
+  th, td {
+  padding: 0.5rem;
+    text-align: left;
+  }
+  
+  /* ─────────── HEADER ─────────── */
+  .header {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .header-logo img {
+  height: 150px;
+  height: 100px;
+  }
+  
+  .header-search {
+  flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+  justify-content: flex-start;
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+  .header-search form {
+  display: flex;
+    align-items: center;
+  }
+  
+  .header-search input[type="text"] {
   height: 40px;
-  padding: 0 20px;
-  font-size: 16px;
-  background-color: #1d70b8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin-left: 0.5rem;
-  cursor: pointer;
-}
-
-#searchButton:hover, #prevMatch:hover, #nextMatch:hover, #clearSearch:hover {
+    padding: 0 0.5rem;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .header-search button {
+  height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .header-search button:hover {
   background-color: #003366;
-}
-
-main {
+  }
+  
+  /* ─────────── HERO ─────────── */
+  .hero {
+  position: fixed;
+    top: 126px;
+    left: 0;
+    width: 100%;
+    height: 345px;
+    background-image: url('images/dft_images/dftheader.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 900;
+  }
+  
+  .hero-overlay {
+  position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .hero-title {
+  font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  font-size: 3.8rem;
+  }
+  
+  .hero-subtitle {
+  font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  font-size: 2.2rem;
+  }
+  
+  .release-note {
+  font-size: 1.2rem;
+    color: #ffd700;
+  font-size: 1rem;
+  }
+  
+  /* ─────────── NAVIGATION ─────────── */
+  nav {
+  position: fixed;
+    top: 470px;
+    left: 0;
+    width: 100%;
+    background: #003a69;
+    padding: 10px 0;
+    z-index: 800;
+    display: flex;
+    justify-content: center;
+  }
+  .main-nav {
+    display: flex;
+    flex-direction: row;   /* This forces horizontal layout */
+    justify-content: center;
+    flex-wrap: nowrap;     /* Prevent wrapping to next line */
+    gap: 2rem;             /* Nice space between links */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .main-nav > li {
+    flex: 0 1 auto;        /* Allow shrinking if really needed */
+    text-align: center;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1em;
+    white-space: nowrap;   /* Stops text from wrapping */
+  }
+  
+  .main-nav a:hover {
+    background: #002847;
+  }
+  
+  
+  /* Dropdown styling */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Directly below the parent link */
+    left: 50%;  /* Start at center */
+    transform: translateX(-50%); /* Shift back left by 50% of its own width */
+    background: #003a69;
+    min-width: 250px;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .main-nav li:hover .dropdown {
+  display: block;
+  }
+  
+  .dropdown li {
+  list-style: none;
+  }
+  
+  .dropdown a {
+  padding: 12px 25px;
+    white-space: nowrap;
+  }
+  .main-nav > li {
+    position: relative; /* 👈 This is the fix */
+  }
+  
+  
+  /* ─────────── MAIN CONTENT ─────────── */
+  .content {
+  padding-top: 600px;
+    margin: 0 20px;
+  }
+  
+  /* Highlighting for search */
+  .highlight {
+  background-color: yellow;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  
+  .highlight.active,
+  .highlight.highlight-current {
+  background-color: orange;
+  }
+  
+  /* Buttons */
+  .gov-button {
+  display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1d70b8;
+    border: 2px solid #1d70b8;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gov-button:hover {
+  background-color: #003078;
+  }
+  
+  .button-container {
+  display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  figure, .figure, .figure-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;        /* Space above and below */
+    text-align: center;
+  }
+  
+  figure img, .figure img, .figure-center img, img[src*="fig"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .lightbox-overlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .lightbox-overlay img {
+  max-width: 90%;
+    max-height: 90%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 20px #000;
+  }
+  
+  .lightbox-close {
+  position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  #toc-container {
+  background-color: #f3f2f1;
+    border-bottom: 2px solid #b1b4b6;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  #doc-search {
+  position: fixed;
+    top: 1rem;
+    right: 3rem;
+    background-color: #f3f2f1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #b1b4b6;
+    border-radius: 8px;
+    z-index: 10000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  
+  html {
+  scroll-behavior: smooth;
+  }
+  
+  .main-nav a.active {
+  border-bottom: 2px solid #ffd700;
+  }
+  
+  @media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  }
+  
+  #site-search {
+  height: 40px;
+    padding: 0 0.5rem;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #searchButton, #prevMatch, #nextMatch, #clearSearch {
+  height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  #searchButton:hover, #prevMatch:hover, #nextMatch:hover, #clearSearch:hover {
+  background-color: #003366;
+  }
+  
+  main {
   padding-top: 300px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-/* Offset for anchor-linked headings */
-h1[id], h2[id], h3[id], h4[id] {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  /* Offset for anchor-linked headings */
+  h1[id], h2[id], h3[id], h4[id] {
   scroll-margin-top: 300px; /* Increase this until headers are visible */
-}
+  }
+  
+  /* Prevent headings from being hidden behind fixed header in web browsers */
+  h1, h2, h3, h4, h5, h6, a[name] {
+  scroll-margin-top: 100px;  /* or adjust to your header height */
+  }
+  
+  
+  /* Adjust main padding for wider screens */
+  main {
+    padding-top: 300px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    main {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+  
+  /* Offset headings to avoid being hidden under fixed header */
+  h1, h2, h3, h4, h5, h6, a[name] {
+    scroll-margin-top: 320px; /* Adjusted for your header and hero */
+  }
+  main#document-body {
+    padding-top: 500px;  /* Adjust until it looks perfect */
+    padding-left: 50px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+  }
+  #welcome-section {
+    scroll-margin-top: 150px;  /* Adjust this to your header/nav height */
+  }
+  

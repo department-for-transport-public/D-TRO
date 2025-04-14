@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Condition</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Condition </h1>
+			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../EA21.htm">Regulations</a> / <a href="EA77.htm">Condition</a> / <a href="EA73.htm">Condition</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../images/4.png" alt="Package"/> <a href="./EA1/EA95.htm">ConditionEnumerations</a></li>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA73.htm">Condition</a></li>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA75.htm">Condition_Key_Concepts</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA80.htm">AccessCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA81.htm">Authority</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA82.htm">Condition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA84.htm">ConditionSet</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA85.htm">DriverCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA86.htm">NonVehicularRoadUserCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA87.htm">NumbersOfOccupants</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA88.htm">OccupantCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA89.htm">PermitCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA90.htm">PermitSubjectToFee</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA91.htm">RoadCondition</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA92.htm">ValidityCondition</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="PageBody">
+	<div class="diagram_image"> 
+<img src="EA74.png" usemap="#EA74" border="0" />
+
+<MAP NAME="EA74">
+<area shape="rect" coords="201,65,316,162" href="EA78.htm" target="_self">
+<area shape="rect" coords="10,320,178,409" href="EA87.htm" target="_self">
+<area shape="rect" coords="489,542,652,646" href="../EA3/EA120.htm" target="_self">
+<area shape="rect" coords="1162,374,1283,450" href="EA81.htm" target="_self">
+<area shape="rect" coords="848,167,1085,331" href="../EA4/EA156.htm" target="_self">
+<area shape="rect" coords="689,567,957,643" href="EA86.htm" target="_self">
+<area shape="rect" coords="970,19,1141,95" href="EA84.htm" target="_self">
+<area shape="rect" coords="134,224,298,300" href="EA91.htm" target="_self">
+<area shape="rect" coords="224,525,459,613" href="EA80.htm" target="_self">
+<area shape="rect" coords="219,318,394,410" href="EA88.htm" target="_self">
+<area shape="rect" coords="89,423,418,514" href="EA85.htm" target="_self">
+<area shape="rect" coords="848,363,1060,560" href="EA89.htm" target="_self">
+<area shape="rect" coords="1162,488,1390,580" href="EA90.htm" target="_self">
+<area shape="rect" coords="422,10,584,103" href="EA73.htm" target="_self">
+</MAP>
+ </div>
+	<div class="ObjectTitle">Condition : Class diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">26/10/2021 14:06:37</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">25/03/2025 15:49:11</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">Kaltwasser</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{A3E543B2-77D2-45a0-A358-7B826600307A}</td>
+		</tr>
+	</table>
+	
+</div>
+
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+
