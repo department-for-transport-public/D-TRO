@@ -9,79 +9,31 @@
       "provision": [
         {
           "actionType": "new",
-          "orderReportingPoint": "ttroTtmoNoticeOfIntention",
-          "provisionDescription": "Temporary full road closure, for combined utility works and carriageway repair",
+          "orderReportingPoint": "ttroTtmoNoticeAfterMaking",
+          "provisionDescription": "Suspension of one way on Haydon Road, perhaps to be linked to placement of temporary traffic signals",
           "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
           "comingIntoForceDate": "2025-01-01",
           "regulatedPlace": [
             {
-              "description": "East Reach, Taunton, both directions",
-              "type": "regulationLocation",
-              "directedLinear": {
-                "version": 1,
-                "directedLineString": "SRID=27700;LINESTRING(323544 124622, 323464 124595)",
-                "origin": [
-                  {
-                    "lastUpdateDate": "2024-10-01T00:00:00",
-                    "uniqueStreetReferenceNumber": [
-                      {
-                        "usrn": 39608173
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "description": "Diversion Route - through traffic - Toneway Wickes roundabout (A38) - Priory Avenue (A3038) - Trenchard Way (A3087) - Staplegrove Road (A3027/A338) - Silk Mills Road (A3065) - Galmington Roundabout (A38) - bi-directional",
-              "type": "diversionRoute",
+              "description": "Haydon Road",
               "linearGeometry": {
                 "version": 1,
-                "linestring": "SRID=27700;LINESTRING(323589 125149, 323340 125227, 321986 125569, 320737 126347, 320715 124191)",
-                "representation": "linear",
                 "direction": "bidirectional",
                 "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323357 124578, 323338 124640)",
+                "representation": "representingZone",
                 "externalReference": [
                   {
                     "lastUpdateDate": "2024-10-01T00:00:00",
                     "uniqueStreetReferenceNumber": [
                       {
-                        "usrn": 39609331
-                      },
-                      {
-                        "usrn": 39605119
-                      },
-                      {
-                        "usrn": 39609519
-                      },
-                      {
-                        "usrn": 39609406
-                      },
-                      {
-                        "usrn": 39605180
-                      },
-                      {
-                        "usrn": 39609179
-                      },
-                      {
-                        "usrn": 39605082
-                      },
-                      {
-                        "usrn": 39605158
-                      },
-                      {
-                        "usrn": 39607389
-                      },
-                      {
-                        "usrn": 39605156
-                      },
-                      {
-                        "usrn": 39606013
+                        "usrn": 39605715
                       }
                     ]
                   }
                 ]
-              }
+              },
+              "type": "regulationLocation"
             }
           ],
           "regulation": [
@@ -89,13 +41,13 @@
               "condition": [
                 {
                   "timeValidity": {
-                    "start": "2024-10-22T06:00:00",
-                    "end": "2024-10-24T20:00:00"
+                    "start": "2024-10-23T08:00:00",
+                    "end": "2024-10-23T20:00:00"
                   }
                 }
               ],
               "generalRegulation": {
-                "regulationType": "miscRoadClosure"
+                "regulationType": "miscSuspensionOfOneWay"
               },
               "isDynamic": false,
               "timeZone": "Europe/London"
