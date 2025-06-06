@@ -10,13 +10,7 @@ https://github.com/department-for-transport-public/D-TRO/issues/78
 
 Documentation and artefacts for v3.4 (and earlier, active versions) are on GitHub. 
 
-v3.2.4 in PROD will be deprecated on 12 May 2025. v3.3.0 in PROD will be deprecated at the end of May 2025.
-
-**HTML Guidance**
-
-An HTML version of the D-TRO User Guide has been published to GitHub Pages at:
-
-https://department-for-transport-public.github.io/D-TRO/
+v3.2.4 in PROD was deprecated on 12 May 2025. v3.3.0 in PROD will be deprecated on 17 June 2025.
 
 **Consultation on Secondary Legislation
 **
@@ -50,11 +44,13 @@ Our GitHub folder structure has been updated to make it easier to find documents
 
 Code GitHubs
 
-We operate two public code GitHub repositories at:
+We operate two code GitHub repositories at:
 
 https://github.com/pa-digital/dft-dtro-beta/
 
 https://github.com/pa-digital/dft-dtro-infra-beta
+
+These have been set to private and are therefore inaccessible to general users at the moment. We are hoping to have them back as public in future. 
 
 ---
 
