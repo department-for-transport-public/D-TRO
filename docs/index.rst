@@ -7,7 +7,7 @@ D-TRO - Data Model User Guide
 =============================
 
 
-.. admonition:: 🚀 Release v3.5.0 (August 2025)
+.. admonition:: 🚀 Release v3.4.0 (March 2025)
    :class: custom
 
    .. raw:: html
