@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>2. TRO-Modelling Key Concepts</title>
+    
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="../_static/documentation_options.js?v=ef2f0be6"></script>
+        <script src="../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="3. A Tour of the Data Model" href="tour_of_the_data_model.html" />
+  <link rel="prev" title="1. Digital Traffic Regulation Orders" href="digital_traffic_regulation_orders.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#d-tro-data-model-user-guide">D-TRO Data Model User Guide</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="digital_traffic_regulation_orders.html" class="reference internal ">Digital Traffic Regulation Orders</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">TRO-Modelling Key Concepts</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#background" class="reference internal">Background</a></li>
+                
+                  <li class="toctree-l2"><a href="#general-concepts" class="reference internal">General Concepts</a></li>
+                
+                  <li class="toctree-l2"><a href="#design-principles" class="reference internal">Design Principles</a></li>
+                
+                  <li class="toctree-l2"><a href="#user-and-policy-driven-needs" class="reference internal">User and Policy-Driven Needs</a></li>
+                
+                  <li class="toctree-l2"><a href="#choice-of-technologies" class="reference internal">Choice of Technologies</a></li>
+                
+                  <li class="toctree-l2"><a href="#alignment-with-other-standards" class="reference internal">Alignment with Other Standards</a></li>
+                
+                  <li class="toctree-l2"><a href="#location-referencing" class="reference internal">Location Referencing</a></li>
+                
+                  <li class="toctree-l2"><a href="#standardised-terms-and-definintions" class="reference internal">Standardised Terms and Definintions</a></li>
+                
+                  <li class="toctree-l2"><a href="#about-data-types-in-the-data-model-and-json-schema" class="reference internal">About Data Types in the Data Model and JSON Schema</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tour_of_the_data_model.html" class="reference internal ">A Tour of the Data Model</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="what_is_a_full_dtro_record.html" class="reference internal ">What is a ‘Full’ D-TRO Record?</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="the_data_model_uml_class_diagrams.html" class="reference internal ">The Data Model UML Class Diagrams</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="change_log.html" class="reference internal ">Change Log</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="document_control.html" class="reference internal ">Document Control</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="references.html" class="reference internal ">References</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">2. </span>TRO-Modelling Key Concepts</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="digital_traffic_regulation_orders.html"
+       title="previous chapter">← <span class="section-number">1. </span>Digital Traffic Regulation Orders</a>
+  </li>
+  <li class="next">
+    <a href="tour_of_the_data_model.html"
+       title="next chapter"><span class="section-number">3. </span>A Tour of the Data Model →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="tro-modelling-key-concepts">
+<h1><span class="section-number">2. </span>TRO-Modelling Key Concepts<a class="headerlink" href="#tro-modelling-key-concepts" title="Link to this heading">¶</a></h1>
+<section id="background">
+<h2><span class="section-number">2.1. </span>Background<a class="headerlink" href="#background" title="Link to this heading">¶</a></h2>
+<p>Data modelling is by its nature open to interpretation, different approaches and may reflect the personal preferences of those developing it.</p>
+<p>DfT agreed that the modelling approach would seek to achieve several aims:</p>
+<ul class="simple">
+<li><p>Provides as simple a structure as is possible to model a wide spectrum of traffic regulation concepts as is practicable</p></li>
+<li><p>Where appropriate, be aligned to internationally recognised standards (see section <a class="reference internal" href="#alignment-with-other-standards"><span class="std std-ref">Alignment with Other Standards</span></a>).</p></li>
+<li><p>Based on an appropriate and relevant data structure.</p></li>
+<li><p>Compatible with other standards where possible.</p></li>
+<li><p>Be as open and accessible as possible.</p></li>
+</ul>
+<p>The management and exchange of traffic regulations and TROs is a strengthening need, that will support the digitisation of traffic, vehicle automation and enhanced data-centric transport and mobility services.</p>
+<p>Transport and mobility include both the short local and cross-border long-distance journey. There is a need to develop common national mechanisms to ensure the efficient and safe movement of vehicles and road users. Commonality is needed to support travel between jurisdictions, but also the consistent sharing and use of TRO data.</p>
+<p>At present, although international conventions support the free movement of road traffic and general conditions for safe common road use, and other road features such as common aspects of road signs, there are no existing common technical standards for how to encode and model road traffic regulations.</p>
+<p>The Data Model is the first national recognised effort to support such encoding, expressly for the purpose of exchanging details concerning road traffic regulations, their location and features as well as the traffic impact that they create. The Data Model is expected to form part of the “with a specified model, standard or set of specifications” specifications as mentioned in the Automated Vehicles Act 2024, section 93(8).</p>
+</section>
+<section id="general-concepts">
+<h2><span class="section-number">2.2. </span>General Concepts<a class="headerlink" href="#general-concepts" title="Link to this heading">¶</a></h2>
+<p>TROs are complex and have been specified by highway authorities (and now TRAs) over an extended period, with quite some variation of style and approach. Developing the Data Model is challenging and therefore choices and simplifications are needed. The Data Model has been subject to modification and enhancement through a series of projects and also in response to comments and issues raised through validation undertaken by some Local Authorities and their existing TRO software service providers.</p>
+<p>Onward reviews and use of this model will identify omissions and exceptions, but the design principles adopted seek to provide clear data modelling constructs to cover a range of key concepts.</p>
+<p>When considering TROs there are various aspects that could be the subject of modelling:</p>
+<ul class="simple">
+<li><p>The legal Order itself, as made by the TRA</p></li>
+<li><p>Road network features (instantiated by the Order) that control the movement of traffic, use of the highways, etc, which includes the modelling of the traffic effect of the regulation for that feature</p></li>
+<li><p>Modelling of road traffic signs</p></li>
+<li><p>Modelling of road markings and other traffic management measures</p></li>
+</ul>
+<p>DfT focus for the Data Model has been to develop a firm technical basis to support the encoding, exchange, storage and distribution of details of the legal contents of the TRO itself.</p>
+<p>The scope of the Data Model covers all different forms of Order (permanent, temporary, experimental and notices) for both moving and stationary traffic.</p>
+</section>
+<section id="design-principles">
+<h2><span class="section-number">2.3. </span>Design Principles<a class="headerlink" href="#design-principles" title="Link to this heading">¶</a></h2>
+<p>The following design principles have reflected the shaping of the Data Model:</p>
+<ul class="simple">
+<li><p>The scope of the Data Model shall cover all different forms of Order (permanent, temporary, experimental and notices) for both moving and stationary traffic.</p></li>
+<li><p>The Data Model will seek to include the full semantic contents of (a largely majority of) TROs. This notes that there is wide variety in the form and content of existing TROs, and attempting to model all content and options is both impractical and counter-productive to the intent of creating standardised digital TRO records based on a common data structure as defined by the Data Model.</p></li>
+<li><p>The Data Model will seek to simplify data structures as much as practical.</p></li>
+<li><p>The Data Model design will be cognisant of user needs in terms of provisioning of digital TRO records, the most likely use cases for consumption and reuse of digital TRO records, and supporting DfT policy objectives, as well as supporting automated validation.</p></li>
+<li><p>Where appropriate, the Data Model will align, and reuse concepts specified in appropriate European or International Standards.</p></li>
+<li><p>The Data Model shall be extensible. The current landscape, format and content of ‘made’ TROs contains wide diversity. As part of the process of digitalising and regularising TRO information in the form of D-TRO records, it is essential to try to bound possible options and characteristics in an extensive, inclusive but ultimately limited way. It is important to provide technical mechanisms within the structure of the Data Model and its implementation in the D-TRO service to enable some of the key vocabulary to be extended in an ad-hoc user driven way.</p></li>
+</ul>
+<p>It is a matter of service governance that use of the extension mechanism, mentioned above, should only be used when absolutely necessary. This will ensure that the consistency of the collected set of D-TRO records is maintained. However, legitimate need to extend values beyond the ‘hard coded’ values in the Data Model is essential. Regular use of extended items should raise the need for their consideration of inclusion in a revision of the Data Model – as part of the expected regime of the Data Model governance.</p>
+<ul class="simple">
+<li><p>The Data Model shall be designed and represented in a manner that aligns with Government policies and is portable, and suitable for long term maintenance.</p></li>
+</ul>
+</section>
+<section id="user-and-policy-driven-needs">
+<span id="id1"></span><h2><span class="section-number">2.4. </span>User and Policy-Driven Needs<a class="headerlink" href="#user-and-policy-driven-needs" title="Link to this heading">¶</a></h2>
+<p>As reflected in the design principles, above, ongoing work is reviewing user needs for digital TRO records, and therefore the foreseen deployment of the D-TRO Service and the Data Model.</p>
+<p>This section does not seek to replicate the wide spectrum of needs but highlights a handful of considerations that shape the way in which the Data Model is expected to be used.</p>
+<p>DfT, through the previous Service Alpha and current Beta Project, are reviewing and enhancing user needs analysis, prototyping the D-TRO Service, and reviewing the Data Model. Therefore, updates and changes may occur.</p>
+<p>The DfT’s preferred option is to establish a centralised service which receives digital TROs (D-TROs) from TRAs, stores these records, and exposes data services for consumers to request distribution of D-TRO records. The Data Model forms the technical baseline for D-TRO records.</p>
+<p>Due to the variety of different forms of TRO and notices permitted under the legislation, there is a need to define in future legislation and statutory guidance when in the lifecycle of orders and notices the TRA will be required to provide a D-TRO record to the D-TRO Service. The current expectation is that the following Reporting Points are needed – see <a class="reference internal" href="#fig2"><span class="std std-numref">Figure 2.1</span></a>.</p>
+<figure class="align-center" id="id3">
+<span id="fig2"></span><a class="reference internal image-reference" href="../_images/fig2.png"><img alt="D-TRO Reporting Points" src="../_images/fig2.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2.1 </span><span class="caption-text">D-TRO Reporting Points</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>These Reporting Points are reflected in the Data Model in an enumerated list named <code class="docutils literal notranslate"><span class="pre">orderReportingPointType</span></code> <a class="reference internal" href="references.html#ref-order-reporting-type"><span class="std std-ref">[5]</span></a> .</p>
+<p>It is not foreseen that the D-TRO Central Service will in the future retain a full, growing library of all D-TROs submitted over time, but retain recently submitted D-TRO records and those that remain current. The Service is also expected to hold future D-TRO records, and those that have recently expired, or replaced by a newer amended version, or revoked. The precise definition of this Service is currently being defined through this Beta project, with initial version for a records management capability being implemented.</p>
+<p>Version 3.4 introduces additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Many of these changes apply to Made orders (whether on initial making, amendment or revocation). The following <code class="docutils literal notranslate"><span class="pre">orderReportPoint</span></code> types, as reflected in <a class="reference internal" href="#fig2"><span class="std std-numref">Figure 2.1</span></a>, are included in the list of Made orders</p>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">experimentalAmendment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experimentalMakingPermanent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experimentalNoticeOfMaking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experimentalRevocation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permanentAmendment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permanentNoticeOfMaking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permanentRevocation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">specialEventOrderNoticeOfMaking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ttroTtmoByNotice</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ttroTtmoExtension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ttroTtmoNoticeAfterMaking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ttroTtmoNoticeOfIntention</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ttroTtmoRevocation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variationByNotice</span></code></p></li>
+</ul>
+<p>These are referred to as “Made Orders” in this document.</p>
+</section>
+<section id="choice-of-technologies">
+<h2><span class="section-number">2.5. </span>Choice of Technologies<a class="headerlink" href="#choice-of-technologies" title="Link to this heading">¶</a></h2>
+<p>The Data Model has been modelled in UML (Unified Modelling Language) following Model Driven Architecture design principles. Sparx Systems Enterprise Architect, a visual modelling and design tool, has been used to develop and refine the Data Model.</p>
+<p>A QEA extract is provided specific to Enterprise Architect that contain the entire UML model, including diagrams, elements, and relationships. This will allow users who have Enterprise Architect software to directly open, view, modify, and work with the model in the same environment it was created. An XMI extract is also provided to allow import of the Data Model into other modelling tools or software applications that support the XMI format (extracts with XMI 1.1 and 2.1 are available), enabling greater interoperability.</p>
+<p>JavaScript Object Notation (JSON) is used for definition of schema and the use of REST APIs preferred to meet GDS best practice outlined at <a class="reference external" href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards">https://www.gov.uk/guidance/gds-api-technical-and-data-standards</a>.</p>
+</section>
+<section id="alignment-with-other-standards">
+<span id="id2"></span><h2><span class="section-number">2.6. </span>Alignment with Other Standards<a class="headerlink" href="#alignment-with-other-standards" title="Link to this heading">¶</a></h2>
+<p>This document and the Data Model reuse some well-known, widely deployed model fragments that appear in several European and International standards:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">condition</span></code> sub-model is specified in both “TN-ITS” CEN/TS17268:2018 and ‘APDS’ ISO/TS 5206-1:2023,</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model is an adaptation of the ‘timeValidity’ package specified in “DATEX II” CEN/TS 16157-7:2018,</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> sub-model specified in ‘DATEX II’ CEN/TS 16157-7:2018,</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">rates</span></code> sub-model is specified in “APDS” ISO/TS 5206-1:2023.</p></li>
+</ul>
+<p>However, the Data Model has been reviewed for application in the UK, and in some cases the values appearing in the lists contained the Data Model have been adjusted with additions, deletions and adjustments when compared to the Standards content.</p>
+<p>The Data Model supports conditions that relate to the vehicle type, vehicle usage, vehicle dimensions, fuel type, etc. These condition lists were reviewed from the viewpoint of normal practice in the UK by experienced practitioners. This has resulted in a profiling of these condition types and lists that are more suitable for current UK practice.</p>
+</section>
+<section id="location-referencing">
+<h2><span class="section-number">2.7. </span>Location Referencing<a class="headerlink" href="#location-referencing" title="Link to this heading">¶</a></h2>
+<p>One of the technical aspects within the D-TRO Beta Data Specification which requires further clarification and resolution, is how to systematically encode information relating to the spatial location and positioning used within TROs. Currently, an approach has been proposed to shape the data structures that are needed to support it within the D-TRO Beta Data Specification and its Data Model.</p>
+<p>In order to make future digital TROs useable to the widest set of stakeholders and applications the provision of a coded location that is machine-interpretable and can be related to specific spatially coded locations on digital maps is considered essential.</p>
+<p>Following stakeholder comment, DfT has revised the proposed recommended approach. Given the need to reduce barriers to uptake during the D-TRO Beta project phase, no singular preferred approach is mandated. Therefore, for example, a speed limit TRO provision can be represented either by linear road centreline/reference line features (polyline) or by use of a polygon. Similarly, kerb line regulations can be represented as a polyline, a polygon or both. This approach will be reviewed during the D-TRO Beta project, taking on board feedback primarily from data consumers concerning the useability of mixed approach data.</p>
+<p>DfT prefers the use of polygons, but these are not mandatory.</p>
+<p>Some forms of TRO do require special treatment to ensure that the data can be correctly interpreted. This special treatment applies to:</p>
+<ul class="simple">
+<li><p>Gate/point locations</p></li>
+<li><p>Directional regulations (such as no entry, one-way streets, turning movements, etc.)</p></li>
+</ul>
+<p>There is a need to provide clear guidance and a common approach to enable TRAs to code TRO locations.</p>
+<p>Single consolidated or other TROs may represent a range of measures (Provisions) impacting different locations – this approach should support TRAs identifying and encoding “regulated place” in a manner that they consider appropriate. The approach aims to limit specific coding rules to a practical minimum, enabling both alignment with the more commonly used existing practice whilst counter-balancing use of a limited number of coding mechanisms which will aid greater commonality and interoperability of data.</p>
+<p>In general, if a TRO regulation is identified as being effective at two or more distinct locations, each location should be treated as a separate “regulated place”, as laid out in the D-TRO Data Specification. The design approach aims to address the wide spectrum of different forms of shape that TRO regulations can take.</p>
+<p>The standardised approach:</p>
+<ul class="simple">
+<li><p>should not be tied to a specific form of reference base map data set.</p></li>
+<li><p>shall use a widely understood and supported standardised data format.</p></li>
+<li><p>should be cognisant of the level of effort required to achieve it.</p></li>
+<li><p>should support the needs of identified use cases, so far as these are defined.</p></li>
+<li><p>should separate the principles of what is being encoded, from the actual IT-centric coding mechanism itself.</p></li>
+</ul>
+<p>The D-TRO Beta Data Specification uses of The OSGB36 / British National Grid Coordinate Reference System (ESPG:27700).In the current D-TRO Private Beta Data Specification the Well-Known Text (WKT) geometry standard - ISO/IEC 13249-3:2016 shall be used for the encoding of geometric coordinates.</p>
+<p>There is no support in the D-TRO Beta Data Specification to enable the upload of scan or electronic version of TROs, schedules, or associated maps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DfT is reviewing the approach used for the use of standardised encoding and file formats for geospatial information. This may result in changes or additions to future releases of the data specification.</p>
+</div>
+</section>
+<section id="standardised-terms-and-definintions">
+<h2><span class="section-number">2.8. </span>Standardised Terms and Definintions<a class="headerlink" href="#standardised-terms-and-definintions" title="Link to this heading">¶</a></h2>
+<p>The transition to digital TROs necessitates the standardisation of terms and definitions to ensure consistency, interoperability, and clarity across different TRAs and platforms.</p>
+<p>Standardisation becomes increasingly important to ensure consistency and interoperability by facilitating a uniform understanding of traffic regulations across various regions and platforms. This uniformity is essential for the development of interoperable digital systems that can communicate and integrate seamlessly. For instance, a term like “no-stopping” (kerbsideNoStopping) should have a universally accepted definition to avoid discrepancies between different technology providers used by TRAs, navigation systems, and other traffic management applications.</p>
+<p>Clear and consistent definitions in digital TROs help in maintaining legal clarity. Inconsistent or ambiguous terms can lead to misinterpretation of the regulations, resulting in legal challenges and non-compliance.With D-TROs also supporting the rise of intelligent transport systems, automated vehicles, and advanced navigation aids, this depends heavily on the availability of standardised digital information. For these technologies to function correctly and interact with human drivers and existing infrastructure, they need access to precise and consistent regulatory data.</p>
+<p>Recognising the critical need for standardisation, an assessment is currently underway to collate and analyse the varied uses of terms across different sources relevant to TROs. This comprehensive assessment involves examining the language used in existing TRO documents from multiple authorities, reviewing legislative texts, and consulting with stakeholders in the Transport Technology Forum and wider. The goal is to identify inconsistencies and ambiguities in the current terminologies and to propose a harmonised set of definitions that can be adopted universally.</p>
+<p>Further information on this topic is available on the issues section of the D-TRO Public GitHub repository at <a class="reference external" href="https://github.com/department-for-transport-public/D-TRO">https://github.com/department-for-transport-public/D-TRO</a>.</p>
+</section>
+<section id="about-data-types-in-the-data-model-and-json-schema">
+<h2><span class="section-number">2.9. </span>About Data Types in the Data Model and JSON Schema<a class="headerlink" href="#about-data-types-in-the-data-model-and-json-schema" title="Link to this heading">¶</a></h2>
+<p>As you work through this user guide you will see attributes that are specified in the different objects are assigned specific data types. These help a developer know the whether the attribute gains its potential values from the entries in an enumerated list (such as vehicleType), or is a date, a date-time, a web address (URI – a Universal Resource Identifier), string (for free text), etc.</p>
+<p>The Data Model is specified using a convention Unified Modelling Language (UML). From this model we generate a JSON (JavaScript Object Notation) schema which provide the template for exchangeable structured data.</p>
+<p>In a limited number of cases the data type shown in the Data Model is translated into a data type that conforms to the JSON specification. These translations are as follows:</p>
+<div class="table"><table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">UML to JSON Schema Mapping</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>In UML Data
+Model</p></th>
+<th class="head"><p>In the JSON schema</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dateTime</p></td>
+<td><p>type: string</p>
+<p>format: date-time</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>date</p></td>
+<td><p>type: string</p>
+<p>format: date</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>type: string</p>
+<p>format: time</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>anyURI</p></td>
+<td><p>type: string</p>
+<p>format: uri</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>email</p></td>
+<td><p>type: string</p>
+<p>format: email</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>decimal</p></td>
+<td><p>type: number</p>
+<p>multipleOf: 0.01 (or 0.1)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>integer</p></td>
+<td><p>type: number</p>
+<p>multipleOf: 1</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>duration</p></td>
+<td><p>type: string</p>
+<p>Regex to enforce ISO 8601-1 duration format</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="digital_traffic_regulation_orders.html"
+       title="previous chapter">← <span class="section-number">1. </span>Digital Traffic Regulation Orders</a>
+  </li>
+  <li class="next">
+    <a href="tour_of_the_data_model.html"
+       title="next chapter"><span class="section-number">3. </span>A Tour of the Data Model →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Department for Transport.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

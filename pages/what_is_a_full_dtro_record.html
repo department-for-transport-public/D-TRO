@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>4. What is a ‘Full’ D-TRO Record?</title>
+    
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="../_static/documentation_options.js?v=ef2f0be6"></script>
+        <script src="../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="5. The Data Model UML Class Diagrams" href="the_data_model_uml_class_diagrams.html" />
+  <link rel="prev" title="3. A Tour of the Data Model" href="tour_of_the_data_model.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#d-tro-data-model-user-guide">D-TRO Data Model User Guide</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="digital_traffic_regulation_orders.html" class="reference internal ">Digital Traffic Regulation Orders</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tro_modelling_key_concepts.html" class="reference internal ">TRO-Modelling Key Concepts</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tour_of_the_data_model.html" class="reference internal ">A Tour of the Data Model</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">What is a ‘Full’ D-TRO Record?</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#valdation-rules" class="reference internal">Valdation Rules</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="the_data_model_uml_class_diagrams.html" class="reference internal ">The Data Model UML Class Diagrams</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="change_log.html" class="reference internal ">Change Log</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="document_control.html" class="reference internal ">Document Control</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="references.html" class="reference internal ">References</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">4. </span>What is a ‘Full’ D-TRO Record?</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="tour_of_the_data_model.html"
+       title="previous chapter">← <span class="section-number">3. </span>A Tour of the Data Model</a>
+  </li>
+  <li class="next">
+    <a href="the_data_model_uml_class_diagrams.html"
+       title="next chapter"><span class="section-number">5. </span>The Data Model UML Class Diagrams →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="what-is-a-full-d-tro-record">
+<h1><span class="section-number">4. </span>What is a ‘Full’ D-TRO Record?<a class="headerlink" href="#what-is-a-full-d-tro-record" title="Link to this heading">¶</a></h1>
+<p>When a TRA submits a new D-TRO record care is required to ensure that the record contains all necessary information - this is the responsibility of the TRA. The D-TRO Service will undertake various forms of validation to ensure that requirements have been met and the D-TRO record can be accepted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The test of what constitutes a D-TRO record that contains all essential elements and therefore can be considered to be a ‘full’ record is subject to review and learning from prototyping. This section is therefore likely to change with new releases.</p>
+</div>
+<section id="valdation-rules">
+<h2><span class="section-number">4.1. </span>Valdation Rules<a class="headerlink" href="#valdation-rules" title="Link to this heading">¶</a></h2>
+<p>Two primary forms of validation test are foreseen:</p>
+<ul class="simple">
+<li><p>Schema validation - this is a set of technical tests to ensure that that the data and the structure of the submitted D-TRO record conforms to the requirements of the Data Model and schema. These tests will check that mandatory elements of the Data Model exist in the D-TRO record; that additional elements not part of the Data Model are not provided; that supplied data conforms to prescribed data types (e.g. that a attribute typed as a datetime in the Data Model is actually a valid datetime); that enum types are valid, etc.</p></li>
+<li><dl class="simple">
+<dt>Semantic validation - this is a further set of technical tests cannot be enforced by schema validation. Examples include, but are not limited to:</dt><dd><ul>
+<li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">traCreator</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">source</span></code> object contains not only an integer value, as required by schema validation, but the value given matches a value in the SWA code list and corresponds to the sender’s TRA SWA code (e.g., ‘116’ for Bristol City Council).</p></li>
+<li><p>Where start and end datetimes are provided, that the start datetime occurs before the end datetime</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>A set of validation tests have been created, which are summarised in the tables below. A detailed document of the validation rules is available in the GitHub repository.</p>
+<p><strong>Appropriateness</strong>-related rules help keep the data within the D-TRO service as relevant as possible and does not contain biases, which make them unfit for use by the Software Providers.</p>
+<div class="table"><table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 4.1 </span><span class="caption-text">Appropriateness-related validation rules</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nature of business rules</p></td>
+<td><p>Some TRO data will apply to specific consumer types or across different consumers. Selection and use of the right set of data ensures that it is relevant for each user type and provided in the appropriate way.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entity-status relationships</p></td>
+<td><p>Provisions cannot be linked to TROs if the status of one is inappropriate.</p></td>
+</tr>
+<tr class="row-even"><td><p>Currency rules</p></td>
+<td><p>Appropriate currencies and timing considerations are used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Retention rules</p></td>
+<td><p>Record is retained for X period after trigger Y, e.g. keep inactive TROs for a maximum of 3 years from time of becoming inactive.</p></td>
+</tr>
+<tr class="row-even"><td><p>Data consistency</p></td>
+<td><p>TROs that are duplicated (for performance, redundancy, etc) should be consistent with the original values, and be subject to the same domain and data quality rules.</p></td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Completeness</strong> rules ensures that the Data Model provides comprehensive information for the digitalisation and analysis of TROs.</p>
+<div class="table"><table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 4.2 </span><span class="caption-text">Completeness validation rules</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Entity completeness</p></td>
+<td><p>The full set of entities are present, i.e. all TRO records with provisions are present</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relationship completeness</p></td>
+<td><p>Referential integrity is correct between TROs and provisions i.e. all relationships between entities can be resolved.</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute completeness</p></td>
+<td><p>All required attributes for TRO entities are present i.e. all necessary columns are populated</p></td>
+</tr>
+<tr class="row-odd"><td><p>Domain completeness</p></td>
+<td><p>All required attributes contain an allowable value, and intentionally set nulls can be differentiated from absent values</p></td>
+</tr>
+<tr class="row-even"><td><p>Identity / uniqueness rules</p></td>
+<td><p>Every TRO record must exist only once, be uniquely identifiable, relate to exactly one real-world entity with attributes not being overloaded – e.g. containing different regulation types in a single field</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entity-relationship constraints</p></td>
+<td><p>The existence of one relationship mandates or prohibits the existence of another, e.g. an “Amend” or “Revoke” provision must be linked to an existing D-TRO record.</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute-relationship constraints</p></td>
+<td><p>The allowable values of one or more values mandates or prohibits the value (or existence) of another, e.g. A vehicle dimension populated for a size-based restriction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Event-relationship constraints</p></td>
+<td><p>Links that must exist for an instance to occur, e.g. activation / inactivation of a TTRO must have an existing TRO present.</p></td>
+</tr>
+<tr class="row-even"><td><p>Optionality constraints</p></td>
+<td><p>Attributes have defined list of options to populate with, e.g. the Speed Limit value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inheritance rules</p></td>
+<td><p>Existence of all necessary fields from combination of super-type and sub-type. Correct application of implied rules through sub-typing, e.g. activation notices for TTROs.</p></td>
+</tr>
+<tr class="row-even"><td><p>Granularity rule</p></td>
+<td><p>Historic data is kept for the same period at similar level of granularity.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Continuity rule</p></td>
+<td><p>No gaps or overlaps in historic or time series data for D-TROs, e.g. contradictory time ranges for overlapping TROs.</p></td>
+</tr>
+<tr class="row-even"><td><p>Event dependencies</p></td>
+<td><p>Relating separate events that are likely to be consistent in time, e.g. connection between consultation and the provision of an active TRO.</p></td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Accuracy</strong>-related rules ensure the degree of confidence that can be placed in the data from the D-TRO service. Data must be sufficiently accurate as standardised data to support the defined use cases and avoid material distortion in the central storage system.</p>
+<div class="table"><table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 4.3 </span><span class="caption-text">Accuracy-related validation rules</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data accuracy</p></td>
+<td><p>An attribute must be representative of its real-world state as per the TRO.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Valid value constraints</p></td>
+<td><p>A list of values, a range of values, a constraint on values, a set of allowable characters as part of the D-TRO.</p></td>
+</tr>
+<tr class="row-even"><td><p>Format constraints</p></td>
+<td><p>For dateTime, Values, Geographical Coordinates and other specific formats for fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precision constraints</p></td>
+<td><p>The values in the field must be the same precision as the attribute requires in response to D-TRO requirements, business rules and intended meaning, e.g. vehicle dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Definition constraints</p></td>
+<td><p>The values match the intended meaning of the attribute, e.g. coordinate type reflects the value of coordinates entered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Attribute constraints</p></td>
+<td><p>One attribute can be derived from one, two, three or more others, e.g. parking duration restrictions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp pattern rule</p></td>
+<td><p>Ensuring dates and times are within correct ranges.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference rule</p></td>
+<td><p>Ensure a reference system is implemented at each TRA level for tracking previous changes done to its D-TROs</p></td>
+</tr>
+<tr class="row-even"><td><p>Action rule</p></td>
+<td><p>Each D-TRO must have one action at the source and provision level provided by the TRA that issues the D-TRO.</p></td>
+</tr>
+</tbody>
+</table>
+</div></section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="tour_of_the_data_model.html"
+       title="previous chapter">← <span class="section-number">3. </span>A Tour of the Data Model</a>
+  </li>
+  <li class="next">
+    <a href="the_data_model_uml_class_diagrams.html"
+       title="next chapter"><span class="section-number">5. </span>The Data Model UML Class Diagrams →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Department for Transport.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

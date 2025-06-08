@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>6. Change Log</title>
+    
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="../_static/documentation_options.js?v=ef2f0be6"></script>
+        <script src="../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="7. Document Control" href="document_control.html" />
+  <link rel="prev" title="5. The Data Model UML Class Diagrams" href="the_data_model_uml_class_diagrams.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#d-tro-data-model-user-guide">D-TRO Data Model User Guide</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="digital_traffic_regulation_orders.html" class="reference internal ">Digital Traffic Regulation Orders</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tro_modelling_key_concepts.html" class="reference internal ">TRO-Modelling Key Concepts</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tour_of_the_data_model.html" class="reference internal ">A Tour of the Data Model</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="what_is_a_full_dtro_record.html" class="reference internal ">What is a ‘Full’ D-TRO Record?</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="the_data_model_uml_class_diagrams.html" class="reference internal ">The Data Model UML Class Diagrams</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Change Log</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#change-log" class="reference internal">Change Log</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="document_control.html" class="reference internal ">Document Control</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="references.html" class="reference internal ">References</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">6. </span>Change Log</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="the_data_model_uml_class_diagrams.html"
+       title="previous chapter">← <span class="section-number">5. </span>The Data Model UML Class Diagrams</a>
+  </li>
+  <li class="next">
+    <a href="document_control.html"
+       title="next chapter"><span class="section-number">7. </span>Document Control →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="change-log">
+<h1><span class="section-number">6. </span>Change Log<a class="headerlink" href="#change-log" title="Link to this heading">¶</a></h1>
+<p>The following critical changes have been made between release <code class="docutils literal notranslate"><span class="pre">v3.1.1</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.2.0</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Inclusion of a Records Management provision</p></li>
+<li><p>Ability to provide Reporting of the real-world status of on road occupancy of TROs (specifically included for TTROs/TTMOs)</p></li>
+<li><p>Development of Location Referencing</p></li>
+<li><p>Proposed approach for Standardised Terms and Definitions</p></li>
+</ol>
+<p>The following critical changes have been made between release <code class="docutils literal notranslate"><span class="pre">v3.2.0</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.2.2</span></code>:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Source.traAffected</span></code> attribute data type changed to an array of int (integers)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> class made optional. Relationship from <code class="docutils literal notranslate"><span class="pre">PointGeometry</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..1]; Relationship from <code class="docutils literal notranslate"><span class="pre">LinearGeometry</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..*]; Relationship from <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..*]; Three relationships from <code class="docutils literal notranslate"><span class="pre">DirectedLinear</span></code> [all 0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> all have lower bound multiplicity 0</p></li>
+<li><p>Classes <code class="docutils literal notranslate"><span class="pre">LicenseCharacteristics</span></code> and <code class="docutils literal notranslate"><span class="pre">AgeOfDriver</span></code> removed from <code class="docutils literal notranslate"><span class="pre">Conditions</span></code> package. Enum list <code class="docutils literal notranslate"><span class="pre">licenseCharacteristicsType</span></code> removed</p></li>
+<li><p>Two missing association added - association - <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEnd</span></code> [1] and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodSource</span></code> [0..1]; association - <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEnd</span></code> [1] and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEntry</span></code> [0..*]</p></li>
+<li><p>Typo correction attribute name - <code class="docutils literal notranslate"><span class="pre">legislationCrossReference</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RegulationType</span></code> enumeration entries with prefixed ‘other’ have been replaced by ‘misc’. Enumeration entries to support TTRO regulations added <code class="docutils literal notranslate"><span class="pre">miscRoadClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscLaneClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscContraflow</span></code>, <code class="docutils literal notranslate"><span class="pre">miscFootwayClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscCycleLaneClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporaryParkingRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfOneWay</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfParkingRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfWeightRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporarySpeedLimit</span></code>, <code class="docutils literal notranslate"><span class="pre">miscRoadClosureCrossingPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">miscBaySuspension</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporaryParkingBay</span></code>, <code class="docutils literal notranslate"><span class="pre">miscPROWClosure</span></code></p></li>
+<li><p>Adjust association to - Provision [1] to Regulation [1]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Provision.provisionIndex</span></code> attribute has been removed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regulationType</span></code> attribute only retained for <code class="docutils literal notranslate"><span class="pre">GeneralRegulation</span></code> class; removed from <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schemeIdentifier</span></code> and <code class="docutils literal notranslate"><span class="pre">permitIdentifier</span></code> typos corrected in <code class="docutils literal notranslate"><span class="pre">PermitCondition</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Authority.name</span></code> attribute <code class="docutils literal notranslate"><span class="pre">ID</span></code> property removed and typed as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Consultation.pointOfContactEmail</span></code> attribute renamed</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">other</span></code> enumeration entries to <code class="docutils literal notranslate"><span class="pre">PayloadType</span></code>, <code class="docutils literal notranslate"><span class="pre">VehicleEquipmentType</span></code> and <code class="docutils literal notranslate"><span class="pre">VehicleUsageType</span></code> and <code class="docutils literal notranslate"><span class="pre">VehicleType</span></code>, to support extension mechanism. <code class="docutils literal notranslate"><span class="pre">VehicleType</span></code> has been added to the <code class="docutils literal notranslate"><span class="pre">TargetEnumeratedList</span></code> Enum</p></li>
+<li><p>Add additional permissable Enum for <code class="docutils literal notranslate"><span class="pre">nationalSpeedLimitMotorway</span></code> in <code class="docutils literal notranslate"><span class="pre">SpeedLimitProfileType</span></code></p></li>
+<li><p>The Package name <code class="docutils literal notranslate"><span class="pre">Validity</span></code> and class name <code class="docutils literal notranslate"><span class="pre">OverallPeriod</span></code> have both been changed to <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code>. The package <code class="docutils literal notranslate"><span class="pre">ValidityEnumerations</span></code> has been renamed <code class="docutils literal notranslate"><span class="pre">TimeValidityEnumerations</span></code></p></li>
+<li><p>Class name for all ENUM classes written in UpperCamelCase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateLine.description</span></code> attribute data type changed to string</p></li>
+</ol>
+<p>The following critical changes have been made between release <code class="docutils literal notranslate"><span class="pre">v3.2.2</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.2.3</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Clarification of various data types (see 3.9. Removal of <code class="docutils literal notranslate"><span class="pre">duration</span></code> data type, replaced by integer minutes)</p></li>
+<li><p>Clarification of the use of WKT formatting for the specification of geometric spatial coordinates</p></li>
+</ol>
+<p>The following change have been made between release <code class="docutils literal notranslate"><span class="pre">v3.2.3</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.2.4</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Addition of <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfBusway</span></code> to <code class="docutils literal notranslate"><span class="pre">RegulationType</span></code></p></li>
+<li><p>Notes to address future updates planned around <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriod</span></code></p></li>
+</ol>
+<p>The following changes have been made between release <code class="docutils literal notranslate"><span class="pre">v3.2.4</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.3.0</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Clarify circular referencing between <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> and <code class="docutils literal notranslate"><span class="pre">Validity</span></code> Condition - the association between <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> and <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> has been removed. <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> is a child of <code class="docutils literal notranslate"><span class="pre">Condition</span></code></p></li>
+<li><p>Adding two more regulation types (<code class="docutils literal notranslate"><span class="pre">kerbsideSingleRedLines</span></code> and <code class="docutils literal notranslate"><span class="pre">kerbsideDoubleRedLines</span></code>)</p></li>
+<li><p>Allowing multiple geometries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TemporaryRegulation</span></code> providing a reference to the previous <code class="docutils literal notranslate"><span class="pre">Provision</span></code> which it overrides (partially or fully)</p></li>
+<li><p>Adding the capability to model diversion routes</p></li>
+</ol>
+<p>A summary of the changes have been made between release <code class="docutils literal notranslate"><span class="pre">v3.3.0</span></code> and <code class="docutils literal notranslate"><span class="pre">v3.4.0</span></code>:</p>
+<ol class="arabic simple">
+<li><p>In response to stakeholder comments, we have adopted a more widely adopted approach - the data model, data schema and service have been adapted to use camelCase for all object names and attribute names. Previously, object names were in PascalCase</p></li>
+<li><p>All <code class="docutils literal notranslate"><span class="pre">/rules</span></code> endpoints and the <code class="docutils literal notranslate"><span class="pre">/schemas/{id}</span></code> endpoint have been retired due to redundancy</p></li>
+<li><p>Additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation - see below for details</p></li>
+<li><p>In response to stakeholder comments, we have moved <code class="docutils literal notranslate"><span class="pre">maximumAccessDuration</span></code> and <code class="docutils literal notranslate"><span class="pre">minimumTimetoNextEntry</span></code> from <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object</p></li>
+<li><p>Use of the extension enumerations has been clarified</p></li>
+<li><p>The ability to submit a consultation D-TRO record is now correctly supported</p></li>
+<li><p>In response to stakeholder comments, additional enumeration values to <code class="docutils literal notranslate"><span class="pre">regulationType</span></code>, <code class="docutils literal notranslate"><span class="pre">vehicleType</span></code> and <code class="docutils literal notranslate"><span class="pre">permitType</span></code></p></li>
+<li><p>A few attribute datatypes have been changed</p></li>
+<li><p>Use of headers <code class="docutils literal notranslate"><span class="pre">X-App-Id</span></code>, <code class="docutils literal notranslate"><span class="pre">X-App-Id-Override</span></code> and <code class="docutils literal notranslate"><span class="pre">X-Correlation-Id</span></code> has been clarified</p></li>
+</ol>
+<p>A full list of changes is published on the D-TRO GitHub repository at <a class="reference external" href="https://github.com/department-for-transport-public/D-TRO">https://github.com/department-for-transport-public/D-TRO</a>.</p>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="the_data_model_uml_class_diagrams.html"
+       title="previous chapter">← <span class="section-number">5. </span>The Data Model UML Class Diagrams</a>
+  </li>
+  <li class="next">
+    <a href="document_control.html"
+       title="next chapter"><span class="section-number">7. </span>Document Control →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Department for Transport.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

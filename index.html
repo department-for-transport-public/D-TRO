@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>D-TRO - Data Model User Guide</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=ef2f0be6"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="1. Digital Traffic Regulation Orders" href="pages/digital_traffic_regulation_orders.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="#" class="home-link">
+    
+      <img class="logo" src="_static/logo.png" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#d-tro-data-model-user-guide">D-TRO Data Model User Guide</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/digital_traffic_regulation_orders.html" class="reference internal ">Digital Traffic Regulation Orders</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/tro_modelling_key_concepts.html" class="reference internal ">TRO-Modelling Key Concepts</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/tour_of_the_data_model.html" class="reference internal ">A Tour of the Data Model</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/what_is_a_full_dtro_record.html" class="reference internal ">What is a ‘Full’ D-TRO Record?</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/the_data_model_uml_class_diagrams.html" class="reference internal ">The Data Model UML Class Diagrams</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/change_log.html" class="reference internal ">Change Log</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/document_control.html" class="reference internal ">Document Control</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="pages/references.html" class="reference internal ">References</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+    
+    <li>D-TRO - Data Model User Guide</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="next">
+    <a href="pages/digital_traffic_regulation_orders.html"
+       title="next chapter"><span class="section-number">1. </span>Digital Traffic Regulation Orders →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="d-tro-data-model-user-guide">
+<h1>D-TRO - Data Model User Guide<a class="headerlink" href="#d-tro-data-model-user-guide" title="Link to this heading">¶</a></h1>
+<div class="custom admonition">
+<p class="admonition-title">🚀 Release v3.4.0 (March 2025)</p>
+&nbsp;</div>
+<p>Welcome to the D-TRO Data Model Interactive User Guide. You can use the navigation sidebar and search controls to navigate through the guide.</p>
+<p>This document is also connected to the UML diagram, which you can open in another tab from the <a class="reference internal" href="pages/tour_of_the_data_model.html#a-tour-of-the-data-model"><span class="std std-ref">A Tour of the Data Model</span></a> section.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">D-TRO Data Model User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html">1. Digital Traffic Regulation Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#introduction">1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#about-this-document">1.2. About This Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#tros-in-context">1.3. TROs in Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#high-level-outline-of-the-d-tro-service">1.4. High-Level Outline of the D-TRO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#other-documents-and-artefacts">1.5. Other Documents and Artefacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#acknowledgements">1.6. Acknowledgements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#non-proprietary-terms">1.7. Non-Proprietary Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#disclaimer">1.8. Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/digital_traffic_regulation_orders.html#licensing">1.9. Licensing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/tro_modelling_key_concepts.html">2. TRO-Modelling Key Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#background">2.1. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#general-concepts">2.2. General Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#design-principles">2.3. Design Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#user-and-policy-driven-needs">2.4. User and Policy-Driven Needs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#choice-of-technologies">2.5. Choice of Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#alignment-with-other-standards">2.6. Alignment with Other Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#location-referencing">2.7. Location Referencing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#standardised-terms-and-definintions">2.8. Standardised Terms and Definintions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tro_modelling_key_concepts.html#about-data-types-in-the-data-model-and-json-schema">2.9. About Data Types in the Data Model and JSON Schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/tour_of_the_data_model.html">3. A Tour of the Data Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#about-the-tro-and-its-provisions">3.1. About the TRO and its Provisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#defining-regulations">3.2. Defining Regulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#managing-records-for-tros-and-corresponding-provisions">3.3. Managing Records for TROs and Corresponding Provisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#specifying-locations-for-tros">3.4. Specifying Locations for TROs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#times-relating-to-regulations">3.5. Times Relating to Regulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#about-conditions-and-exclusions">3.6. About Conditions and Exclusions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#specifying-vehicle-conditions">3.7. Specifying Vehicle Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#about-tariff-rates">3.8. About Tariff Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#about-consultations">3.9. About Consultations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/tour_of_the_data_model.html#extending-the-data-model">3.10. Extending the Data Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/what_is_a_full_dtro_record.html">4. What is a ‘Full’ D-TRO Record?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/what_is_a_full_dtro_record.html#valdation-rules">4.1. Valdation Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html">5. The Data Model UML Class Diagrams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#high-level-full-d-tro-model">5.1. High-Level Full D-TRO Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#condition-sub-model">5.2. <code class="docutils literal notranslate"><span class="pre">condition</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#vehiclecharacteristics-sub-model">5.3. <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#validity-sub-model">5.4. <code class="docutils literal notranslate"><span class="pre">validity</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#rate-sub-model">5.5. <code class="docutils literal notranslate"><span class="pre">rate</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#consultation-sub-model">5.6. <code class="docutils literal notranslate"><span class="pre">consultation</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#extensionenumeration-sub-model">5.7. <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> Sub-Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#enumeration-classes">5.8. Enumeration Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#regulation-enumerations">5.9. <code class="docutils literal notranslate"><span class="pre">regulation</span></code> Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#condition-enumerations">5.10. <code class="docutils literal notranslate"><span class="pre">condition</span></code> Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#vehiclecharacteristics-enumerations">5.11. <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#validity-enumerations">5.12. <code class="docutils literal notranslate"><span class="pre">validity</span></code> Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/the_data_model_uml_class_diagrams.html#rate-enumerations">5.13. <code class="docutils literal notranslate"><span class="pre">rate</span></code> Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pages/change_log.html">6. Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/document_control.html">7. Document Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/references.html">8. References</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="next">
+    <a href="pages/digital_traffic_regulation_orders.html"
+       title="next chapter"><span class="section-number">1. </span>Digital Traffic Regulation Orders →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Department for Transport.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>5. The Data Model UML Class Diagrams</title>
+    
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="../_static/documentation_options.js?v=ef2f0be6"></script>
+        <script src="../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="6. Change Log" href="change_log.html" />
+  <link rel="prev" title="4. What is a ‘Full’ D-TRO Record?" href="what_is_a_full_dtro_record.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#d-tro-data-model-user-guide">D-TRO Data Model User Guide</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="digital_traffic_regulation_orders.html" class="reference internal ">Digital Traffic Regulation Orders</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tro_modelling_key_concepts.html" class="reference internal ">TRO-Modelling Key Concepts</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="tour_of_the_data_model.html" class="reference internal ">A Tour of the Data Model</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="what_is_a_full_dtro_record.html" class="reference internal ">What is a ‘Full’ D-TRO Record?</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">The Data Model UML Class Diagrams</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#high-level-full-d-tro-model" class="reference internal">High-Level Full D-TRO Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#condition-sub-model" class="reference internal">condition Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#vehiclecharacteristics-sub-model" class="reference internal">vehicleCharacteristics Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#validity-sub-model" class="reference internal">validity Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#rate-sub-model" class="reference internal">rate Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#consultation-sub-model" class="reference internal">consultation Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#extensionenumeration-sub-model" class="reference internal">extensionEnumeration Sub-Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#enumeration-classes" class="reference internal">Enumeration Classes</a></li>
+                
+                  <li class="toctree-l2"><a href="#regulation-enumerations" class="reference internal">regulation Enumerations</a></li>
+                
+                  <li class="toctree-l2"><a href="#condition-enumerations" class="reference internal">condition Enumerations</a></li>
+                
+                  <li class="toctree-l2"><a href="#vehiclecharacteristics-enumerations" class="reference internal">vehicleCharacteristics Enumerations</a></li>
+                
+                  <li class="toctree-l2"><a href="#validity-enumerations" class="reference internal">validity Enumerations</a></li>
+                
+                  <li class="toctree-l2"><a href="#rate-enumerations" class="reference internal">rate Enumerations</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="change_log.html" class="reference internal ">Change Log</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="document_control.html" class="reference internal ">Document Control</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="references.html" class="reference internal ">References</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">5. </span>The Data Model UML Class Diagrams</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="what_is_a_full_dtro_record.html"
+       title="previous chapter">← <span class="section-number">4. </span>What is a ‘Full’ D-TRO Record?</a>
+  </li>
+  <li class="next">
+    <a href="change_log.html"
+       title="next chapter"><span class="section-number">6. </span>Change Log →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="the-data-model-uml-class-diagrams">
+<h1><span class="section-number">5. </span>The Data Model UML Class Diagrams<a class="headerlink" href="#the-data-model-uml-class-diagrams" title="Link to this heading">¶</a></h1>
+<p>This section presents UML class diagrams for the full content of the Data Model.</p>
+<div class="formatted-title"><section id="high-level-full-d-tro-model">
+<h2><span class="section-number">5.1. </span>High-Level Full D-TRO Model<a class="headerlink" href="#high-level-full-d-tro-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id1">
+<span id="high-level-dtro-uml"></span><a class="reference internal image-reference" href="../_images/high-level-dtro-uml.png"><img alt="UML class diagram - high-level full D-TRO model" src="../_images/high-level-dtro-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.1 </span><span class="caption-text">UML class diagram - high-level full D-TRO model</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="condition-sub-model">
+<h2><span class="section-number">5.2. </span><code class="docutils literal notranslate"><span class="pre">condition</span></code> Sub-Model<a class="headerlink" href="#condition-sub-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id2">
+<span id="condition-uml"></span><a class="reference internal image-reference" href="../_images/condition-uml.png"><img alt="UML class diagram - condition sub-model" src="../_images/condition-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.2 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">condition</span></code> sub-model</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="vehiclecharacteristics-sub-model">
+<h2><span class="section-number">5.3. </span><code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> Sub-Model<a class="headerlink" href="#vehiclecharacteristics-sub-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id3">
+<span id="vehicle-characteristics-uml"></span><a class="reference internal image-reference" href="../_images/vehicle-characteristics-uml.png"><img alt="UML class diagram - vehicleCharacteristics sub-model" src="../_images/vehicle-characteristics-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.3 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> sub-model</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="validity-sub-model">
+<h2><span class="section-number">5.4. </span><code class="docutils literal notranslate"><span class="pre">validity</span></code> Sub-Model<a class="headerlink" href="#validity-sub-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id4">
+<span id="validity-uml"></span><a class="reference internal image-reference" href="../_images/time-validity-relationships.png"><img alt="UML class diagram - timeValidity sub-model" src="../_images/time-validity-relationships.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.4 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="rate-sub-model">
+<h2><span class="section-number">5.5. </span><code class="docutils literal notranslate"><span class="pre">rate</span></code> Sub-Model<a class="headerlink" href="#rate-sub-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id5">
+<span id="rate-uml"></span><a class="reference internal image-reference" href="../_images/rate-uml.png"><img alt="UML class diagram - rate sub-model" src="../_images/rate-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.5 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">rate</span></code> sub-model</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="consultation-sub-model">
+<h2><span class="section-number">5.6. </span><code class="docutils literal notranslate"><span class="pre">consultation</span></code> Sub-Model<a class="headerlink" href="#consultation-sub-model" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id6">
+<span id="consultation-uml"></span><a class="reference internal image-reference" href="../_images/consultation-uml.png"><img alt="UML class diagram - consultation sub-model" src="../_images/consultation-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.6 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">consultation</span></code> sub-model</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="extensionenumeration-sub-model">
+<h2><span class="section-number">5.7. </span><code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> Sub-Model<a class="headerlink" href="#extensionenumeration-sub-model" title="Link to this heading">¶</a></h2>
+</div><p>This sub-model enables user-defined extensions to the main enumeration lists found in the Data Model (see <code class="docutils literal notranslate"><span class="pre">targetEnumeratedList</span></code>). This functionality is expected to be used rarely and sparingly.</p>
+<figure class="align-center" id="id7">
+<span id="extension-enumeration-uml"></span><a class="reference internal image-reference" href="../_images/extension-enumeration-uml.png"><img alt="UML class diagram - extension-enumeration sub-model" src="../_images/extension-enumeration-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.7 </span><span class="caption-text">UML class diagram - <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> sub-model</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="enumeration-classes">
+<h2><span class="section-number">5.8. </span>Enumeration Classes<a class="headerlink" href="#enumeration-classes" title="Link to this heading">¶</a></h2>
+<div class="formatted-title"></section>
+<section id="regulation-enumerations">
+<h2><span class="section-number">5.9. </span><code class="docutils literal notranslate"><span class="pre">regulation</span></code> Enumerations<a class="headerlink" href="#regulation-enumerations" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id8">
+<span id="regulation-enumerations-uml"></span><a class="reference internal image-reference" href="../_images/regulation-enumerations-uml.png"><img alt="UML class diagram - Enumeration Class in the high-level regulation sub-model" src="../_images/regulation-enumerations-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.8 </span><span class="caption-text">UML class diagram - Enumeration Class in the high-level <code class="docutils literal notranslate"><span class="pre">regulation</span></code> sub-model</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="condition-enumerations">
+<h2><span class="section-number">5.10. </span><code class="docutils literal notranslate"><span class="pre">condition</span></code> Enumerations<a class="headerlink" href="#condition-enumerations" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id9">
+<span id="condition-enumerations-uml"></span><a class="reference internal image-reference" href="../_images/condition-enumerations-uml.png"><img alt="UML class diagram - Enumeration Class in the high-level condition sub-model" src="../_images/condition-enumerations-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.9 </span><span class="caption-text">UML class diagram - Enumeration Class in the high-level <code class="docutils literal notranslate"><span class="pre">condition</span></code> sub-model</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="vehiclecharacteristics-enumerations">
+<h2><span class="section-number">5.11. </span><code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> Enumerations<a class="headerlink" href="#vehiclecharacteristics-enumerations" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id10">
+<span id="vehicle-characteristics-enumerations-uml"></span><a class="reference internal image-reference" href="../_images/vehicle-characteristics-enumerations-uml.png"><img alt="UML class diagram - Enumeration Classes in the vehicleCharacteristics sub-model" src="../_images/vehicle-characteristics-enumerations-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.10 </span><span class="caption-text">UML class diagram - Enumeration Classes in the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> sub-model</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="validity-enumerations">
+<h2><span class="section-number">5.12. </span><code class="docutils literal notranslate"><span class="pre">validity</span></code> Enumerations<a class="headerlink" href="#validity-enumerations" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id11">
+<span id="validity-enumerations-uml"></span><a class="reference internal image-reference" href="../_images/validity-enumerations-uml.png"><img alt="UML class diagram - Enumeration Classes in the validity sub-model" src="../_images/validity-enumerations-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.11 </span><span class="caption-text">UML class diagram - Enumeration Classes in the <code class="docutils literal notranslate"><span class="pre">validity</span></code> sub-model</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="formatted-title"></section>
+<section id="rate-enumerations">
+<h2><span class="section-number">5.13. </span><code class="docutils literal notranslate"><span class="pre">rate</span></code> Enumerations<a class="headerlink" href="#rate-enumerations" title="Link to this heading">¶</a></h2>
+</div><figure class="align-center" id="id12">
+<span id="rate-enumerations-uml"></span><a class="reference internal image-reference" href="../_images/rate-enumerations-uml.png"><img alt="UML class diagram - Enumeration Classes in the rate sub-model" src="../_images/rate-enumerations-uml.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5.12 </span><span class="caption-text">UML class diagram - Enumeration Classes in the <code class="docutils literal notranslate"><span class="pre">rate</span></code> sub-model</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="what_is_a_full_dtro_record.html"
+       title="previous chapter">← <span class="section-number">4. </span>What is a ‘Full’ D-TRO Record?</a>
+  </li>
+  <li class="next">
+    <a href="change_log.html"
+       title="next chapter"><span class="section-number">6. </span>Change Log →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2025, Department for Transport.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
