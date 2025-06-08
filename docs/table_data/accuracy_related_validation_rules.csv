@@ -1,0 +1,10 @@
+Rule Type,Description
+Data accuracy,An attribute must be representative of its real-world state as per the TRO.
+Valid value constraints,"A list of values, a range of values, a constraint on values, a set of allowable characters as part of the D-TRO."
+Format constraints,"For dateTime, Values, Geographical Coordinates and other specific formats for fields."
+Precision constraints,"The values in the field must be the same precision as the attribute requires in response to D-TRO requirements, business rules and intended meaning, e.g. vehicle dimensions."
+Definition constraints,"The values match the intended meaning of the attribute, e.g. coordinate type reflects the value of coordinates entered."
+Attribute constraints,"One attribute can be derived from one, two, three or more others, e.g. parking duration restrictions."
+Timestamp pattern rule,Ensuring dates and times are within correct ranges.
+Reference rule,Ensure a reference system is implemented at each TRA level for tracking previous changes done to its D-TROs
+Action rule,Each D-TRO must have one action at the source and provision level provided by the TRA that issues the D-TRO.

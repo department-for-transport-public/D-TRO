@@ -1,0 +1,14 @@
+Rule Type,Description
+Entity completeness,"The full set of entities are present, i.e. all TRO records with provisions are present"
+Relationship completeness,Referential integrity is correct between TROs and provisions i.e. all relationships between entities can be resolved.
+Attribute completeness,All required attributes for TRO entities are present i.e. all necessary columns are populated
+Domain completeness,"All required attributes contain an allowable value, and intentionally set nulls can be differentiated from absent values"
+Identity / uniqueness rules,"Every TRO record must exist only once, be uniquely identifiable, relate to exactly one real-world entity with attributes not being overloaded – e.g. containing different regulation types in a single field"
+Entity-relationship constraints,"The existence of one relationship mandates or prohibits the existence of another, e.g. an “Amend” or “Revoke” provision must be linked to an existing D-TRO record."
+Attribute-relationship constraints,"The allowable values of one or more values mandates or prohibits the value (or existence) of another, e.g. A vehicle dimension populated for a size-based restriction."
+Event-relationship constraints,"Links that must exist for an instance to occur, e.g. activation / inactivation of a TTRO must have an existing TRO present."
+Optionality constraints,"Attributes have defined list of options to populate with, e.g. the Speed Limit value."
+Inheritance rules,"Existence of all necessary fields from combination of super-type and sub-type. Correct application of implied rules through sub-typing, e.g. activation notices for TTROs."
+Granularity rule,Historic data is kept for the same period at similar level of granularity.
+Continuity rule,"No gaps or overlaps in historic or time series data for D-TROs, e.g. contradictory time ranges for overlapping TROs."
+Event dependencies,"Relating separate events that are likely to be consistent in time, e.g. connection between consultation and the provision of an active TRO."

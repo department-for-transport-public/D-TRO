@@ -1,0 +1,6 @@
+Rule Type,Description
+Nature of business rules,Some TRO data will apply to specific consumer types or across different consumers. Selection and use of the right set of data ensures that it is relevant for each user type and provided in the appropriate way.
+Entity-status relationships,Provisions cannot be linked to TROs if the status of one is inappropriate.
+Currency rules,Appropriate currencies and timing considerations are used.
+Retention rules,"Record is retained for X period after trigger Y, e.g. keep inactive TROs for a maximum of 3 years from time of becoming inactive."
+Data consistency,"TROs that are duplicated (for performance, redundancy, etc) should be consistent with the original values, and be subject to the same domain and data quality rules."

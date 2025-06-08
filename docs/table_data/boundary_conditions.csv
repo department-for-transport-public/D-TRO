@@ -1,0 +1,7 @@
+Object,Numeric attribute,Unit,Numeric type
+``maximumGrossWeightCharacteristic``,``grossVehicleWeight``,Tonnes,Decimal
+``maximumHeightCharacteristic``,``vehicleHeight``,Metres,Decimal
+``maximumLengthCharacteristic``,``vehicleLength``,Metres,Decimal
+``maximumWidthCharacteristics``,``vehicleWidth``,Metres,Decimal
+``heaviestAxleWeightCharacteristic``,``heaviestAxleWeight``,Tonnes,Decimal
+``numberOfAxlesCharacteristic``,``numberOfAxles``,\-,Integer

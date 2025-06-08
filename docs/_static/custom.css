@@ -1,0 +1,104 @@
+:root {
+  --navbar-height: 5.4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.admonition.custom {
+  background-color: #e5f1fb;
+  border-left: 4px solid #5faaea;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.admonition.example {
+  background-color: #ffeaa7;
+  border-left: 4px solid #fdcb6e;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+table caption,
+.code-block-caption {
+  text-align: center;
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.formatted-title h2 {
+  text-align: center;
+  padding: 32px 0 16px 0;
+  border-bottom: none;
+}
+
+.navbar {
+  padding: 0.7rem 0.7rem;
+  height: var(--navbar-height);
+}
+
+.vp-sidebar {
+  top: var(--navbar-height);
+}
+
+.page {
+  padding-top: var(--navbar-height);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.body-header {
+  border-bottom: 1px solid #eaecef;
+}
+
+.body-header ul.page-nav {
+  margin-right: 0;
+}
+
+hr {
+  display: none;
+}
+
+:target {
+  scroll-margin-top: calc(var(--navbar-height) + 1rem) !important;
+}
+
+figcaption {
+  font-weight: bold;
+}
+
+.navbar a.home-link,
+.navbar img.logo {
+  height: 100%;
+}
+
+.toctree-wrapper .toctree-l1 {
+  padding-bottom: 32px;
+}
+
+.toctree-wrapper .toctree-l1,
+.toctree-wrapper .toctree-l1 ul {
+  list-style-type: none;
+}
+
+.vp-sidebar .searchbox {
+  padding: 1rem;
+}
+
+.searchformwrapper > .search {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.searchformwrapper > .search > input[type="text"] {
+  flex-grow: 1;
+}
