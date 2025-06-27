@@ -106,9 +106,9 @@
                                                     {
                                                         "applicableCurrency": "GBP",
                                                         "maxTime": "PT11H",
-                                                        "maxValueCollection": 7.2,
+                                                        "maxValueCollection": 17,
                                                         "minTime": "PT1H",
-                                                        "minValueCollection": 1.0,
+                                                        "minValueCollection": 3.2,
                                                         "rateLine": [
                                                             {
                                                                 "durationEnd": "00:59:59",
