@@ -4,13 +4,24 @@ Private Beta was launched on Tuesday 15 October 2024.
  
 The latest release of the Data Specification in PROD is 3.4.0 as part of the D-TRO Beta project for your input and feedback on. Version 3.4 introduces camelCase, more robust validation and several other improvements. 
 
-Version 3.4 has been launched in Integration as of 31 March 2025 and Production as of 29 April 2025. More details are available at:
+Version 3.4 is live in Integration as of 31 March 2025 and Production as of 29 April 2025. More details are available at:
 
 https://github.com/department-for-transport-public/D-TRO/issues/78
 
 Documentation and artefacts for v3.4 (and earlier, active versions) are on GitHub. 
 
-v3.2.4 in PROD was deprecated on 12 May 2025. v3.3.0 in PROD will be deprecated on 17 June 2025.
+All versions v3.x have been deprecated. 
+
+New minor version (with non-breaking changes) 3.4.1 will be launched in Integration on 15 July 2025 and in Production on 12 August 2025.
+
+Changes in v3.4.1 of the Data Specification address:
+
+Max Stay, no return attribution for all regulations (previously limited to Permits only)
+Extending the "extensionEnumeration" enumeration works across all of the following enumerated list:"permitType", "payloadType", "vehicleUsageType", "emissionsClassificationEuroType", "fuelType", "vehicleEquipmentType", "vehicleType"
+Bug fixes to the processing of Consultation records
+Various additional enumerations
+
+See https://github.com/department-for-transport-public/D-TRO/issues/78 for more details.
 
 **Consultation on Secondary Legislation
 **
@@ -18,6 +29,10 @@ v3.2.4 in PROD was deprecated on 12 May 2025. v3.3.0 in PROD will be deprecated 
 The statutory consultation, which launched on Thursday 23 January 2025, closed on Friday 21 March 2025. More details are available at:
 
 https://ttf.uk.net/2025/01/24/dft-has-issued-a-consultation-on-draft-regulations/
+
+The timing of next steps and the tabling of the Regulations in Parliament will be subject to approval by DfT Ministers. The DfT will also publish guidance to accompany the Regulations.  
+ 
+The DfT acknowledges that Traffic Regulation Authorities and Digital Solution Providers preparing for when it will become a legal requirement to submit new digital traffic regulation orders to the D-TRO Service need clarity on the timetable. The DfT currently envisages that the draft Regulations will be tabled early in the Autumn 2025 session of Parliament. It is this parliamentary process that will set the timetable. 
 
 **GitHub
 **
@@ -32,25 +47,13 @@ As part of the current release of the Data Specification (version 3.3.1), we are
 - Validation rules
 - Example JSON D-TRO files
 
-Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) are applicable to v3.3.1.
+Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) are applicable to v3.4 and v3.4.1.
 
 See Issue #1 for more details:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
 
 Our GitHub folder structure has been updated to make it easier to find documents relating to the latest and other supported versions of the Data Specification. 
-
----
-
-Code GitHubs
-
-We operate two code GitHub repositories at:
-
-https://github.com/pa-digital/dft-dtro-beta/
-
-https://github.com/pa-digital/dft-dtro-infra-beta
-
-These have been set to private and are therefore inaccessible to general users at the moment. We are hoping to have them back as public in future. 
 
 ---
 
