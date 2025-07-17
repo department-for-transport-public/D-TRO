@@ -1,89 +1,50 @@
-// === Master script for D-TRO HTML User Guide ===
-
 document.addEventListener("DOMContentLoaded", function () {
-  setupFigures();
-  setupLinks();
+  buildNavbar();
   setupLightbox();
 });
 
-// === Insert figure images under proper captions ===
-function setupFigures() {
-  const paragraphs = document.querySelectorAll("p");
+function buildNavbar() {
+  // Dynamically builds the Navbar from the header content
+  const links = document.querySelectorAll('[data-number]');
+  const navList = document.querySelector('.main-nav');
 
-  paragraphs.forEach((p) => {
-    if (p.dataset.figureInserted === "true") return;
+  let currentSectionLi = null;
+  let currentSubList = null;
 
-    const text = p.textContent.trim();
+  links.forEach((heading) => {
+    const num = heading.dataset.number;
+    const text = heading.textContent.trim();
+    const link = document.createElement('a');
+    link.href = `#${heading.id}`;
+    link.textContent = `${num} ${text.replace(/^[\d.]+\s*/, '')}`;
 
-    // Only match if paragraph starts with "Figure X – ..." with separator
-    const match = text.match(/^Figure\s*(\d+)\s*[\-–:]\s+/i);
+    if (/^\d+$/.test(num)) {
+      const li = document.createElement('li');
+      li.appendChild(link);
 
-    if (match) {
-      const figNum = match[1];
-      const imgPath = `images/data_model_images/fig${figNum}.png`;
+      currentSubList = document.createElement('ul');
+      currentSubList.className = 'dropdown';
+      li.appendChild(currentSubList);
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "figure-wrapper";
-
-      const caption = p.cloneNode(true);
-      caption.classList.add("figure-caption");
-
-      const img = document.createElement("img");
-      img.src = imgPath;
-      img.alt = `Figure ${figNum}`;
-      img.style.width = "600px";
-      img.style.height = "auto";
-
-      wrapper.appendChild(caption);
-      wrapper.appendChild(img);
-      p.parentNode.replaceChild(wrapper, p);
-
-      wrapper.dataset.figureInserted = "true";
-
-      console.log(`✅ Inserted Figure ${figNum}: ${imgPath}`);
+      navList.appendChild(li);
+      currentSectionLi = li;
+    } else if (/^\d+\.\d+/.test(num) && currentSubList) {
+      const subLi = document.createElement('li');
+      subLi.appendChild(link);
+      currentSubList.appendChild(subLi);
     }
   });
+
+  const elementsToLink = document.querySelectorAll('.main-nav a');
+  for (let i = 0; i < links.length; i++) {
+    const element = elementsToLink[i];
+    const link = links[i];
+    element.href = `#${link.id}`;
+  }
 }
 
-// === Convert [https://...] to clickable links ===
-function setupLinks() {
-  document.querySelectorAll("p").forEach((p) => {
-    [...p.childNodes].forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent;
-        const urlPattern = /\[(https?:\/\/[^\]]+)\]/g;
-
-        if (urlPattern.test(text)) {
-          const replacedHTML = text.replace(urlPattern, (match, url) => {
-            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
-          });
-
-          const wrapper = document.createElement("span");
-          wrapper.innerHTML = replacedHTML;
-          p.replaceChild(wrapper, node);
-        }
-      }
-    });
-  });
-
-  // Ensure external links open in new tab
-  document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (
-      href &&
-      !href.startsWith("#") &&
-      !href.startsWith("mailto:") &&
-      !href.startsWith("tel:")
-    ) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
-}
-
-// === Lightbox for figure images ===
 function setupLightbox() {
-  const imgs = document.querySelectorAll(".figure-wrapper img");
+  const imgs = document.querySelectorAll("img");
 
   imgs.forEach((img) => {
     img.style.cursor = "zoom-in";

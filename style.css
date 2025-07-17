@@ -52,7 +52,7 @@ td {
 }
 
 /* ─────────── HEADER ─────────── */
-.header {
+.page-header {
   position: sticky;
   top: 0;
   left: 0;
@@ -63,14 +63,15 @@ td {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.header-logo img {
+.page-header-logo img {
   height: 150px;
   height: 100px;
 }
 
-.header-search {
+.page-header-search {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
@@ -80,12 +81,12 @@ td {
   margin-top: 10px;
 }
 
-.header-search form {
+.page-header-search form {
   display: flex;
   align-items: center;
 }
 
-.header-search input[type="text"] {
+.page-header-search input[type="text"] {
   height: 40px;
   padding: 0 0.5rem;
   font-size: 16px;
@@ -94,7 +95,7 @@ td {
   border-radius: 4px;
 }
 
-.header-search button {
+.page-header-search button {
   height: 40px;
   padding: 0 20px;
   font-size: 16px;
@@ -106,7 +107,7 @@ td {
   cursor: pointer;
 }
 
-.header-search button:hover {
+.page-header-search button:hover {
   background-color: #003366;
 }
 
@@ -460,4 +461,20 @@ main#document-body {
 
 p {
   padding-bottom: 12px;
+}
+
+li {
+  margin-left: 22px;
+  padding-left: 12px;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

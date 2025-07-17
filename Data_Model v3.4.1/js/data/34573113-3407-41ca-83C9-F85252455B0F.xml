@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("0.3.1:1", "", "timeValidityEnumerations", "EARoot/EA3/EA1/EA146.htm", "175.png", "6", "0", "", "Logical diagram0","{C7034DEC-49F5-4051-9483-CCB4A103461B}");
+tocTab[tocTab.length] = new Array("0.3.1:2", "", "«JSON_Datatype» calendarWeekInMonthType", "EARoot/EA3/EA1/EA149.htm", "247.png", "E18", "0", "", "Enumeration0","{45052397-452D-4b55-B7A1-86993BFD2CDA}");
+tocTab[tocTab.length] = new Array("0.3.1:3", "", "«JSON_Datatype» changeableTimeType", "EARoot/EA3/EA1/EA150.htm", "247.png", "E32", "0", "", "Enumeration0","{80DDD7CE-A74C-4054-9EFD-71D9163EB094}");
+tocTab[tocTab.length] = new Array("0.3.1:4", "", "«JSON_Datatype» dayType", "EARoot/EA3/EA1/EA151.htm", "247.png", "E56", "0", "", "Enumeration0","{23CEBF1C-3981-42d5-8BE6-D15B850B25DD}");
+tocTab[tocTab.length] = new Array("0.3.1:5", "", "«JSON_Datatype» publicEventType", "EARoot/EA3/EA1/EA152.htm", "247.png", "E9", "0", "", "Enumeration0","{C6B46157-7F61-4ea9-B5FA-D16165936ADD}");
+tocTab[tocTab.length] = new Array("0.3.1:6", "", "«JSON_Datatype» specialDayType", "EARoot/EA3/EA1/EA153.htm", "247.png", "E31", "0", "", "Enumeration0","{0243256D-0479-4de7-B722-B58A19C16946}");
+tocTab[tocTab.length] = new Array("0.3.1:7", "", "«JSON_Datatype» weekInMonthType", "EARoot/EA3/EA1/EA154.htm", "247.png", "E45", "0", "", "Enumeration0","{268A8B91-B047-46bd-B8C9-854A6F665E27}");
+tocTab[tocTab.length] = new Array("0.3.1:8", "", "«JSON_Datatype» instanceOfDayInMonth", "EARoot/EA3/EA1/EA155.htm", "247.png", "E55", "0", "", "Enumeration0","{9FDCCA5B-3D4E-45e8-82E9-FE36FF20F250}");
+tocTab[tocTab.length] = new Array("0.3.1:9", "", "«JSON_Datatype» monthType", "EARoot/EA3/EA1/EA156.htm", "247.png", "E61", "0", "", "Enumeration0","{ECB02BF9-5D20-4501-A095-1DAB79C8D717}");

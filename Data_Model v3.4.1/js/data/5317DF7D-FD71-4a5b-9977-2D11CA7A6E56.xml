@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("0.2.1:1", "", "ratesEnumerations", "EARoot/EA2/EA1/EA111.htm", "175.png", "10", "0", "", "Logical diagram0","{C61DBDFE-2332-4c16-80EB-19231B709391}");
+tocTab[tocTab.length] = new Array("0.2.1:2", "", "«JSON_Datatype» currencyType", "EARoot/EA2/EA1/EA114.htm", "247.png", "E116", "0", "", "Enumeration0","{A25D2E02-14C0-4c89-9D7F-FB3A0F86FB69}");
+tocTab[tocTab.length] = new Array("0.2.1:3", "", "«JSON_Datatype» rateType", "EARoot/EA2/EA1/EA115.htm", "247.png", "E104", "0", "", "Enumeration0","{EE1C7AD6-C1C3-47da-9A5D-0241D0F2C3CD}");
+tocTab[tocTab.length] = new Array("0.2.1:4", "", "«JSON_Datatype» rateUsageConditionsType", "EARoot/EA2/EA1/EA116.htm", "247.png", "E106", "0", "", "Enumeration0","{635FAD84-F3F8-4281-AA91-621FAB8A8139}");
+tocTab[tocTab.length] = new Array("0.2.1:5", "", "«JSON_Datatype» rateLineType", "EARoot/EA2/EA1/EA117.htm", "247.png", "E105", "0", "", "Enumeration0","{ABC42E1B-DAC6-4d7c-AD19-CD47E36A3CCC}");

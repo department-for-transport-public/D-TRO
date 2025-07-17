@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("0.4:1", "", "vehicleCharacteristics", "EARoot/EA4/EA157.htm", "175.png", "5", "0", "", "Logical diagram0","{8446C1B4-665A-41be-898E-946CD6F5FDBB}");
+tocTab[tocTab.length] = new Array("0.4:2", "", "vehicleCharacteristics_Concepts", "EARoot/EA4/EA159.htm", "175.png", "23", "0", "", "Logical diagram0","{9D3CFF5F-A604-413d-9C9E-ECD91C62023C}");
+tocTab[tocTab.length] = new Array("0.4:3", "", "«JSON_Element» emissions", "EARoot/EA4/EA164.htm", "5.png", "E101", "0", "", "Class0","{7176AB10-1CA0-4ad0-8DFD-57720327E842}");
+tocTab[tocTab.length] = new Array("0.4:4", "", "«JSON_Element» heaviestAxleWeightCharacteristic", "EARoot/EA4/EA165.htm", "5.png", "E97", "0", "", "Class0","{A47D5A7C-70EC-4192-9643-4C137F6F7D35}");
+tocTab[tocTab.length] = new Array("0.4:5", "", "«JSON_Element» maximumGrossWeightCharacteristic", "EARoot/EA4/EA166.htm", "5.png", "E96", "0", "", "Class0","{16D45341-4486-47cf-8882-4772D5502539}");
+tocTab[tocTab.length] = new Array("0.4:6", "", "«JSON_Element» maximumHeightCharacteristic", "EARoot/EA4/EA167.htm", "5.png", "E95", "0", "", "Class0","{99237113-F352-4083-8C42-4049134EABC1}");
+tocTab[tocTab.length] = new Array("0.4:7", "", "«JSON_Element» maximumLengthCharacteristic", "EARoot/EA4/EA168.htm", "5.png", "E100", "0", "", "Class0","{CF6DFEEA-1BB5-488d-B574-8C788B1B924E}");
+tocTab[tocTab.length] = new Array("0.4:8", "", "«JSON_Element» maximumWidthCharacteristic", "EARoot/EA4/EA169.htm", "5.png", "E99", "0", "", "Class0","{6945E161-D6D7-4835-95D8-99A3E10CB360}");
+tocTab[tocTab.length] = new Array("0.4:9", "", "«JSON_Element» numberOfAxlesCharacteristic", "EARoot/EA4/EA170.htm", "5.png", "E93", "0", "", "Class0","{668A8AD8-B7C3-4492-B2A2-D282320E995E}");
+tocTab[tocTab.length] = new Array("0.4:10", "", "«JSON_Element» vehicleCharacteristics", "EARoot/EA4/EA171.htm", "5.png", "E92", "0", "", "Class0","{34DAF9DE-C34C-4227-BA70-C66D04AD885F}");
+tocTab[tocTab.length] = new Array("0.4.1", "1", "vehicleCharacteristicsEnumerations", "EARoot/EA4/EA1/EA175.htm", "4.png", "", "", "{23F9C8B3-B1A6-44e5-B7EA-4DEA3D41055C}", "Package");

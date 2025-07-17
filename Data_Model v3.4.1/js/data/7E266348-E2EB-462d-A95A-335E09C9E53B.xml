@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("0.1.1:1", "", "conditionEnumerations", "EARoot/EA1/EA1/EA93.htm", "175.png", "7", "0", "", "Logical diagram0","{78018CFE-9222-486a-BC36-06B8BC4D8332}");
+tocTab[tocTab.length] = new Array("0.1.1:2", "", "«JSON_Datatype» accessConditionType", "EARoot/EA1/EA1/EA96.htm", "247.png", "E112", "0", "", "Enumeration0","{57288D55-4B0B-43ba-83C0-B2AA7C722C60}");
+tocTab[tocTab.length] = new Array("0.1.1:3", "", "«JSON_Datatype» conditionOperatorType", "EARoot/EA1/EA1/EA97.htm", "247.png", "E119", "0", "", "Enumeration0","{DE1E7EFF-0C09-45f5-A4B1-72E243369E1A}");
+tocTab[tocTab.length] = new Array("0.1.1:4", "", "«JSON_Datatype» driverCharacteristicsType", "EARoot/EA1/EA1/EA98.htm", "247.png", "E110", "0", "", "Enumeration0","{87142D24-A770-4896-AD1D-9380011B0D29}");
+tocTab[tocTab.length] = new Array("0.1.1:5", "", "«JSON_Datatype» nonVehicularRoadUserType", "EARoot/EA1/EA1/EA99.htm", "247.png", "E113", "0", "", "Enumeration0","{C3306E8B-99A4-496c-946F-CBF119F633DA}");
+tocTab[tocTab.length] = new Array("0.1.1:6", "", "«JSON_Datatype» permitType", "EARoot/EA1/EA1/EA100.htm", "247.png", "E36", "0", "", "Enumeration0","{90BD4612-B60B-40d7-A0DB-139EF30E4DDE}");
+tocTab[tocTab.length] = new Array("0.1.1:7", "", "«JSON_Datatype» roadType", "EARoot/EA1/EA1/EA101.htm", "247.png", "E7", "0", "", "Enumeration0","{C5D312ED-C9F2-4d69-B5D9-960396476FD7}");

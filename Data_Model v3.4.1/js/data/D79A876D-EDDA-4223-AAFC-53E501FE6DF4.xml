@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("0.2:1", "", "ratesKeyConcepts", "EARoot/EA2/EA102.htm", "175.png", "18", "0", "", "Logical diagram0","{70F33164-4125-477e-876C-2E2B67854554}");
+tocTab[tocTab.length] = new Array("0.2:2", "", "rates", "EARoot/EA2/EA104.htm", "175.png", "9", "0", "", "Logical diagram0","{C5DA972C-7085-43d2-ABBF-88B7A4854F4E}");
+tocTab[tocTab.length] = new Array("0.2:3", "", "«JSON_Element» rateLine", "EARoot/EA2/EA108.htm", "5.png", "E84", "0", "", "Class0","{3E81E0DB-175C-4917-AEDB-36D0AA61CB7D}");
+tocTab[tocTab.length] = new Array("0.2:4", "", "«JSON_Element» rateLineCollection", "EARoot/EA2/EA109.htm", "5.png", "E70", "0", "", "Class0","{B4CB9641-BD4E-4dc2-94E0-E03426744772}");
+tocTab[tocTab.length] = new Array("0.2:5", "", "«JSON_Element» rateTable", "EARoot/EA2/EA110.htm", "5.png", "E69", "0", "", "Class0","{534B5019-D456-41fd-A8B4-E28E21F54CC5}");
+tocTab[tocTab.length] = new Array("0.2.1", "1", "ratesEnumerations", "EARoot/EA2/EA1/EA113.htm", "4.png", "", "", "{5317DF7D-FD71-4a5b-9977-2D11CA7A6E56}", "Package");

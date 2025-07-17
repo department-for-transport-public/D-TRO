@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>enumerations</title>
+<link href="../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> enumerations </h1>
+			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="EA21.htm">Regulations</a> / <a href="EA13.htm">enumerations</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA78.htm">condition</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA2/EA106.htm">rates</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA3/EA122.htm">timeValidity</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA4/EA161.htm">vehicleCharacteristics</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA11.htm">consultation</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA13.htm">enumerations</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA15.htm">extensionEnumeration</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA1.htm">highLevelKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA3.htm">locationKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA5.htm">locationReferencingKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA7.htm">overview</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA9.htm">recordsManagementConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="EA19.htm">regulations</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA24.htm">actualStartOrStop</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA36.htm">consultation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA37.htm">directedLinear</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA39.htm">diversionType</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA40.htm">elementaryStreetUnit</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA25.htm">experimentalCessation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA26.htm">experimentalVariation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA42.htm">extensionEnumeration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA43.htm">externalReference</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA44.htm">generalRegulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA45.htm">geometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA47.htm">linearGeometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA50.htm">offListRegulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA52.htm">pointGeometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA54.htm">polygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA55.htm">provision</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA58.htm">regulatedPlace</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA60.htm">regulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA62.htm">source</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA65.htm">speedLimitProfileBased</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA67.htm">speedLimitValueBased</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA70.htm">temporaryProvision</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="EA71.htm">uniqueStreetReferenceNumber</a></li>
+<li><img src="../images/202.png" alt="Constraint"/> <a href="EA23.htm"></a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA34.htm">bywayType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA38.htm">diversionRouteType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA41.htm">eventType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA46.htm">linearDirectionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA48.htm">linearLateralPositionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA49.htm">linearType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA51.htm">orderReportingPointType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA53.htm">pointType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA56.htm">provisionActionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA59.htm">regulatedPlaceType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA61.htm">regulationType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA63.htm">sourceActionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA64.htm">speedLimitNatureType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA66.htm">speedLimitProfileType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA68.htm">speedLimitValueType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="EA69.htm">targetEnumeratedList</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="PageBody">
+	<div class="diagram_image"> 
+<img src="EA14.png" usemap="#EA14" border="0" />
+
+<MAP NAME="EA14">
+<area shape="rect" coords="444,127,569,232" href="EA63.htm" target="_self">
+<area shape="rect" coords="574,14,674,89" href="EA59.htm" target="_self">
+<area shape="rect" coords="595,339,714,466" href="EA34.htm" target="_self">
+<area shape="rect" coords="723,14,850,89" href="EA41.htm" target="_self">
+<area shape="rect" coords="447,259,566,347" href="EA38.htm" target="_self">
+<area shape="rect" coords="591,237,718,312" href="EA64.htm" target="_self">
+<area shape="rect" coords="296,111,421,264" href="EA56.htm" target="_self">
+<area shape="rect" coords="302,402,471,659" href="EA51.htm" target="_self">
+<area shape="rect" coords="296,280,421,381" href="EA46.htm" target="_self">
+<area shape="rect" coords="436,10,563,111" href="EA48.htm" target="_self">
+<area shape="rect" coords="587,127,714,215" href="EA53.htm" target="_self">
+<area shape="rect" coords="296,10,421,98" href="EA49.htm" target="_self">
+<area shape="rect" coords="10,10,283,1034" href="EA61.htm" target="_self">
+<area shape="rect" coords="751,268,937,362" href="EA66.htm" target="_self">
+<area shape="rect" coords="745,132,931,220" href="EA68.htm" target="_self">
+</MAP>
+ </div>
+	<div class="ObjectTitle">enumerations : Logical diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">11/05/2021 05:54:59</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">09/07/2025 10:22:31</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">D-TRO</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{94B02EFD-A745-482c-8747-8E1254471EBD}</td>
+		</tr>
+	</table>
+	
+</div>
+
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+
