@@ -39,7 +39,7 @@ The DfT acknowledges that Traffic Regulation Authorities and Digital Solution Pr
 
 GitHub is the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
  
-As part of the current release of the Data Specification (version 3.3.1), we are providing the following:
+As part of the current release of the Data Specification (version 3.4.1), we are providing the following:
  
 - User Guide detailing the content and structure of the D-TRO data model
 - Data Model - QEA and XMI extracts
