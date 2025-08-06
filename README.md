@@ -10,7 +10,7 @@ https://github.com/department-for-transport-public/D-TRO/issues/78
 
 Documentation and artefacts for v3.4 (and earlier, active versions) are on GitHub. 
 
-All versions v3.x have been deprecated. 
+All versions v3.3.x have been deprecated. 
 
 New minor version (with non-breaking changes) 3.4.1 will be launched in Integration on 15 July 2025 and in Production on 12 August 2025.
 
