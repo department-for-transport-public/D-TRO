@@ -2,26 +2,22 @@ The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway
 
 Private Beta was launched on Tuesday 15 October 2024. 
  
-The latest release of the Data Specification in PROD is 3.4.0 as part of the D-TRO Beta project for your input and feedback on. Version 3.4 introduces camelCase, more robust validation and several other improvements. 
+The latest release of the Data Specification in PROD is 3.4.1 as part of the D-TRO Beta project for your input and feedback on.
 
-Version 3.4 is live in Integration as of 31 March 2025 and Production as of 29 April 2025. More details are available at:
+Version 3.4.1 introduces 
+
+- Max Stay, no return attribution for all regulations (previously limited to Permits only)
+- Extending the "extensionEnumeration" enumeration works across all of the following enumerated list:"permitType", "payloadType", "vehicleUsageType", "emissionsClassificationEuroType", "fuelType", "vehicleEquipmentType", "vehicleType"
+- Bug fixes to the processing of Consultation records
+- Various additional enumerations
+
+Version 3.4.1 is live in Integration and Production as of 12 August 2025. More details are available at:
 
 https://github.com/department-for-transport-public/D-TRO/issues/78
 
-Documentation and artefacts for v3.4 (and earlier, active versions) are on GitHub. 
+Documentation and artefacts for v3.4.x are on GitHub. 
 
-All versions v3.3.x have been deprecated. 
-
-New minor version (with non-breaking changes) 3.4.1 will be launched in Integration on 15 July 2025 and in Production on 12 August 2025.
-
-Changes in v3.4.1 of the Data Specification address:
-
-Max Stay, no return attribution for all regulations (previously limited to Permits only)
-Extending the "extensionEnumeration" enumeration works across all of the following enumerated list:"permitType", "payloadType", "vehicleUsageType", "emissionsClassificationEuroType", "fuelType", "vehicleEquipmentType", "vehicleType"
-Bug fixes to the processing of Consultation records
-Various additional enumerations
-
-See https://github.com/department-for-transport-public/D-TRO/issues/78 for more details.
+All versions v3.3.x (and lower) have been deprecated. 
 
 **Consultation on Secondary Legislation
 **
