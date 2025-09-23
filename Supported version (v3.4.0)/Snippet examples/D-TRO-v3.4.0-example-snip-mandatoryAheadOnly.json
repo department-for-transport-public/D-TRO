@@ -1,0 +1,112 @@
+{
+    "schemaVersion": "3.4.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "comingIntoForceDate": "2025-01-01",
+            "madeDate": "2025-01-01",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "provisionDescription": "Mandatory Direction Ahead Only, Bagshot Road, Bracknell",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbdc",
+                    "comingIntoForceDate": "2025-01-01",
+                    "regulatedPlace": [
+                        {
+                            "description": "Bagshot Road, Bracknell, northbound",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": true,
+                            "bywayType": "road",
+                            "type": "regulationLocation",
+                            "directedLinear": {
+                                "version": 1,
+                                "directedLineString": "SRID=27700;LINESTRING(487226 168010, 487224 168054)",
+                                "origin": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 3800068
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "destination": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 3800068
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+						{
+                            "description": "Bagshot Road, Bracknell, southbound",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": true,
+                            "bywayType": "road",
+                            "type": "regulationLocation",
+                            "directedLinear": {
+                                "version": 1,
+                                "directedLineString": "SRID=27700;LINESTRING(487236 168050, 487237 168021)",
+                                "origin": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 3800068
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "destination": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 3800068
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "condition": [
+                                {
+                                    "timeValidity": {
+                                        "start": "2024-10-22T06:00:00"
+                                    }
+                                }
+                            ],
+                            "generalRegulation": {
+                                "regulationType": "mandatoryDirectionAheadOnly"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example - Mandatory Ahead, Apr. 2025",
+            "statementDescription": "Some description"
+        }
+    }
+}

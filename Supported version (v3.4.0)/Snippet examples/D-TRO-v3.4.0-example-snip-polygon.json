@@ -1,0 +1,115 @@
+{
+    "schemaVersion": "3.4.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2024-10-17",
+            "comingIntoForceDate": "2024-10-22",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "provisionDescription": "Bus and taxi access only, Tower Street and Castle Way, Taunton",
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+                    "comingIntoForceDate": "2024-12-10",
+                    "regulatedPlace": [
+                        {
+                            "description": "Tower Street (from the junction with Castle Street to Castle Way) and Castle Way, Taunton {approximate - linear}",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": true,
+                            "bywayType": "road",
+                            "polygon": {
+                                "polygon": "SRID=27700;POLYGON((322493 124517, 322511 124533, 322570 124558, 322587 124497, 322579 124494, 322565 124545, 322526 124531, 322496 124511, 322493 124517))",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39605980
+                                            },
+                                            {
+                                                "usrn": 39605591
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "isDynamic": false,
+                            "timeZone": "Europe/London",
+                            "generalRegulation": {
+                                "regulationType": "movementOrderProhibitedAccess"
+                            },
+                            "conditionSet": [
+                                {
+                                    "operator": "and",
+                                    "conditions": [
+                                        {
+                                            "conditionSet": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "negate": false,
+                                                            "vehicleCharacteristics": {
+                                                                "vehicleType": "taxi"
+                                                            }
+                                                        },
+                                                        {
+                                                            "negate": false,
+                                                            "vehicleCharacteristics": {
+                                                                "vehicleType": "bus"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "operator": "or"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "negate": false,
+                                            "timeValidity": {
+                                                "start": "2024-12-10T08:00:00",
+                                                "validPeriod": [
+                                                    {
+                                                        "recurringDayWeekMonthPeriod": [
+                                                            {
+                                                                "applicableDay": [
+                                                                    "monday",
+                                                                    "tuesday",
+                                                                    "wednesday",
+                                                                    "thursday",
+                                                                    "friday",
+                                                                    "saturday"
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example – Bus and Taxi only access control, May 2025",
+            "statementDescription": "Some description"
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "schemaVersion": "3.4.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2024-10-17",
+            "comingIntoForceDate": "2024-10-22",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "comingIntoForceDate": "2025-01-01",
+                    "provisionDescription": "Bus Lane restriction, Collett Road, Norton Fitzwarren {approximate} with fictitious time restrictions",
+                    "reference": "c962b51f-e1aa-416e-8f0b-bcfd09a4d089",
+                    "regulatedPlace": [
+                        {
+                            "description": "Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - notational point of effect}",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": false,
+                            "bywayType": "road",
+                            "pointGeometry": {
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39609234
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "point": "SRID=27700;POINT(320329 126155)",
+                                "representation": "centreLinePoint",
+                                "version": 2
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "conditionSet": [
+                                {
+                                    "operator": "and",
+                                    "conditionSet": [
+                                        {
+                                            "operator": "or",
+                                            "conditions": [
+                                                {
+                                                    "negate": true,
+                                                    "vehicleCharacteristics": {
+                                                        "vehicleType": "anyVehicle"
+                                                    }
+                                                },
+                                                {
+                                                    "negate": false,
+                                                    "vehicleCharacteristics": {
+                                                        "vehicleType": "bus"
+                                                    }
+                                                },
+                                                {
+                                                    "negate": false,
+                                                    "vehicleCharacteristics": {
+                                                        "vehicleType": "pedalCycle"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "condition": [
+                                        {
+                                            "negate": false,
+                                            "timeValidity": {
+                                                "start": "2025-01-01T08:00:00"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "generalRegulation": {
+                                "regulationType": "miscBusGate"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example – Bus gate - point, May 2025",
+            "statementDescription": "Some description"
+        }
+    }
+}

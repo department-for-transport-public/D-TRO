@@ -1,0 +1,97 @@
+{
+    "schemaVersion": "3.4.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2024-10-17",
+            "comingIntoForceDate": "2024-10-22",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "provisionDescription": "Parking restrictions, East Reach, Pay & Display Parking Places - Monday to Sunday 9.00 am to 8.00 pm",
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+                    "comingIntoForceDate": "2024-12-10",
+                    "regulatedPlace": [
+                        {
+                            "description": "East Reach, Taunton, northside / eastbound, between 10 metres east from the junction with Tancred Street to 15 metres west of the junction with South Street {approximate - linear}",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": true,
+                            "bywayType": "road",
+                            "linearGeometry": {
+                                "direction": "bidirectional",
+                                "representation": "linear",
+                                "lateralPosition": "onKerb",
+                                "linestring": "SRID=27700;LINESTRING(323158 124529,323252 124546)",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39608173
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "condition": [
+                                {
+                                    "negate": false,
+                                    "timeValidity": {
+                                        "start": "2024-12-10T09:00:00",
+                                        "validPeriod": [
+                                            {
+                                                "recurringDayWeekMonthPeriod": [
+                                                    {
+                                                        "applicableDay": [
+                                                            "friday",
+                                                            "monday",
+                                                            "saturday",
+                                                            "sunday",
+                                                            "thursday",
+                                                            "tuesday",
+                                                            "wednesday"
+                                                        ]
+                                                    }
+                                                ],
+                                                "recurringTimePeriodOfDay": [
+                                                    {
+                                                        "endTimeOfPeriod": "20:00:00",
+                                                        "startTimeOfPeriod": "09:00:00"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "generalRegulation": {
+                                "regulationType": "kerbsidePaymentParkingPlace"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                3300,
+                9001
+            ],
+            "traCreator": 9001,
+            "statementDescription": "overall description of purpose of TRO",
+            "troName": "DfT Example - More complex v5, Mar. 2025"
+        }
+    }
+}

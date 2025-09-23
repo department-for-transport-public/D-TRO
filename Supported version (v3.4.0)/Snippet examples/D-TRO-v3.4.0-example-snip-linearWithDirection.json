@@ -1,0 +1,97 @@
+{
+    "schemaVersion": "3.4.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2024-10-17",
+            "comingIntoForceDate": "2024-10-22",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "provisionDescription": "Bus lane, Corporation Street, Taunton",
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+                    "comingIntoForceDate": "2024-12-10",
+                    "regulatedPlace": [
+                        {
+                            "description": "Corporation Street, Taunton {approximate - linear}",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": true,
+                            "bywayType": "road",
+                            "linearGeometry": {
+                                "direction": "startToEnd",
+                                "representation": "representingZone",
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(322494 124467,322645 124504, 322666 124502)",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39608010
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "condition": [
+                                {
+                                    "negate": false,
+                                    "timeValidity": {
+                                        "start": "2024-12-10T07:00:00",
+                                        "validPeriod": [
+                                            {
+                                                "recurringDayWeekMonthPeriod": [
+                                                    {
+                                                        "applicableDay": [
+                                                            "friday",
+                                                            "monday",
+                                                            "saturday",
+                                                            "sunday",
+                                                            "thursday",
+                                                            "tuesday",
+                                                            "wednesday"
+                                                        ]
+                                                    }
+                                                ],
+                                                "recurringTimePeriodOfDay": [
+                                                    {
+                                                        "endTimeOfPeriod": "16:00:00",
+                                                        "startTimeOfPeriod": "07:00:00"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "generalRegulation": {
+                                "regulationType": "miscBusLaneWithTrafficFlow"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                3300,
+                9001
+            ],
+            "traCreator": 9001,
+            "statementDescription": "overall description of purpose of TRO",
+            "troName": "DfT Example - snippet - linear with direction - May 2025"
+        }
+    }
+}
