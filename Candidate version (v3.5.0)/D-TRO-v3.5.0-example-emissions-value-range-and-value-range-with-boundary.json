@@ -49,16 +49,18 @@
                                 {
                                     "vehicleCharacteristics": {
                                         "emissions": {
-                                            "valueRange": {
-                                                "class": "emissionValve",
-                                                "unit": "gkm",
-                                                "valueRangeBoundary": [
-                                                    {
-                                                        "comparisonOperator": "lessThan",
-                                                        "value": 121
-                                                    }
-                                                ]
-                                            }
+                                            "valueRange": [
+                                                {
+                                                    "class": "emissionValue",
+                                                    "unit": "gkm",
+                                                    "valueRangeBoundary": [
+                                                        {
+                                                            "comparisonOperator": "lessThan",
+                                                            "value": 121
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     }
                                 }
@@ -75,7 +77,6 @@
             "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
             "section": "All sections",
             "traAffected": [
-                3300,
                 9001
             ],
             "traCreator": 9001,

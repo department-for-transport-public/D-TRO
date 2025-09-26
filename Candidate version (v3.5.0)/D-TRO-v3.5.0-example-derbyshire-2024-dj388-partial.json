@@ -47,7 +47,7 @@
                 {
                   "timeValidity": {
                     "start": "2024-08-01T08:00:00",
-					"isPlaceholderTro": "false",
+					"isPlaceholderTro": false,
                     "validPeriod": [
                       {
                         "recurringDayWeekMonthPeriod": [

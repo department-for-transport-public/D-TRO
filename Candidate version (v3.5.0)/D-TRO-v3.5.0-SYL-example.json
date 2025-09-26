@@ -45,7 +45,7 @@
                   "negate": false,
                   "timeValidity": {
                     "start": "2024-12-10T09:00:00",
-					"isPlaceholderTro": "false",
+					"isPlaceholderTro": false,
                     "validPeriod": [
                       {
                         "recurringDayWeekMonthPeriod": [
@@ -118,7 +118,7 @@
                   "negate": false,
                   "timeValidity": {
                     "start": "2024-12-10T09:00:00",
-					"isPlaceholderTro": "false",
+					"isPlaceholderTro": false,
                     "validPeriod": [
                       {
                         "recurringDayWeekMonthPeriod": [
@@ -191,7 +191,7 @@
                   "negate": false,
                   "timeValidity": {
                     "start": "2024-12-10T09:00:00",
-					"isPlaceholderTro": "false",
+					"isPlaceholderTro": false,
                     "validPeriod": [
                       {
                         "recurringDayWeekMonthPeriod": [
@@ -264,7 +264,7 @@
                   "negate": false,
                   "timeValidity": {
                     "start": "2024-12-10T09:00:00",
-					"isPlaceholderTro": "false",
+					"isPlaceholderTro": false,
 					"maxStayNoReturn": {
 						"maximumOccupancy": "PT3H",
 						"minimumPeriodForReturn": "PT1H"

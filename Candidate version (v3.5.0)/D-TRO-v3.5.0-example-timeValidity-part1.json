@@ -87,7 +87,7 @@
                                 {
                                     "negate": false,
                                     "timeValidity": {
-										"isPlaceholderTro": true
+										"isPlaceholderTro": true,
                                         "start": "1970-01-01T00:00:00"
                                     }
                                 }

@@ -76,7 +76,7 @@
                                             "negate": false,
                                             "timeValidity": {
                                                 "start": "2024-09-22T08:00:00",
-												"isPlaceholderTro": "false",
+												"isPlaceholderTro": false,
                                                 "validPeriod": [
                                                     {
                                                         "recurringDayWeekMonthPeriod": [
