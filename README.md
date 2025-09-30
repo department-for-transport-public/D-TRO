@@ -1,23 +1,20 @@
 The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway with enhancements proposed to the Data Specification, being conducted by Harrod Booth Consulting Ltd and PA Consulting, working alongside the DfT. Welcome to our Public External GitHub repository.
 
-Private Beta was launched on Tuesday 15 October 2024. 
+Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025.
  
-The latest release of the Data Specification in PROD is 3.4.1 as part of the D-TRO Beta project for your input and feedback on.
-
-Version 3.4.1 introduces 
-
-- Max Stay, no return attribution for all regulations (previously limited to Permits only)
-- Extending the "extensionEnumeration" enumeration works across all of the following enumerated list:"permitType", "payloadType", "vehicleUsageType", "emissionsClassificationEuroType", "fuelType", "vehicleEquipmentType", "vehicleType"
-- Bug fixes to the processing of Consultation records
-- Various additional enumerations
+The latest release version of the Data Specification in the Production Environment is 3.4.1 as part of the D-TRO Beta project for your input and feedback on.
 
 Version 3.4.1 is live in Integration and Production as of 12 August 2025. More details are available at:
 
-https://github.com/department-for-transport-public/D-TRO/issues/78
+https://github.com/department-for-transport-public/D-TRO/issues/1
 
 Documentation and artefacts for v3.4.x are on GitHub. 
 
 All versions v3.3.x (and lower) have been deprecated. 
+
+Version 3.5.0 of the Data Specification is now available in the Integration Environment.
+
+The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/D-TRO/tree/main/Candidate%20version%20(v3.5.0)) - this includes examples files, the v3.5.0 schema and data model source file and validation rules documentation.
 
 **Consultation on Secondary Legislation
 **
@@ -35,16 +32,6 @@ The DfT acknowledges that Traffic Regulation Authorities and Digital Solution Pr
 
 GitHub is the repository for supporting documentation and artefacts required by those participating in validation and providing feedback during the D-TRO Beta phase.
  
-As part of the current release of the Data Specification (version 3.4.1), we are providing the following:
- 
-- User Guide detailing the content and structure of the D-TRO data model
-- Data Model - QEA and XMI extracts
-- JSON schema
-- Validation rules
-- Example JSON D-TRO files
-
-Updated Interface Control Documents (ICDs) for Publishers and Consumers (specifying the API interface for data extraction, supply and publication) are applicable to v3.4 and v3.4.1.
-
 See Issue #1 for more details:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
