@@ -54,7 +54,7 @@
                   "negate": false,
                   "timeValidity": {
                     "start": "2024-12-10T09:00:00",
-					"isPlaceholderTro": false,
+					"isPlaceholderTro": false
                   }                  
                 }
               ],
@@ -67,7 +67,7 @@
               "timeZone": "Europe/London"
             }
           ]
-        },
+        }
       ],
       "reference": "abc",
       "section": "All sections",

@@ -38,7 +38,7 @@
                 "version": 1
               },
               "type": "regulationLocation"
-            },
+            }
           ],
           "regulation": [
             {
@@ -172,7 +172,7 @@
               "timeZone": "Europe/London"
             }
           ]
-        },
+        }
       ],
       "reference": "abc",
       "section": "All sections",
