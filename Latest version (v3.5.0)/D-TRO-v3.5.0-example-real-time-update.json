@@ -1,0 +1,102 @@
+{
+    "schemaVersion": "3.5.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "provision": [
+                                {
+                    "actionType": "noChange",
+                    "orderReportingPoint": "troOnRoadActiveStatus",
+                    "provisionDescription": "Temporary Speed limit, Toneway, Taunton",
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c089",
+                    "actualStartOrStop": [
+                        {
+                            "eventAt": "2025-03-26T06:53:00",
+                            "eventType": "start"
+                        },
+                        {
+                            "eventAt": "2025-03-26T12:45:00",
+                            "eventType": "stop"
+                        }
+                    ],
+                    "regulatedPlace": [
+                        {
+                            "description": "Toneway Eastbound (A38, A358) {approximate - linear}",
+                            "linearGeometry": {
+                                "direction": "startToEnd",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Toneway",
+                                                "nsgStreetNumber": "A38",
+                                                "usrn": 3961030
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Hankridge Dual Carriageway",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39686520
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Hankridge Roundabout",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39604745
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(323628 125167 234,325437 124895 240)",
+                                "representation": "linear",
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "condition": [
+                                {
+                                    "negate": false,
+                                    "timeValidity": {
+                                        "start": "2025-03-26T00:00:00",
+                                        "end": "2025-03-28T23:59:00",
+										"isPlaceholderTro": false
+                                    }
+                                }
+                            ],
+                            "isDynamic": false,
+                            "speedLimitValueBased": {
+                                "type": "maximumSpeedLimit",
+                                "nature": "temporary",
+                                "mphValue": 30
+                            },
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                3300,
+                9001
+            ],
+            "traCreator": 9001,
+            "statementDescription": "overall description of purpose of TRO",
+            "troName": "DfT Example - More complex v5, Mar. 2025"
+        }
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "schemaVersion": "3.5.0",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2025-01-01",
+            "comingIntoForceDate": "2025-01-01",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+                    "comingIntoForceDate": "2025-01-01",
+                    "provisionDescription": "Ad-hoc full closures for utility and highway works, Toneway, Taunton",
+                    "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c089",
+                    "regulatedPlace": [
+                        {
+                            "description": "Toneway Eastbound (A38, A358) {approximate - linear}",
+                            "linearGeometry": {
+                                "direction": "startToEnd",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Toneway",
+                                                "nsgStreetNumber": "A38",
+                                                "usrn": 39612030
+                                            },
+                                            {
+                                                "nsgStreetName": "Hankridge Dual Carriageway",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39686520
+                                            },
+                                            {
+                                                "nsgStreetName": "Hankridge Roundabout",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39604745
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(323628 125167,325437 124895)",
+                                "representation": "linear",
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        },
+                        {
+                            "description": "Toneway Westbound (A38, A358) {approximate - linear}",
+                            "linearGeometry": {
+                                "direction": "endToStart",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Toneway",
+                                                "nsgStreetNumber": "A38",
+                                                "usrn": 39612030
+                                            },
+                                            {
+                                                "nsgStreetName": "Hankridge Dual Carriageway",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39686520
+                                            },
+                                            {
+                                                "nsgStreetName": "Hankridge Roundabout",
+                                                "nsgStreetNumber": "A358",
+                                                "usrn": 39604745
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(323634 125151,325393 124859)",
+                                "representation": "linear",
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "condition": [
+                                {
+                                    "negate": false,
+                                    "timeValidity": {
+										"isPlaceholderTro": true,
+                                        "start": "1970-01-01T00:00:00"
+                                    }
+                                }
+                            ],
+                            "isDynamic": false,
+                            "generalRegulation": {
+                                "regulationType": "miscRoadClosure"
+                            },
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example - maintenance order update v1, part 1, Aug. 2025",
+            "statementDescription": "Some description"
+        }
+    }
+}

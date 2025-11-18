@@ -1,0 +1,2087 @@
+{
+  "source": {
+    "actionType": "string",
+    "comingIntoForceDate": "string",
+    "currentTraOwner": "integer",
+    "madeDate": "string",
+    "reference": "string",
+    "section": "string",
+    "statementDescription": "string",
+    "traAffected": [
+      "integer"
+    ],
+    "traCreator": "integer",
+    "troName": "string",
+    "provision": [
+      {
+        "actionType": "string",
+        "comingIntoForceDate": "string",
+        "expectedOccupancyDuration": "string",
+        "orderReportingPoint": "string",
+        "provisionDescription": "string",
+        "reference": "string",
+        "actualStartOrStop": [
+          {
+            "eventAt": "string",
+            "eventType": "string"
+          }
+        ],
+        "experimentalCessation": {
+          "actualDateOfCessation": "string",
+          "natureOfCessation": "string"
+        },
+        "experimentalVariation": {
+          "effectOfChange": "string",
+          "expectedDuration": "integer"
+        },
+        "regulatedPlace": [
+          {
+            "assignment": "boolean",
+            "busRoute": "boolean",
+            "bywayType": "string",
+            "concession": "boolean",
+            "description": "string",
+            "tramcar": "boolean",
+            "type": "string",
+            "polygon": {
+              "diversionType": {
+                "diversionType": "string"
+              },
+              "version": "integer",
+              "polygon": "string",
+              "externalReference": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "directedLinear": {
+              "diversionType": {
+                "diversionType": "string"
+              },
+              "version": "integer",
+              "directedLineString": "string",
+              "destination": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "intermediateLocation": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "origin": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "linearGeometry": {
+              "diversionType": {
+                "diversionType": "string"
+              },
+              "version": "integer",
+              "direction": "string",
+              "lateralPosition": "string",
+              "linestring": "string",
+              "representation": "string",
+              "externalReference": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "pointGeometry": {
+              "diversionType": {
+                "diversionType": "string"
+              },
+              "externalReference": [
+                {
+                  "lastUpdateDate": "string",
+                  "uniqueStreetReferenceNumber": [
+                    {
+                      "nsgStreetName": "string",
+                      "nsgStreetNumber": "string",
+                      "usrn": "integer",
+                      "elementaryStreetUnit": [
+                        {
+                          "esu": "integer"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "point": "string",
+              "representation": "string",
+              "version": "integer"
+            }
+          }
+        ],
+        "regulation": [
+          {
+            "isDynamic": "boolean",
+            "timeZone": "string",
+            "conditionSet": [
+              {
+                "operator": "string",
+                "conditionSet": "recursive",
+                "conditions": [
+                  "object"
+                ],
+                "condition": [
+                  {
+                    "negate": "boolean",
+                    "operator": "string",
+                    "rateTable": {
+                      "type": "string",
+                      "additionalInformation": "string",
+                      "rateLineCollection": [
+                        {
+                          "applicableCurrency": "string",
+                          "startValidUsagePeriod": "string",
+                          "endValidUsagePeriod": "string",
+                          "maxTime": "string",
+                          "minTime": "string",
+                          "maxValueCollection": "number",
+                          "minValueCollection": "number",
+                          "resetTime": "string",
+                          "sequence": "integer",
+                          "rateLine": [
+                            {
+                              "description": "string",
+                              "durationEnd": "string",
+                              "durationStart": "string",
+                              "incrementPeriod": "integer",
+                              "maxValue": "number",
+                              "minValue": "number",
+                              "sequence": "integer",
+                              "type": "string",
+                              "usageCondition": "string",
+                              "value": "number"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "vehicleCharacteristics": {
+                      "fuelType": [
+                        "string"
+                      ],
+                      "loadType": "string",
+                      "vehicleEquipment": "string",
+                      "vehicleType": "string",
+                      "vehicleUsage": "string",
+                      "yearOfFirstRegistration": "integer",
+                      "maximumGrossWeightCharacteristic": {
+                        "grossVehicleWeight": "number",
+                        "typeOfWeight": "string"
+                      },
+                      "maximumHeightCharacteristic": {
+                        "vehicleHeight": "number"
+                      },
+                      "maximumLengthCharacteristic": {
+                        "vehicleLength": "number"
+                      },
+                      "maximumWidthCharacteristic": {
+                        "vehicleWidth": "number"
+                      },
+                      "heaviestAxleWeightCharacteristic": {
+                        "heaviestAxleWeight": "number"
+                      },
+                      "numberOfAxlesCharacteristic": [
+                        {
+                          "numberOfAxles": "integer",
+                          "comparisonOperator": "string"
+                        }
+                      ],
+                      "emissions": {
+                        "emissionClassificationEuro": "string",
+                        "emissionClassificationOther": [
+                          "string"
+                        ],
+                        "emissionClassificationEuroTypeExtension": {
+                          "definition": "string",
+                          "enumeratedList": "string",
+                          "value": "string"
+                        }
+                      },
+                      "vehicleUsageTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    },
+                    "roadCondition": {
+                      "roadType": "string"
+                    },
+                    "occupantCondition": {
+                      "disabledWithPermit": "boolean",
+                      "numberOfOccupants": [
+                        {
+                          "operator": "string",
+                          "value": "integer"
+                        }
+                      ]
+                    },
+                    "driverCondition": {
+                      "driverCharacteristics": "string"
+                    },
+                    "accessCondition": {
+                      "accessConditionType": [
+                        "string"
+                      ],
+                      "otherAccessRestriction": "string"
+                    },
+                    "timeValidity": {
+                      "end": "string",
+                      "start": "string",
+                      "validPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ],
+                      "exceptionPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "nonVehicularRoadUserCondition": {
+                      "nonVehicularRoadUser": "string"
+                    },
+                    "permitCondition": {
+                      "locationRelatedPermit": "boolean",
+                      "maxDurationOfPermit": "integer",
+                      "permitIdentifier": "string",
+                      "schemeIdentifier": "string",
+                      "whereToApplyForPermit": "string",
+                      "whereToCallForPermit": "string",
+                      "type": "string",
+                      "maximumAccessDuration": "integer",
+                      "minimumTimeToNextEntry": "integer",
+                      "authority": {
+                        "name": "string"
+                      },
+                      "permitSubjectToFee": "object",
+                      "permitTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "condition": [
+              {
+                "negate": "boolean",
+                "operator": "string",
+                "rateTable": {
+                  "type": "string",
+                  "additionalInformation": "string",
+                  "rateLineCollection": [
+                    {
+                      "applicableCurrency": "string",
+                      "startValidUsagePeriod": "string",
+                      "endValidUsagePeriod": "string",
+                      "maxTime": "string",
+                      "minTime": "string",
+                      "maxValueCollection": "number",
+                      "minValueCollection": "number",
+                      "resetTime": "string",
+                      "sequence": "integer",
+                      "rateLine": [
+                        {
+                          "description": "string",
+                          "durationEnd": "string",
+                          "durationStart": "string",
+                          "incrementPeriod": "integer",
+                          "maxValue": "number",
+                          "minValue": "number",
+                          "sequence": "integer",
+                          "type": "string",
+                          "usageCondition": "string",
+                          "value": "number"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "vehicleCharacteristics": {
+                  "fuelType": [
+                    "string"
+                  ],
+                  "loadType": "string",
+                  "vehicleEquipment": "string",
+                  "vehicleType": "string",
+                  "vehicleUsage": "string",
+                  "yearOfFirstRegistration": "integer",
+                  "maximumGrossWeightCharacteristic": {
+                    "grossVehicleWeight": "number",
+                    "typeOfWeight": "string"
+                  },
+                  "maximumHeightCharacteristic": {
+                    "vehicleHeight": "number"
+                  },
+                  "maximumLengthCharacteristic": {
+                    "vehicleLength": "number"
+                  },
+                  "maximumWidthCharacteristic": {
+                    "vehicleWidth": "number"
+                  },
+                  "heaviestAxleWeightCharacteristic": {
+                    "heaviestAxleWeight": "number"
+                  },
+                  "numberOfAxlesCharacteristic": [
+                    {
+                      "numberOfAxles": "integer",
+                      "comparisonOperator": "string"
+                    }
+                  ],
+                  "emissions": {
+                    "emissionClassificationEuro": "string",
+                    "emissionClassificationOther": [
+                      "string"
+                    ],
+                    "emissionClassificationEuroTypeExtension": {
+                      "definition": "string",
+                      "enumeratedList": "string",
+                      "value": "string"
+                    }
+                  },
+                  "vehicleUsageTypeExtension": {
+                    "definition": "string",
+                    "enumeratedList": "string",
+                    "value": "string"
+                  }
+                },
+                "roadCondition": {
+                  "roadType": "string"
+                },
+                "occupantCondition": {
+                  "disabledWithPermit": "boolean",
+                  "numberOfOccupants": [
+                    {
+                      "operator": "string",
+                      "value": "integer"
+                    }
+                  ]
+                },
+                "driverCondition": {
+                  "driverCharacteristics": "string"
+                },
+                "accessCondition": {
+                  "accessConditionType": [
+                    "string"
+                  ],
+                  "otherAccessRestriction": "string"
+                },
+                "timeValidity": {
+                  "end": "string",
+                  "start": "string",
+                  "validPeriod": [
+                    {
+                      "endOfPeriod": "string",
+                      "startOfPeriod": "string",
+                      "periodName": "string",
+                      "recurrents": "integer",
+                      "recurringPeriod": "integer",
+                      "recurringTimePeriodOfDay": [
+                        {
+                          "endTimeOfPeriod": "string",
+                          "startTimeOfPeriod": "string"
+                        }
+                      ],
+                      "recurringDayWeekMonthPeriod": [
+                        {
+                          "applicableDay": [
+                            "string"
+                          ],
+                          "applicableMonth": [
+                            "string"
+                          ],
+                          "weekInMonth": "string",
+                          "applicableWeek": "string",
+                          "applicableInstanceOfDayWithinMonth": "string"
+                        }
+                      ],
+                      "recurringSpecialDay": [
+                        {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      ],
+                      "periodStart": {
+                        "startType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      },
+                      "periodEnd": {
+                        "endType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      }
+                    }
+                  ],
+                  "exceptionPeriod": [
+                    {
+                      "endOfPeriod": "string",
+                      "startOfPeriod": "string",
+                      "periodName": "string",
+                      "recurrents": "integer",
+                      "recurringPeriod": "integer",
+                      "recurringTimePeriodOfDay": [
+                        {
+                          "endTimeOfPeriod": "string",
+                          "startTimeOfPeriod": "string"
+                        }
+                      ],
+                      "recurringDayWeekMonthPeriod": [
+                        {
+                          "applicableDay": [
+                            "string"
+                          ],
+                          "applicableMonth": [
+                            "string"
+                          ],
+                          "weekInMonth": "string",
+                          "applicableWeek": "string",
+                          "applicableInstanceOfDayWithinMonth": "string"
+                        }
+                      ],
+                      "recurringSpecialDay": [
+                        {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      ],
+                      "periodStart": {
+                        "startType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      },
+                      "periodEnd": {
+                        "endType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "nonVehicularRoadUserCondition": {
+                  "nonVehicularRoadUser": "string"
+                },
+                "permitCondition": {
+                  "locationRelatedPermit": "boolean",
+                  "maxDurationOfPermit": "integer",
+                  "permitIdentifier": "string",
+                  "schemeIdentifier": "string",
+                  "whereToApplyForPermit": "string",
+                  "whereToCallForPermit": "string",
+                  "type": "string",
+                  "maximumAccessDuration": "integer",
+                  "minimumTimeToNextEntry": "integer",
+                  "authority": {
+                    "name": "string"
+                  },
+                  "permitSubjectToFee": "object",
+                  "permitTypeExtension": {
+                    "definition": "string",
+                    "enumeratedList": "string",
+                    "value": "string"
+                  }
+                }
+              }
+            ],
+            "conditions": [
+              {
+                "negate": "boolean",
+                "operator": "string",
+                "rateTable": {
+                  "type": "string",
+                  "additionalInformation": "string",
+                  "rateLineCollection": [
+                    {
+                      "applicableCurrency": "string",
+                      "startValidUsagePeriod": "string",
+                      "endValidUsagePeriod": "string",
+                      "maxTime": "string",
+                      "minTime": "string",
+                      "maxValueCollection": "number",
+                      "minValueCollection": "number",
+                      "resetTime": "string",
+                      "sequence": "integer",
+                      "rateLine": [
+                        {
+                          "description": "string",
+                          "durationEnd": "string",
+                          "durationStart": "string",
+                          "incrementPeriod": "integer",
+                          "maxValue": "number",
+                          "minValue": "number",
+                          "sequence": "integer",
+                          "type": "string",
+                          "usageCondition": "string",
+                          "value": "number"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "vehicleCharacteristics": {
+                  "fuelType": [
+                    "string"
+                  ],
+                  "loadType": "string",
+                  "vehicleEquipment": "string",
+                  "vehicleType": "string",
+                  "vehicleUsage": "string",
+                  "yearOfFirstRegistration": "integer",
+                  "maximumGrossWeightCharacteristic": {
+                    "grossVehicleWeight": "number",
+                    "typeOfWeight": "string"
+                  },
+                  "maximumHeightCharacteristic": {
+                    "vehicleHeight": "number"
+                  },
+                  "maximumLengthCharacteristic": {
+                    "vehicleLength": "number"
+                  },
+                  "maximumWidthCharacteristic": {
+                    "vehicleWidth": "number"
+                  },
+                  "heaviestAxleWeightCharacteristic": {
+                    "heaviestAxleWeight": "number"
+                  },
+                  "numberOfAxlesCharacteristic": [
+                    {
+                      "numberOfAxles": "integer",
+                      "comparisonOperator": "string"
+                    }
+                  ],
+                  "emissions": {
+                    "emissionClassificationEuro": "string",
+                    "emissionClassificationOther": [
+                      "string"
+                    ],
+                    "emissionClassificationEuroTypeExtension": {
+                      "definition": "string",
+                      "enumeratedList": "string",
+                      "value": "string"
+                    }
+                  },
+                  "vehicleUsageTypeExtension": {
+                    "definition": "string",
+                    "enumeratedList": "string",
+                    "value": "string"
+                  }
+                },
+                "roadCondition": {
+                  "roadType": "string"
+                },
+                "occupantCondition": {
+                  "disabledWithPermit": "boolean",
+                  "numberOfOccupants": [
+                    {
+                      "operator": "string",
+                      "value": "integer"
+                    }
+                  ]
+                },
+                "driverCondition": {
+                  "driverCharacteristics": "string"
+                },
+                "accessCondition": {
+                  "accessConditionType": [
+                    "string"
+                  ],
+                  "otherAccessRestriction": "string"
+                },
+                "timeValidity": {
+                  "end": "string",
+                  "start": "string",
+                  "validPeriod": [
+                    {
+                      "endOfPeriod": "string",
+                      "startOfPeriod": "string",
+                      "periodName": "string",
+                      "recurrents": "integer",
+                      "recurringPeriod": "integer",
+                      "recurringTimePeriodOfDay": [
+                        {
+                          "endTimeOfPeriod": "string",
+                          "startTimeOfPeriod": "string"
+                        }
+                      ],
+                      "recurringDayWeekMonthPeriod": [
+                        {
+                          "applicableDay": [
+                            "string"
+                          ],
+                          "applicableMonth": [
+                            "string"
+                          ],
+                          "weekInMonth": "string",
+                          "applicableWeek": "string",
+                          "applicableInstanceOfDayWithinMonth": "string"
+                        }
+                      ],
+                      "recurringSpecialDay": [
+                        {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      ],
+                      "periodStart": {
+                        "startType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      },
+                      "periodEnd": {
+                        "endType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      }
+                    }
+                  ],
+                  "exceptionPeriod": [
+                    {
+                      "endOfPeriod": "string",
+                      "startOfPeriod": "string",
+                      "periodName": "string",
+                      "recurrents": "integer",
+                      "recurringPeriod": "integer",
+                      "recurringTimePeriodOfDay": [
+                        {
+                          "endTimeOfPeriod": "string",
+                          "startTimeOfPeriod": "string"
+                        }
+                      ],
+                      "recurringDayWeekMonthPeriod": [
+                        {
+                          "applicableDay": [
+                            "string"
+                          ],
+                          "applicableMonth": [
+                            "string"
+                          ],
+                          "weekInMonth": "string",
+                          "applicableWeek": "string",
+                          "applicableInstanceOfDayWithinMonth": "string"
+                        }
+                      ],
+                      "recurringSpecialDay": [
+                        {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      ],
+                      "periodStart": {
+                        "startType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      },
+                      "periodEnd": {
+                        "endType": "string",
+                        "changeableTimePeriodSource": {
+                          "definition": "string",
+                          "sourceLocator": "string"
+                        },
+                        "changeableTimePeriodEntry": [
+                          {
+                            "entry": "string"
+                          }
+                        ],
+                        "specialDay": {
+                          "intersectWithApplicableDays": "boolean",
+                          "publicEvent": "string",
+                          "specialDayType": "string"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "nonVehicularRoadUserCondition": {
+                  "nonVehicularRoadUser": "string"
+                },
+                "permitCondition": {
+                  "locationRelatedPermit": "boolean",
+                  "maxDurationOfPermit": "integer",
+                  "permitIdentifier": "string",
+                  "schemeIdentifier": "string",
+                  "whereToApplyForPermit": "string",
+                  "whereToCallForPermit": "string",
+                  "type": "string",
+                  "maximumAccessDuration": "integer",
+                  "minimumTimeToNextEntry": "integer",
+                  "authority": {
+                    "name": "string"
+                  },
+                  "permitSubjectToFee": "object",
+                  "permitTypeExtension": {
+                    "definition": "string",
+                    "enumeratedList": "string",
+                    "value": "string"
+                  }
+                }
+              }
+            ],
+            "generalRegulation": {
+              "regulationType": "string"
+            },
+            "offListRegulation": {
+              "legislationCrossReference": [
+                "string"
+              ],
+              "regulationFullText": "string",
+              "regulationShortName": "string"
+            },
+            "speedLimitValueBased": {
+              "mphValue": "integer",
+              "nature": "string",
+              "type": "string"
+            },
+            "speedLimitProfileBased": {
+              "type": "string"
+            },
+            "temporaryProvision": [
+              {
+                "temporaryOverriddenProvision": {
+                  "reference": "string"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "consultation": {
+    "consultationName": "string",
+    "endOfConsultation": "string",
+    "howToComment": "string",
+    "localReference": "string",
+    "pointOfContactAddress": "string",
+    "pointOfContactEmail": "string",
+    "startOfConsultation": "string",
+    "statementOfReason": "string",
+    "urlAdditionalInformation": "string",
+    "source": [
+      {
+        "actionType": "string",
+        "comingIntoForceDate": "string",
+        "currentTraOwner": "integer",
+        "madeDate": "string",
+        "reference": "string",
+        "section": "string",
+        "statementDescription": "string",
+        "traAffected": [
+          "integer"
+        ],
+        "traCreator": "integer",
+        "troName": "string",
+        "provision": [
+          {
+            "actionType": "string",
+            "comingIntoForceDate": "string",
+            "expectedOccupancyDuration": "string",
+            "orderReportingPoint": "string",
+            "provisionDescription": "string",
+            "reference": "string",
+            "actualStartOrStop": [
+              {
+                "eventAt": "string",
+                "eventType": "string"
+              }
+            ],
+            "experimentalCessation": {
+              "actualDateOfCessation": "string",
+              "natureOfCessation": "string"
+            },
+            "experimentalVariation": {
+              "effectOfChange": "string",
+              "expectedDuration": "integer"
+            },
+            "regulatedPlace": [
+              {
+                "assignment": "boolean",
+                "busRoute": "boolean",
+                "bywayType": "string",
+                "concession": "boolean",
+                "description": "string",
+                "tramcar": "boolean",
+                "type": "string",
+                "polygon": {
+                  "diversionType": {
+                    "diversionType": "string"
+                  },
+                  "version": "integer",
+                  "polygon": "string",
+                  "externalReference": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "directedLinear": {
+                  "diversionType": {
+                    "diversionType": "string"
+                  },
+                  "version": "integer",
+                  "directedLineString": "string",
+                  "destination": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "intermediateLocation": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "origin": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "linearGeometry": {
+                  "diversionType": {
+                    "diversionType": "string"
+                  },
+                  "version": "integer",
+                  "direction": "string",
+                  "lateralPosition": "string",
+                  "linestring": "string",
+                  "representation": "string",
+                  "externalReference": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "pointGeometry": {
+                  "diversionType": {
+                    "diversionType": "string"
+                  },
+                  "externalReference": [
+                    {
+                      "lastUpdateDate": "string",
+                      "uniqueStreetReferenceNumber": [
+                        {
+                          "nsgStreetName": "string",
+                          "nsgStreetNumber": "string",
+                          "usrn": "integer",
+                          "elementaryStreetUnit": [
+                            {
+                              "esu": "integer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "point": "string",
+                  "representation": "string",
+                  "version": "integer"
+                }
+              }
+            ],
+            "regulation": [
+              {
+                "isDynamic": "boolean",
+                "timeZone": "string",
+                "conditionSet": [
+                  {
+                    "operator": "string",
+                    "conditionSet": "recursive",
+                    "conditions": [
+                      "object"
+                    ],
+                    "condition": [
+                      {
+                        "negate": "boolean",
+                        "operator": "string",
+                        "rateTable": {
+                          "type": "string",
+                          "additionalInformation": "string",
+                          "rateLineCollection": [
+                            {
+                              "applicableCurrency": "string",
+                              "startValidUsagePeriod": "string",
+                              "endValidUsagePeriod": "string",
+                              "maxTime": "string",
+                              "minTime": "string",
+                              "maxValueCollection": "number",
+                              "minValueCollection": "number",
+                              "resetTime": "string",
+                              "sequence": "integer",
+                              "rateLine": [
+                                {
+                                  "description": "string",
+                                  "durationEnd": "string",
+                                  "durationStart": "string",
+                                  "incrementPeriod": "integer",
+                                  "maxValue": "number",
+                                  "minValue": "number",
+                                  "sequence": "integer",
+                                  "type": "string",
+                                  "usageCondition": "string",
+                                  "value": "number"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "vehicleCharacteristics": {
+                          "fuelType": [
+                            "string"
+                          ],
+                          "loadType": "string",
+                          "vehicleEquipment": "string",
+                          "vehicleType": "string",
+                          "vehicleUsage": "string",
+                          "yearOfFirstRegistration": "integer",
+                          "maximumGrossWeightCharacteristic": {
+                            "grossVehicleWeight": "number",
+                            "typeOfWeight": "string"
+                          },
+                          "maximumHeightCharacteristic": {
+                            "vehicleHeight": "number"
+                          },
+                          "maximumLengthCharacteristic": {
+                            "vehicleLength": "number"
+                          },
+                          "maximumWidthCharacteristic": {
+                            "vehicleWidth": "number"
+                          },
+                          "heaviestAxleWeightCharacteristic": {
+                            "heaviestAxleWeight": "number"
+                          },
+                          "numberOfAxlesCharacteristic": [
+                            {
+                              "numberOfAxles": "integer",
+                              "comparisonOperator": "string"
+                            }
+                          ],
+                          "emissions": {
+                            "emissionClassificationEuro": "string",
+                            "emissionClassificationOther": [
+                              "string"
+                            ],
+                            "emissionClassificationEuroTypeExtension": {
+                              "definition": "string",
+                              "enumeratedList": "string",
+                              "value": "string"
+                            }
+                          },
+                          "vehicleUsageTypeExtension": {
+                            "definition": "string",
+                            "enumeratedList": "string",
+                            "value": "string"
+                          }
+                        },
+                        "roadCondition": {
+                          "roadType": "string"
+                        },
+                        "occupantCondition": {
+                          "disabledWithPermit": "boolean",
+                          "numberOfOccupants": [
+                            {
+                              "operator": "string",
+                              "value": "integer"
+                            }
+                          ]
+                        },
+                        "driverCondition": {
+                          "driverCharacteristics": "string"
+                        },
+                        "accessCondition": {
+                          "accessConditionType": [
+                            "string"
+                          ],
+                          "otherAccessRestriction": "string"
+                        },
+                        "timeValidity": {
+                          "end": "string",
+                          "start": "string",
+                          "validPeriod": [
+                            {
+                              "endOfPeriod": "string",
+                              "startOfPeriod": "string",
+                              "periodName": "string",
+                              "recurrents": "integer",
+                              "recurringPeriod": "integer",
+                              "recurringTimePeriodOfDay": [
+                                {
+                                  "endTimeOfPeriod": "string",
+                                  "startTimeOfPeriod": "string"
+                                }
+                              ],
+                              "recurringDayWeekMonthPeriod": [
+                                {
+                                  "applicableDay": [
+                                    "string"
+                                  ],
+                                  "applicableMonth": [
+                                    "string"
+                                  ],
+                                  "weekInMonth": "string",
+                                  "applicableWeek": "string",
+                                  "applicableInstanceOfDayWithinMonth": "string"
+                                }
+                              ],
+                              "recurringSpecialDay": [
+                                {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              ],
+                              "periodStart": {
+                                "startType": "string",
+                                "changeableTimePeriodSource": {
+                                  "definition": "string",
+                                  "sourceLocator": "string"
+                                },
+                                "changeableTimePeriodEntry": [
+                                  {
+                                    "entry": "string"
+                                  }
+                                ],
+                                "specialDay": {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              },
+                              "periodEnd": {
+                                "endType": "string",
+                                "changeableTimePeriodSource": {
+                                  "definition": "string",
+                                  "sourceLocator": "string"
+                                },
+                                "changeableTimePeriodEntry": [
+                                  {
+                                    "entry": "string"
+                                  }
+                                ],
+                                "specialDay": {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              }
+                            }
+                          ],
+                          "exceptionPeriod": [
+                            {
+                              "endOfPeriod": "string",
+                              "startOfPeriod": "string",
+                              "periodName": "string",
+                              "recurrents": "integer",
+                              "recurringPeriod": "integer",
+                              "recurringTimePeriodOfDay": [
+                                {
+                                  "endTimeOfPeriod": "string",
+                                  "startTimeOfPeriod": "string"
+                                }
+                              ],
+                              "recurringDayWeekMonthPeriod": [
+                                {
+                                  "applicableDay": [
+                                    "string"
+                                  ],
+                                  "applicableMonth": [
+                                    "string"
+                                  ],
+                                  "weekInMonth": "string",
+                                  "applicableWeek": "string",
+                                  "applicableInstanceOfDayWithinMonth": "string"
+                                }
+                              ],
+                              "recurringSpecialDay": [
+                                {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              ],
+                              "periodStart": {
+                                "startType": "string",
+                                "changeableTimePeriodSource": {
+                                  "definition": "string",
+                                  "sourceLocator": "string"
+                                },
+                                "changeableTimePeriodEntry": [
+                                  {
+                                    "entry": "string"
+                                  }
+                                ],
+                                "specialDay": {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              },
+                              "periodEnd": {
+                                "endType": "string",
+                                "changeableTimePeriodSource": {
+                                  "definition": "string",
+                                  "sourceLocator": "string"
+                                },
+                                "changeableTimePeriodEntry": [
+                                  {
+                                    "entry": "string"
+                                  }
+                                ],
+                                "specialDay": {
+                                  "intersectWithApplicableDays": "boolean",
+                                  "publicEvent": "string",
+                                  "specialDayType": "string"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "nonVehicularRoadUserCondition": {
+                          "nonVehicularRoadUser": "string"
+                        },
+                        "permitCondition": {
+                          "locationRelatedPermit": "boolean",
+                          "maxDurationOfPermit": "integer",
+                          "permitIdentifier": "string",
+                          "schemeIdentifier": "string",
+                          "whereToApplyForPermit": "string",
+                          "whereToCallForPermit": "string",
+                          "type": "string",
+                          "maximumAccessDuration": "integer",
+                          "minimumTimeToNextEntry": "integer",
+                          "authority": {
+                            "name": "string"
+                          },
+                          "permitSubjectToFee": "object",
+                          "permitTypeExtension": {
+                            "definition": "string",
+                            "enumeratedList": "string",
+                            "value": "string"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "condition": [
+                  {
+                    "negate": "boolean",
+                    "operator": "string",
+                    "rateTable": {
+                      "type": "string",
+                      "additionalInformation": "string",
+                      "rateLineCollection": [
+                        {
+                          "applicableCurrency": "string",
+                          "startValidUsagePeriod": "string",
+                          "endValidUsagePeriod": "string",
+                          "maxTime": "string",
+                          "minTime": "string",
+                          "maxValueCollection": "number",
+                          "minValueCollection": "number",
+                          "resetTime": "string",
+                          "sequence": "integer",
+                          "rateLine": [
+                            {
+                              "description": "string",
+                              "durationEnd": "string",
+                              "durationStart": "string",
+                              "incrementPeriod": "integer",
+                              "maxValue": "number",
+                              "minValue": "number",
+                              "sequence": "integer",
+                              "type": "string",
+                              "usageCondition": "string",
+                              "value": "number"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "vehicleCharacteristics": {
+                      "fuelType": [
+                        "string"
+                      ],
+                      "loadType": "string",
+                      "vehicleEquipment": "string",
+                      "vehicleType": "string",
+                      "vehicleUsage": "string",
+                      "yearOfFirstRegistration": "integer",
+                      "maximumGrossWeightCharacteristic": {
+                        "grossVehicleWeight": "number",
+                        "typeOfWeight": "string"
+                      },
+                      "maximumHeightCharacteristic": {
+                        "vehicleHeight": "number"
+                      },
+                      "maximumLengthCharacteristic": {
+                        "vehicleLength": "number"
+                      },
+                      "maximumWidthCharacteristic": {
+                        "vehicleWidth": "number"
+                      },
+                      "heaviestAxleWeightCharacteristic": {
+                        "heaviestAxleWeight": "number"
+                      },
+                      "numberOfAxlesCharacteristic": [
+                        {
+                          "numberOfAxles": "integer",
+                          "comparisonOperator": "string"
+                        }
+                      ],
+                      "emissions": {
+                        "emissionClassificationEuro": "string",
+                        "emissionClassificationOther": [
+                          "string"
+                        ],
+                        "emissionClassificationEuroTypeExtension": {
+                          "definition": "string",
+                          "enumeratedList": "string",
+                          "value": "string"
+                        }
+                      },
+                      "vehicleUsageTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    },
+                    "roadCondition": {
+                      "roadType": "string"
+                    },
+                    "occupantCondition": {
+                      "disabledWithPermit": "boolean",
+                      "numberOfOccupants": [
+                        {
+                          "operator": "string",
+                          "value": "integer"
+                        }
+                      ]
+                    },
+                    "driverCondition": {
+                      "driverCharacteristics": "string"
+                    },
+                    "accessCondition": {
+                      "accessConditionType": [
+                        "string"
+                      ],
+                      "otherAccessRestriction": "string"
+                    },
+                    "timeValidity": {
+                      "end": "string",
+                      "start": "string",
+                      "validPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ],
+                      "exceptionPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "nonVehicularRoadUserCondition": {
+                      "nonVehicularRoadUser": "string"
+                    },
+                    "permitCondition": {
+                      "locationRelatedPermit": "boolean",
+                      "maxDurationOfPermit": "integer",
+                      "permitIdentifier": "string",
+                      "schemeIdentifier": "string",
+                      "whereToApplyForPermit": "string",
+                      "whereToCallForPermit": "string",
+                      "type": "string",
+                      "maximumAccessDuration": "integer",
+                      "minimumTimeToNextEntry": "integer",
+                      "authority": {
+                        "name": "string"
+                      },
+                      "permitSubjectToFee": "object",
+                      "permitTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "negate": "boolean",
+                    "operator": "string",
+                    "rateTable": {
+                      "type": "string",
+                      "additionalInformation": "string",
+                      "rateLineCollection": [
+                        {
+                          "applicableCurrency": "string",
+                          "startValidUsagePeriod": "string",
+                          "endValidUsagePeriod": "string",
+                          "maxTime": "string",
+                          "minTime": "string",
+                          "maxValueCollection": "number",
+                          "minValueCollection": "number",
+                          "resetTime": "string",
+                          "sequence": "integer",
+                          "rateLine": [
+                            {
+                              "description": "string",
+                              "durationEnd": "string",
+                              "durationStart": "string",
+                              "incrementPeriod": "integer",
+                              "maxValue": "number",
+                              "minValue": "number",
+                              "sequence": "integer",
+                              "type": "string",
+                              "usageCondition": "string",
+                              "value": "number"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "vehicleCharacteristics": {
+                      "fuelType": [
+                        "string"
+                      ],
+                      "loadType": "string",
+                      "vehicleEquipment": "string",
+                      "vehicleType": "string",
+                      "vehicleUsage": "string",
+                      "yearOfFirstRegistration": "integer",
+                      "maximumGrossWeightCharacteristic": {
+                        "grossVehicleWeight": "number",
+                        "typeOfWeight": "string"
+                      },
+                      "maximumHeightCharacteristic": {
+                        "vehicleHeight": "number"
+                      },
+                      "maximumLengthCharacteristic": {
+                        "vehicleLength": "number"
+                      },
+                      "maximumWidthCharacteristic": {
+                        "vehicleWidth": "number"
+                      },
+                      "heaviestAxleWeightCharacteristic": {
+                        "heaviestAxleWeight": "number"
+                      },
+                      "numberOfAxlesCharacteristic": [
+                        {
+                          "numberOfAxles": "integer",
+                          "comparisonOperator": "string"
+                        }
+                      ],
+                      "emissions": {
+                        "emissionClassificationEuro": "string",
+                        "emissionClassificationOther": [
+                          "string"
+                        ],
+                        "emissionClassificationEuroTypeExtension": {
+                          "definition": "string",
+                          "enumeratedList": "string",
+                          "value": "string"
+                        }
+                      },
+                      "vehicleUsageTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    },
+                    "roadCondition": {
+                      "roadType": "string"
+                    },
+                    "occupantCondition": {
+                      "disabledWithPermit": "boolean",
+                      "numberOfOccupants": [
+                        {
+                          "operator": "string",
+                          "value": "integer"
+                        }
+                      ]
+                    },
+                    "driverCondition": {
+                      "driverCharacteristics": "string"
+                    },
+                    "accessCondition": {
+                      "accessConditionType": [
+                        "string"
+                      ],
+                      "otherAccessRestriction": "string"
+                    },
+                    "timeValidity": {
+                      "end": "string",
+                      "start": "string",
+                      "validPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ],
+                      "exceptionPeriod": [
+                        {
+                          "endOfPeriod": "string",
+                          "startOfPeriod": "string",
+                          "periodName": "string",
+                          "recurrents": "integer",
+                          "recurringPeriod": "integer",
+                          "recurringTimePeriodOfDay": [
+                            {
+                              "endTimeOfPeriod": "string",
+                              "startTimeOfPeriod": "string"
+                            }
+                          ],
+                          "recurringDayWeekMonthPeriod": [
+                            {
+                              "applicableDay": [
+                                "string"
+                              ],
+                              "applicableMonth": [
+                                "string"
+                              ],
+                              "weekInMonth": "string",
+                              "applicableWeek": "string",
+                              "applicableInstanceOfDayWithinMonth": "string"
+                            }
+                          ],
+                          "recurringSpecialDay": [
+                            {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          ],
+                          "periodStart": {
+                            "startType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          },
+                          "periodEnd": {
+                            "endType": "string",
+                            "changeableTimePeriodSource": {
+                              "definition": "string",
+                              "sourceLocator": "string"
+                            },
+                            "changeableTimePeriodEntry": [
+                              {
+                                "entry": "string"
+                              }
+                            ],
+                            "specialDay": {
+                              "intersectWithApplicableDays": "boolean",
+                              "publicEvent": "string",
+                              "specialDayType": "string"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "nonVehicularRoadUserCondition": {
+                      "nonVehicularRoadUser": "string"
+                    },
+                    "permitCondition": {
+                      "locationRelatedPermit": "boolean",
+                      "maxDurationOfPermit": "integer",
+                      "permitIdentifier": "string",
+                      "schemeIdentifier": "string",
+                      "whereToApplyForPermit": "string",
+                      "whereToCallForPermit": "string",
+                      "type": "string",
+                      "maximumAccessDuration": "integer",
+                      "minimumTimeToNextEntry": "integer",
+                      "authority": {
+                        "name": "string"
+                      },
+                      "permitSubjectToFee": "object",
+                      "permitTypeExtension": {
+                        "definition": "string",
+                        "enumeratedList": "string",
+                        "value": "string"
+                      }
+                    }
+                  }
+                ],
+                "generalRegulation": {
+                  "regulationType": "string"
+                },
+                "offListRegulation": {
+                  "legislationCrossReference": [
+                    "string"
+                  ],
+                  "regulationFullText": "string",
+                  "regulationShortName": "string"
+                },
+                "speedLimitValueBased": {
+                  "mphValue": "integer",
+                  "nature": "string",
+                  "type": "string"
+                },
+                "speedLimitProfileBased": {
+                  "type": "string"
+                },
+                "temporaryProvision": [
+                  {
+                    "temporaryOverriddenProvision": {
+                      "reference": "string"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
