@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "3.5.0",
+  "data": {
+    "source": {
+      "actionType": "new",
+      "currentTraOwner": 9001,
+      "madeDate": "2025-01-01",
+      "comingIntoForceDate": "2025-01-01",
+      "provision": [
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Speed limit, national speed limit, A38 between Boome Lane and 147 metres north of the northern boundary of Bell House {approximate}",
+          "reference": "c962b51f-e1aa-416e-8f0b-bcfe39a4d089",
+          "regulatedPlace": [
+            {
+              "description": "A38 between Boome Lane and 147 metres north of the northern boundary of Bell House {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "startToEnd",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39604805
+                      },
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 34004899
+                      },
+                      {
+                        "nsgStreetNumber": "A38",
+                        "usrn": 34000991
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(327506 128646,325437 124895)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            },
+            {
+              "description": "Toneway Westbound (A38, A358) {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "linearGeometry": {
+                "direction": "endToStart",
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Toneway",
+                        "nsgStreetNumber": "A38",
+                        "usrn": 39612030
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Dual Carriageway",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39686520
+                      },
+                      {
+                        "nsgStreetName": "Hankridge Roundabout",
+                        "nsgStreetNumber": "A358",
+                        "usrn": 39604745
+                      }
+                    ]
+                  }
+                ],
+                "lateralPosition": "centreline",
+                "linestring": "SRID=27700;LINESTRING(323634 125151,325393 124859)",
+                "representation": "linear",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "condition": [
+                {
+                  "negate": false,
+                  "timeValidity": {
+                    "start": "2024-12-12T00:00:00",
+					"isPlaceholderTro": false
+                  }
+                }
+              ],
+              "isDynamic": false,
+              "speedLimitProfileBased": {
+                "type": "nationalSpeedLimit"
+              },
+              "timeZone": "Europe/London"
+            }
+          ]
+        }
+      ],
+      "reference": "abc",
+      "section": "All sections",
+      "traAffected": [
+        9001
+      ],
+      "traCreator": 9001,
+      "troName": "DfT Example - nationalSpeedLimit example v1, Aug. 2025",
+      "statementDescription": "National Speed Limit profile"
+    }
+  }
+}

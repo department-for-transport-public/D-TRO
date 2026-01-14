@@ -1,0 +1,201 @@
+{
+    "schemaVersion": "3.5.1",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2025-01-01",
+            "comingIntoForceDate": "2025-01-01",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "ttroTtmoNoticeOfIntention",
+                    "provisionDescription": "placeholder - example TRO",
+                    "reference": "b1618e6f-f65c-48c7-9cc7-45da9f45fbda",
+                    "comingIntoForceDate": "2025-01-01",
+                    "regulatedPlace": [
+                        {
+                            "description": "East Reach, Taunton, bi-directional",
+                            "directedLinear": {
+                                "directedLineString": "SRID=27700;LINESTRING(323544 124622, 323464 124595)",
+                                "origin": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39608173
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        },
+                        {
+                            "description": "Diversion Route - through traffic - Toneway Wickes roundabout (A38) - Priory Avenue (A3038) - Trenchard Way (A3087) - Staplegrove Road (A3027/A338) - Silk Mills Road (A3065) - Galmington Roundabout (A38) - bi-directional",
+                            "type": "diversionRoute",
+                            "linearGeometry": {
+                                "direction": "bidirectional",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "usrn": 39609331
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(323589 125149, 323340 125227, 321986 125569, 320737 126347, 320715 124191)",
+                                "representation": "linear",
+                                "version": 1
+                            }
+                        }
+                    ],
+                    "regulation": [
+                        {
+                            "conditionSet": [
+                                {
+                                    "operator": "or",
+                                    "conditionSet": [
+                                        {
+                                            "operator": "and",
+                                            "conditions": [
+                                                {
+                                                    "negate": false,
+                                                    "timeValidity": {
+                                                        "start": "2024-09-22T08:00:00",
+                                                        "isPlaceholderTro": false,
+                                                        "validPeriod": [
+                                                            {
+                                                                "recurringDayWeekMonthPeriod": [
+                                                                    {
+                                                                        "applicableDay": [
+                                                                            "monday",
+                                                                            "tuesday",
+                                                                            "wednesday",
+                                                                            "thursday",
+                                                                            "friday",
+                                                                            "saturday"
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "recurringTimePeriodOfDay": [
+                                                                    {
+                                                                        "startTimeOfPeriod": "08:00:00",
+                                                                        "endTimeOfPeriod": "16:00:00"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "recurringDayWeekMonthPeriod": [
+                                                                    {
+                                                                        "applicableDay": [
+                                                                            "sunday"
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "recurringTimePeriodOfDay": [
+                                                                    {
+                                                                        "startTimeOfPeriod": "08:00:00",
+                                                                        "endTimeOfPeriod": "13:00:00"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "maxStayNoReturn": {
+                                                            "maximumOccupancy": "PT20M"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "negate": false,
+                                                    "vehicleCharacteristics": {
+                                                        "vehicleType": "anyVehicle"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "operator": "and",
+                                            "conditions": [
+                                                {
+											        "negate": false,
+													"timeValidity": {
+														"start": "2024-09-22T08:00:00",
+														"isPlaceholderTro": false,
+														"validPeriod": [
+															{
+																"recurringDayWeekMonthPeriod": [
+																	{
+																		"applicableDay": [
+																			"monday",
+																			"tuesday",
+																			"wednesday",
+																			"thursday",
+																			"friday",
+																			"saturday"
+																		]
+																	}
+																],
+																"recurringTimePeriodOfDay": [
+																	{
+																		"startTimeOfPeriod": "08:00:00",
+																		"endTimeOfPeriod": "16:00:00"
+																	}
+																]
+															},
+															{
+																"recurringDayWeekMonthPeriod": [
+																	{
+																		"applicableDay": [
+																			"sunday"
+																		]
+																	}
+																],
+																"recurringTimePeriodOfDay": [
+																	{
+																		"startTimeOfPeriod": "08:00:00",
+																		"endTimeOfPeriod": "13:00:00"
+																	}
+																]
+															}
+														],
+														"maxStayNoReturn": {
+															"maximumOccupancy": "PT3H"
+														}
+													}
+												},
+												{
+													"negate": false,
+													"occupantCondition": {
+														"disabledWithPermit": true
+													}
+												}
+											]
+										}	
+                                    ]
+                                }
+                            ],
+							"generalRegulation": {
+								"regulationType": "kerbsideLoadingPlace"
+							},
+							"isDynamic": false,
+							"timeZone": "Europe/London"
+						}
+					]	
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example - for TfL",
+            "statementDescription": "Some description"
+        }
+    }
+}

@@ -1,0 +1,156 @@
+{
+    "schemaVersion": "3.5.1",
+    "data": {
+        "source": {
+            "actionType": "new",
+            "currentTraOwner": 9001,
+            "madeDate": "2025-01-01",
+            "comingIntoForceDate": "2025-01-01",
+            "provision": [
+                {
+                    "actionType": "new",
+                    "orderReportingPoint": "permanentNoticeOfMaking",
+                    "comingIntoForceDate": "2025-01-01",
+                    "provisionDescription": "Example",
+                    "reference": "c962b51f-e1aa-416e-8f0b-bcfd09a4d060",
+                    "regulatedPlace": [
+                        {
+                            "description": "Somewhere",
+                            "concession": false,
+                            "assignment": false,
+                            "tramcar": false,
+                            "busRoute": false,
+                            "bywayType": "road",
+                            "linearGeometry": {
+                                "direction": "startToEnd",
+                                "externalReference": [
+                                    {
+                                        "lastUpdateDate": "2024-10-01T00:00:00",
+                                        "uniqueStreetReferenceNumber": [
+                                            {
+                                                "nsgStreetName": "Collett Road",
+                                                "usrn": 39609232
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "lateralPosition": "centreline",
+                                "linestring": "SRID=27700;LINESTRING(320336 126142,320315 126172)",
+                                "representation": "linear",
+                                "version": 1
+                            },
+                            "type": "regulationLocation"
+                        }
+                    ],
+                    "regulation": [
+                        {
+							"conditionSet": [
+								{
+									"operator": "and",
+									"conditions": [
+										{
+											"negate": false,
+											"timeValidity": {
+												"isPlaceholderTro": false,
+												"start": "2025-11-27T00:00:00",
+												"validPeriod": [
+													{
+														"recurringDayWeekMonthPeriod": [
+															{
+																"applicableDay": [
+																	"friday",
+																	"monday",
+																	"saturday",
+																	"thursday",
+																	"tuesday",
+																	"wednesday"
+																]
+															}
+														],
+														"recurringTimePeriodOfDay": [
+															{
+																"endTimeOfPeriod": "07:00:00",
+																"startTimeOfPeriod": "00:00:00"
+															},
+															{
+																"endTimeOfPeriod": "19:00:00",
+																"startTimeOfPeriod": "23:59:59"
+															}
+														]
+													},
+													{
+														"recurringDayWeekMonthPeriod": [
+															{
+																"applicableDay": [
+																	"sunday"                                      
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+                                        {
+					    					"conditionSet": [
+						    					{
+							    					"operator": "or",
+								    				"conditions": [
+									    				{
+										    				"negate": false,
+											    			"vehicleCharacteristics": {
+												    			"vehicleType": "anyVehicle"
+													    	}
+													    },
+														{
+															"conditionSet": [
+																{
+																	"operator": "or",
+																	"conditions": [
+																		{
+																			"negate": false,
+																			"vehicleCharacteristics": {
+																				"vehicleType": "goodsVehicle"
+																			}
+																		},
+																		{
+																			"negate": false,
+																			"vehicleCharacteristics": {
+																				"vehicleType": "other",																				
+																				"vehicleTypeExtension": {
+																					"definition": "vehicle designed and constructed for the carriage of seated passengers",
+																					"enumeratedList": "vehicleType",
+																					"value": "coach"
+																				}
+																			}	
+																		}
+																	]
+																}
+															]
+														}
+					    							]
+						    					}
+							    			]
+                                        }
+									]
+								}
+							],
+                            "generalRegulation": {
+                                "regulationType": "kerbsideNoStopping"
+                            },
+                            "isDynamic": false,
+                            "timeZone": "Europe/London"
+                        }
+                    ]
+                }
+            ],
+            "reference": "abc",
+            "section": "All sections",
+            "traAffected": [
+                9001
+            ],
+            "traCreator": 9001,
+            "troName": "DfT Example - Sample",
+            "statementDescription": "Some description"
+        }
+    }
+}

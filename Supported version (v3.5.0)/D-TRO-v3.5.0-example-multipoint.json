@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "3.5.0",
+  "data": {
+    "source": {
+      "actionType": "new",
+      "currentTraOwner": 9001,
+      "madeDate": "2025-01-01",
+      "comingIntoForceDate": "2025-01-01",
+      "provision": [
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Bus Lane restriction, Collett Road, Norton Fitzwarren {approximate} with fictitious time restrictions",
+          "reference": "c962b51f-e1aa-416e-8f0b-bcfd09a4d089",
+          "regulatedPlace": [
+            {
+              "description": "Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - linear}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": true,
+              "bywayType": "road",
+              "pointGeometry": {
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "nsgStreetName": "Collett Road",
+                        "usrn": 39609232
+                      }
+                    ]
+                  }
+                ],
+                "point": "SRID=27700;MULTIPOINT((320336 126142),(320315 126172))",
+                "representation": "centreLinePoint",
+                "version": 1
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": [
+            {
+              "conditionSet": [
+                {
+                  "operator": "and",
+                  "conditionSet": [
+                    {
+                      "operator": "or",
+                      "conditions": [
+                        {
+                          "negate": true,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "anyVehicle"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "bus"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "vehicleCharacteristics": {
+                            "vehicleType": "pedalCycle"
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "occupantCondition": {
+                            "disabledWithPermit": true
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "occupantCondition": {
+                            "numberOfOccupants": [
+                              {
+                                "operator": "greaterThan",
+                                "value": 2
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "negate": false,
+                          "permitCondition": {
+                            "schemeIdentifier": "ABC123",
+                            "type": "resident",
+                            "authority": {
+                              "name": "Somerset Council"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "condition": [
+                    {
+                      "negate": false,
+                      "timeValidity": {
+                        "start": "2024-09-22T08:00:00",
+						"isPlaceholderTro": false,
+                        "validPeriod": [
+                          {
+                            "recurringDayWeekMonthPeriod": [
+                              {
+                                "applicableDay": [
+                                  "monday",
+                                  "tuesday",
+                                  "wednesday",
+                                  "thursday",
+                                  "friday"
+                                ]
+                              }
+                            ],
+                            "recurringTimePeriodOfDay": [
+                              {
+                                "startTimeOfPeriod": "08:00:00",
+                                "endTimeOfPeriod": "09:30:00"
+                              },
+                              {
+                                "startTimeOfPeriod": "16:30:00:00",
+                                "endTimeOfPeriod": "18:30:00"
+                              }
+                            ]
+                          }
+                        ],
+                        "exceptionPeriod": [
+                          {
+                            "recurringSpecialDay": [
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "publicHoliday"
+                              },
+                              {
+                                "intersectWithApplicableDays": true,
+                                "specialDayType": "matchDay"
+                              }
+                            ]
+                          },
+                          {
+                            "periodStart": {
+                              "startType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of start of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          },
+                          {
+                            "periodEnd": {
+                              "endType": "external",
+                              "changeableTimePeriodSource": {
+                                "definition": "Source of end of non-school day periods, in 'Any' county",
+                                "sourceLocator": "http://www.schooldiaries.com"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "generalRegulation": {
+                "regulationType": "miscBusGate"
+              },
+              "isDynamic": false,
+              "timeZone": "Europe/London"
+            }
+          ]
+        }
+      ],
+      "reference": "abc",
+      "section": "All sections",
+      "traAffected": [
+        9001
+      ],
+      "traCreator": 9001,
+      "troName": "DfT Example - Multipoint example v1, Aug. 2025",
+      "statementDescription": "Some description"
+    }
+  }
+}
