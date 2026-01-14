@@ -12,13 +12,7 @@ Documentation and artefacts for v3.5.x are on GitHub.
 
 The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0 and 3.5.1. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/)) - these include examples files, the JSON schema and data model source file and validation rules documentation.
 
-<<<<<<< Updated upstream
-The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/D-TRO/tree/main/Latest%20version%20(v3.5.0)) - this includes examples files, the v3.5.0 schema and data model source file and validation rules documentation.
-=======
-Versions 3.4.0 and 3.4.1 are still supported.
-
-All versions v3.3.x (and lower) have been deprecated. 
->>>>>>> Stashed changes
+The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0 and version 3.5.1. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/D-TRO/tree/main/Latest%20version%20(v3.5.0)) - this includes examples files, the schema and data model source file and validation rules documentation.
 
 **Consultation on Secondary Legislation
 **
