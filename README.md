@@ -2,9 +2,9 @@ The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway
 
 Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025.
  
-The latest release version of the Data Specification in the Production Environment is 3.5.0 as part of the D-TRO Beta project for your input and feedback on.
+The latest release version of the Data Specification in the Production Environment is 3.5.1 as part of the D-TRO Beta project for your input and feedback on.
 
-Version 3.5.1 is live in Integration. More details are available at:
+Version 3.5.1 is live in Production. More details are available at:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
 
