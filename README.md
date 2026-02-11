@@ -21,10 +21,9 @@ The statutory consultation, which launched on Thursday 23 January 2025, closed o
 
 https://ttf.uk.net/2025/01/24/dft-has-issued-a-consultation-on-draft-regulations/
 
-The timing of next steps and the tabling of the Regulations in Parliament will be subject to approval by DfT Ministers. The DfT will also publish guidance to accompany the Regulations.  
- 
-The DfT acknowledges that Traffic Regulation Authorities and Digital Solution Providers preparing for when it will become a legal requirement to submit new digital traffic regulation orders to the D-TRO Service need clarity on the timetable. The DfT currently envisages that the draft Regulations will be tabled early in the Autumn 2025 session of Parliament. It is this parliamentary process that will set the timetable. 
+The timing of next steps and the tabling of the Regulations in Parliament will be subject to approval by DfT Ministers. The DfT will also publish guidance to accompany the Regulations. It is this parliamentary process that will set the timetable. 
 
+The DfT acknowledges that Traffic Regulation Authorities and Digital Solution Providers preparing for when it will become a legal requirement to submit new digital traffic regulation orders to the D-TRO Service need clarity on the timetable. We will update as soon as we have further information. 
 **GitHub
 **
 
