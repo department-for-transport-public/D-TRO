@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "4.0.0",
+  "data": {
+    "source": {
+      "actionType": "new",
+      "currentTraOwner": 9001,
+      "madeDate": "2025-01-01",
+      "comingIntoForceDate": "2025-01-01",
+      "provision": [
+        {
+          "actionType": "new",
+          "orderReportingPoint": "permanentNoticeOfMaking",
+          "comingIntoForceDate": "2025-01-01",
+          "provisionDescription": "Mockup - use of MultiPolygon with rings",
+          "reference": "c962b51f-e1aa-416e-8f0b-aefe39a4c099",
+          "regulatedPlace": [
+            {
+              "description": "various roads north of East Reach, Taunton {approximate - polygon}",
+              "concession": false,
+              "assignment": false,
+              "tramcar": false,
+              "busRoute": false,
+              "bywayType": "road",
+              "polygon": {
+                "polygon": "SRID=27700;MULTIPOLYGON(((100000 100000,100000 150000,150000 150000,150000 100000,100000 100000),(110000 110000,110000 120000,120000 120000,120000 110000,110000 110000),(130000 130000,130000 140000,140000 140000,140000 130000,130000 130000)),((170000 170000,170000 180000,180000 180000,180000 170000,170000 170000),(171000 171000,171000 172000,172000 172000,172000 171000,171000 171000),(173000 173000,173000 174000,174000 174000,174000 173000,173000 173000)))",
+                "version": 2,
+                "externalReference": [
+                  {
+                    "lastUpdateDate": "2024-10-01T00:00:00",
+                    "uniqueStreetReferenceNumber": [
+                      {
+                        "usrn": 39605595
+                      }
+                    ]
+                  }
+                ]
+              },
+              "type": "regulationLocation"
+            }
+          ],
+          "regulation": {
+            "condition": {
+              "negate": false,
+              "timeValidity": {
+                "start": "2024-12-10T09:00:00",
+                "isPlaceholderTro": false
+              }
+            },
+            "speedLimitValueBased": {
+              "mphValue": 20,
+              "nature": "permanent",
+              "type": "maximumSpeedLimit"
+            },
+            "isDynamic": false,
+            "timeZone": "Europe/London"
+          }
+        }
+      ],
+      "reference": "abc",
+      "section": "All sections",
+      "traAffected": [
+        9001
+      ],
+      "traCreator": 9001,
+      "troName": "DfT Example - Multipolygon with holes",
+      "statementDescription": "Some description"
+    }
+  }
+}
