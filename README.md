@@ -2,7 +2,7 @@ The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway
 
 Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025.
 
-The D-TRO Team will issue v4.0.0 in the coming months. This is planned to be released in the Integration environment at the end of April 2026 and the Production environment at the end of May 2026. 
+The D-TRO Team will issue v4.0.0 in the coming months. This is planned was released in the Integration environment on 30 April 2026 and will be released in the Production environment at the end of May 2026. 
 
 See Issue #1 which contains full details of the v4.0.0 documentation and supporting artefacts. 
 
