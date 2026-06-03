@@ -2,7 +2,9 @@ The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway
 
 Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025.
 
-The D-TRO Team is issuing v4.0.0 in April/May 2026. This was released in the Integration environment on 30 April 2026 and will be released in the Production environment at the end of May 2026. 
+Version 4.0.0 is live in Production as of 29 May 2026 having been released in the Integration environment on 30 April 2026.
+
+Versions 3.4.0 and 3.4.1 were deprecated on 1 June 2026. 
 
 See Issue #1 which contains full details of the v4.0.0 documentation and supporting artefacts. 
 
@@ -12,21 +14,17 @@ Technical artefacts such as the Data Model, Schema and example files are availab
 
 [https://github.com/department-for-transport-public/D-TRO](https://github.com/department-for-transport-public/D-TRO)
 
-It should be noted that v3.4.0 will be deprecated at the time of the release of v4.0.0 to the Production environment at the end of May 2026.
-
 -------
  
-The latest release version of the Data Specification in the Production Environment is 3.5.1 as part of the D-TRO Beta project for your input and feedback on.
+The latest release version of the Data Specification in the Production Environment is 4.0.0 as part of the D-TRO Beta project for your input and feedback on.
 
-Version 3.5.1 is live in Production. More details are available at:
+More details are available at:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
 
-Documentation and artefacts for v3.5.x are on GitHub. 
+Documentation and artefacts for v4.0.0 (and previous live versions) are on GitHub. 
 
-The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0 and 3.5.1. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/)) - these include examples files, the JSON schema and data model source file and validation rules documentation.
-
-The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 3.5.0 and version 3.5.1. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/D-TRO/tree/main/Latest%20version%20(v3.5.0)) - this includes examples files, the schema and data model source file and validation rules documentation.
+The data model user guide, API documentation and a new Quickstart guide are available at https://d-tro.dft.gov.uk/ - for version 4.0.0. Technical artefacts are made available via our GitHub Repository (https://github.com/department-for-transport-public/)) - these include examples files, the JSON schema and data model source file and validation rules documentation.
 
 **Consultation on Secondary Legislation
 **
@@ -47,8 +45,6 @@ GitHub is the repository for supporting documentation and artefacts required by 
 See Issue #1 for more details:
 
 https://github.com/department-for-transport-public/D-TRO/issues/1
-
-Our GitHub folder structure has been updated to make it easier to find documents relating to the latest and other supported versions of the Data Specification. 
 
 ---
 
