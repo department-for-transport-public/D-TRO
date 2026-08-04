@@ -1,0 +1,2011 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Digital Traffic Regulation Orders",
+    "description": "This page provides the API documentation for the Digital Traffic Regulation Orders (D-TRO) service.",
+    "termsOfService": "https://www.gov.uk/help/terms-conditions",
+    "contact": {
+      "name": "Department for Transport",
+      "email": "d-tro@dft.gov.uk"
+    },
+    "license": {
+      "name": "Crown copyright",
+      "url": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+    },
+    "version": "4.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dtro.dft.gov.uk/v1"
+    }
+  ],
+  "paths": {
+    "/oauth-generator": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get auth token",
+        "description": "Exchange client ID and secret using HTTP basic authentication. This returns an access token to use in all subsequent requests.\n",
+        "operationId": "get-auth-token",
+        "security": [],
+        "requestBody": {
+          "description": "Token grant request parameters",
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "type": "string",
+                    "enum": [
+                      "client_credentials"
+                    ],
+                    "default": "client_credentials"
+                  }
+                },
+                "required": [
+                  "grant_type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessTokenResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/createFromBody": {
+      "post": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Create D-TRO from body",
+        "description": "Create a D-TRO record by submitting a JSON payload in the request body.",
+        "operationId": "create-dtro-from-body",
+        "security": [
+          {
+            "oAuth": [
+              "dsp"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Object containing D-TRO details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTROPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTROIDResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/createFromFile": {
+      "post": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Create D-TRO from file",
+        "description": "Create a D-TRO record by uploading a JSON file containing the D-TRO content.",
+        "operationId": "create-dtro-from-file",
+        "security": [
+          {
+            "oAuth": [
+              "dsp"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "JSON file contaning the D-TRO content"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTROIDResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/updateFromBody/{dtroId}": {
+      "put": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Update D-TRO from body",
+        "description": "Update an existing D-TRO by submitting a JSON payload in the request body.",
+        "operationId": "update-dtro-from-body",
+        "security": [
+          {
+            "oAuth": [
+              "dsp"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "dtroId",
+            "in": "path",
+            "description": "ID of the D-TRO to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object describing the D-TRO",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTROPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTROIDResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/updateFromFile/{dtroId}": {
+      "put": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Update D-TRO from file",
+        "operationId": "update-dtro-from-file",
+        "security": [
+          {
+            "oAuth": [
+              "dsp"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "dtroId",
+            "in": "path",
+            "description": "ID of the D-TRO to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "JSON file contaning the D-TRO content"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTROIDResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Returned as a result of missing or incorrect"
+          },
+          "404": {
+            "description": "Not found. Returned when a D-TRO with the supplied ID does not exist"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/{id}": {
+      "get": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Get D-TRO by ID",
+        "description": "Retrieves a published D-TRO by its ID.",
+        "operationId": "get-dtro-by-id",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the D-TRO to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTROResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/all": {
+      "get": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Get all D-TROs",
+        "description": "Generate a signed URL to download a data extract of all published D-TROs.",
+        "operationId": "get-dtros",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uri",
+                  "example": "https://storage.googleapis.com/my-bucket-name/my-file.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=my-service-account%40my-project.iam.gserviceaccount.com%2F20250701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250701T142000Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "uri",
+                  "example": "https://storage.googleapis.com/my-bucket-name/my-file.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=my-service-account%40my-project.iam.gserviceaccount.com%2F20250701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250701T142000Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dtros/{dtroId}": {
+      "delete": {
+        "tags": [
+          "D-TROs"
+        ],
+        "summary": "Delete D-TRO",
+        "description": "Deletes a D-TRO from the service. Note this is a soft-delete, and marks the D-TRO as deleted rather than physically removing the record.",
+        "operationId": "delete-dtro-by-dtroId",
+        "security": [
+          {
+            "oAuth": [
+              "dsp"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "dtroId",
+            "in": "path",
+            "description": "ID of the D-TRO to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully deleted"
+          },
+          "400": {
+            "description": "Bad Request. Returned as a result of missing or incorrect parameters"
+          },
+          "404": {
+            "description": "Not found. Returned when a D-TRO with the given ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/events": {
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Retrieve D-TRO event history",
+        "description": "Retrieve a list of D-TRO events (e.g., creations, updates, deletes) that match a given search criteria.\n**Note:** Pagination is applied at the D-TRO level, not the event level. For example, `pageSize = 50` means the service retrieves 50 D-TROs and expands them into events (each D-TRO may have multiple events). The `totalCount` field in the response is hardcoded to `-1` to reflect that it no longer reflects events.\n",
+        "operationId": "get-dtro-events",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "requestBody": {
+          "description": "A search query object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTRO.Request.Events"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DfT.DTRO.Models.DtroEvent.DtroEventSearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request. Returned as a result of missing or incorrect parameters"
+          },
+          "404": {
+            "description": "Not found. Returned when no events match the search criteria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Not found"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "No events found matching the criteria"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/schemas/versions": {
+      "get": {
+        "tags": [
+          "Schemas"
+        ],
+        "summary": "Get all schema versions",
+        "description": "Retrieve all schema versions known to the D-TRO system",
+        "operationId": "get-schema-versions",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK."
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/schemas": {
+      "get": {
+        "tags": [
+          "Schemas"
+        ],
+        "summary": "Get schema templates.",
+        "operationId": "get-schemas",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK."
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/schemas/{version}": {
+      "get": {
+        "tags": [
+          "Schemas"
+        ],
+        "summary": "Get schema template by its schema version",
+        "operationId": "get-schema-by-version",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "Schema version by which schema template to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK."
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/search": {
+      "post": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Finds existing D-TROs that match the required criteria.",
+        "operationId": "search-dtro",
+        "security": [
+          {
+            "oAuth": [
+              "dsp",
+              "dc"
+            ]
+          }
+        ],
+        "requestBody": {
+          "description": "A D-TRO object search criteria.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.DtroSearch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DfT.DTRO.Models.Pagination.PaginatedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Email": {
+        "name": "Email",
+        "in": "header",
+        "description": "Apigee automatically injects this header. Clients do not need to send it.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "AccessTokenResponse": {
+        "type": "object",
+        "properties": {
+          "refresh_token_expires_in": {
+            "type": "string",
+            "description": "Number of seconds until the refresh token expires",
+            "example": "0"
+          },
+          "api_product_list": {
+            "type": "string",
+            "description": "The API products attached to the application",
+            "example": "[int-publisher]"
+          },
+          "api_product_list_json": {
+            "type": "object",
+            "description": "JSON representation of the API products attached to the application",
+            "example": [
+              "int-publisher"
+            ]
+          },
+          "organization_name": {
+            "type": "string",
+            "description": "Name of the organization the application belongs to",
+            "example": "dft-dtro-int"
+          },
+          "developer.email": {
+            "type": "string",
+            "description": "Email address of the user the app is registered to",
+            "example": "user@example.com"
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of token issued",
+            "example": "BearerToken"
+          },
+          "issued_at": {
+            "type": "string",
+            "description": "Unix timestamp of when the token was issued",
+            "example": "1751369026823"
+          },
+          "client_id": {
+            "type": "string",
+            "description": "Client ID of the application",
+            "example": "GXvLpQeYzWmKjRuTnAoXcVbNqLzHdFgTyUiOpAsDfGhJkLzXcVbNmQwErTyUiOpAs"
+          },
+          "access_token": {
+            "type": "string",
+            "description": "The OAuth 2.0 access token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+          },
+          "application_name": {
+            "type": "string",
+            "description": "The ID of the application",
+            "example": "c646ba58-a094-4b33-bfb5-41494dd749ec"
+          },
+          "scope": {
+            "type": "string",
+            "description": "The application scope",
+            "example": "dsp"
+          },
+          "expires_in": {
+            "type": "string",
+            "description": "The number of seconds until the access token expires",
+            "example": "1799"
+          },
+          "refresh_count": {
+            "type": "string",
+            "description": "The number of times the token has been refreshed",
+            "example": "0"
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the application",
+            "example": "approved"
+          }
+        }
+      },
+      "DTROIDResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "0bead96d-1c15-4cab-91f3-d25e243601b5"
+          }
+        }
+      },
+      "SchemaVersion": {
+        "type": "string",
+        "description": "Version of the schema to submit the D-TRO payload against",
+        "example": "3.4.0"
+      },
+      "DTROData": {
+        "type": "object",
+        "description": "Object describing the D-TRO content",
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "actionType": {
+                "type": "string",
+                "example": "new"
+              },
+              "currentTraOwner": {
+                "type": "integer",
+                "example": 1
+              },
+              "provision": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "actionType": {
+                      "type": "string",
+                      "example": "new"
+                    },
+                    "orderReportingPoint": {
+                      "type": "string",
+                      "example": "permanentNoticeOfMaking"
+                    },
+                    "provisionDescription": {
+                      "type": "string",
+                      "example": "Example"
+                    },
+                    "reference": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "A3448229-1DFA-48CD-A785-376ACB9F7C56"
+                    },
+                    "regulatedPlace": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string",
+                            "example": "Example"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "regulationLocation"
+                          },
+                          "linearGeometry": {
+                            "type": "object",
+                            "properties": {
+                              "direction": {
+                                "type": "string",
+                                "example": "bidirectional"
+                              },
+                              "lateralPosition": {
+                                "type": "string",
+                                "example": "onKerb"
+                              },
+                              "linestring": {
+                                "type": "string",
+                                "example": "SRID=27700;LINESTRING(444284 333253, 444284 333253)"
+                              },
+                              "representation": {
+                                "type": "string",
+                                "example": "linear"
+                              },
+                              "version": {
+                                "type": "integer",
+                                "example": 1
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "regulation": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "isDynamic": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "timeZone": {
+                            "type": "string",
+                            "example": "Europe/London"
+                          },
+                          "condition": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "timeValidity": {
+                                  "type": "object",
+                                  "properties": {
+                                    "start": {
+                                      "type": "string",
+                                      "example": "2024-08-01T08:00:00"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "reference": {
+                "type": "string",
+                "format": "uuid",
+                "example": "B2787FE2-AD74-432A-BB32-76FDB065F3E8"
+              },
+              "section": {
+                "type": "string",
+                "example": "Example"
+              },
+              "traAffected": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "example": [
+                  1
+                ]
+              },
+              "traCreator": {
+                "type": "integer",
+                "example": 1
+              },
+              "troName": {
+                "type": "string",
+                "example": "Example"
+              }
+            }
+          }
+        }
+      },
+      "DTRO.Request.Events": {
+        "type": "object",
+        "required": [
+          "pageSize",
+          "page",
+          "since",
+          "to"
+        ],
+        "properties": {
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of D-TROs to retrieve per page",
+            "example": 5
+          },
+          "page": {
+            "type": "integer",
+            "description": "Page number to retrieve",
+            "example": 1
+          },
+          "since": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Return events where D-TRO creation is is on or after this datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Return events where D-TRO creation time is up to and including this datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "deletionTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was deleted. Deprecated - use `deletedFrom` and `deletedTo`",
+            "example": "2025-01-01T09:00:00",
+            "deprecated": true
+          },
+          "deletedFrom": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was deleted on, or after",
+            "example": "2025-01-01T09:00:00"
+          },
+          "deletedTo": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was deleted on, or before",
+            "example": "2025-01-01T09:00:00"
+          },
+          "modificationTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was modified. Deprectaed - use `modifiedFrom` and `modifiedTo`",
+            "example": "2025-01-01T09:00:00",
+            "deprecated": true
+          },
+          "modifiedFrom": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was last modified on, or after",
+            "example": "2025-01-01T09:00:00"
+          },
+          "modifiedTo": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Datetime the D-TRO was last modified on, or before",
+            "example": "2025-01-01T09:00:00"
+          },
+          "traCreator": {
+            "type": "integer",
+            "description": "D-TRO TRA creator",
+            "example": 1
+          },
+          "currentTraOwner": {
+            "type": "integer",
+            "description": "D-TRO current TRA owner",
+            "example": 1
+          },
+          "troName": {
+            "type": "string",
+            "description": "Name of the TRO",
+            "example": "Example"
+          },
+          "regulationType": {
+            "type": "string",
+            "description": "The D-TRO regulation type"
+          },
+          "regulatedPlaceType": {
+            "type": "string",
+            "description": "The D-TRO regulated place type",
+            "example": "regulationLocation"
+          },
+          "vehicleType": {
+            "type": "string",
+            "description": "The D-TRO vehicle type",
+            "example": "car"
+          },
+          "orderReportingPoint": {
+            "type": "string",
+            "description": "The D-TRO order reporting point",
+            "example": "permanentNoticeOfMaking"
+          },
+          "regulationStart": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Return events where D-TRO regulation date is on or after this datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "regulationEnd": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Return events where D-TRO regulation date is up to and including this datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "eventType": {
+            "type": "string",
+            "enum": [
+              "create",
+              "update",
+              "delete"
+            ],
+            "description": "The D-TRO event type",
+            "example": "start"
+          }
+        }
+      },
+      "DTROPayload": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "datas"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "$ref": "#/components/schemas/SchemaVersion"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DTROData"
+          }
+        }
+      },
+      "DTROResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "77be1c43-cf55-4aa8-b0e7-5af77f2dcc71"
+          },
+          "schemaVersion": {
+            "$ref": "#/components/schemas/SchemaVersion"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DTROData"
+          },
+          "traName": {
+            "type": "string",
+            "example": "Some TRA"
+          },
+          "created": {
+            "type": "string",
+            "format": "datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "datetime",
+            "example": "2025-01-01T09:00:00"
+          },
+          "lastUpversioned": {
+            "type": "string",
+            "format": "datetime",
+            "nullable": true,
+            "example": "2025-01-01T09:00:00"
+          }
+        }
+      },
+      "ApplicationInactiveListDto": {
+        "type": "object",
+        "properties": {
+          "traName": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "userEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "appId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationNameQueryParameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteDtroUsersRequest": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Applications.AppInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "app name.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "App input."
+      },
+      "DfT.DTRO.Models.Auth.AuthTokenInput": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "username",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "description": "password"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Auth token input."
+      },
+      "DfT.DTRO.Models.DtroDtos.DtroResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "D-TRO unique identifier.",
+            "format": "uuid"
+          },
+          "schemaVersion": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.SchemaTemplate.SchemaVersion"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "D-TRO data model response.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "D-TRO data response."
+      },
+      "DfT.DTRO.Models.DtroDtos.DtroSubmit": {
+        "required": [
+          "schemaVersion",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "description": "Version of the schema to submit payload against",
+            "example": "3.4.0"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Object representing the D-TRO"
+          }
+        },
+        "additionalProperties": false,
+        "description": "D-TRO data request."
+      },
+      "DfT.DTRO.Models.DtroEvent.DtroEvent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "D-TRO ID",
+            "format": "uuid"
+          },
+          "publicationTime": {
+            "type": "string",
+            "description": "Date and time the D-TRO was published.",
+            "format": "date-time"
+          },
+          "traCreator": {
+            "type": "integer",
+            "description": "Traffic Authority Regulation that created the D-TRO.",
+            "format": "int32"
+          },
+          "currentTraOwner": {
+            "type": "integer",
+            "description": "Traffic Authority Regulation that owns the D-TRO.",
+            "format": "int32"
+          },
+          "troName": {
+            "type": "string",
+            "description": "Traffic Regulation Order name.",
+            "nullable": true
+          },
+          "regulationType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Regulation type of the traffic regulation order.",
+            "nullable": true
+          },
+          "vehicleType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Vehicle type.",
+            "nullable": true
+          },
+          "regulatedPlaceType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "orderReportingPoint": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "regulationStart": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "regulationEnd": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "eventType": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.DtroEvent.DtroEventType"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time",
+            "deletionTime": {
+              "type": "string",
+              "format": "datetime",
+              "deprecated": true
+            },
+            "modificationTime": {
+              "type": "string",
+              "format": "datetime",
+              "deprecated": true
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Search.Links"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Record representing a change event in the D-TRO service."
+      },
+      "DfT.DTRO.Models.DtroEvent.DtroEventSearch": {
+        "required": [
+          "page",
+          "pageSize",
+          "since",
+          "to"
+        ],
+        "type": "object",
+        "properties": {
+          "page": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "maximum": 50,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "since": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "traCreator": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "currentTraOwner": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "troName": {
+            "type": "string",
+            "nullable": true
+          },
+          "regulationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "regulatedPlaceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleType": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderReportingPoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "regulationStart": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
+          },
+          "regulationEnd": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.DtroEvent.DtroEventSearchResult": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DfT.DTRO.Models.DtroEvent.DtroEvent"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.DtroEvent.DtroEventType": {
+        "enum": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "type": "string"
+      },
+      "DfT.DTRO.Models.DtroHistory.DtroHistoryProvisionResponse": {
+        "type": "object",
+        "properties": {
+          "actionType": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "schemaVersion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.DtroHistory.DtroHistorySourceResponse": {
+        "type": "object",
+        "properties": {
+          "actionType": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "schemaVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "section": {
+            "type": "string",
+            "nullable": true
+          },
+          "trafficAuthorityCreatorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trafficAuthorityOwnerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "troName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Filtering.ComparisonOperator": {
+        "enum": [
+          "=",
+          ">",
+          ">=",
+          "<",
+          "<="
+        ],
+        "type": "string"
+      },
+      "DfT.DTRO.Models.Filtering.DtroSearch": {
+        "required": [
+          "page",
+          "pageSize"
+        ],
+        "type": "object",
+        "properties": {
+          "queries": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.SearchQuery"
+            },
+            "nullable": true
+          },
+          "page": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "maximum": 50,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Filtering.SearchQuery": {
+        "type": "object",
+        "properties": {
+          "publicationTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificationTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "deletionTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "traCreator": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "currentTraOwner": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "troName": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "regulationType": {
+            "maxLength": 60,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleType": {
+            "maxLength": 40,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "orderReportingPoint": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "regulatedPlaceType": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "regulationStart": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
+          },
+          "regulationEnd": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
+          },
+          "geometry": {
+            "type": "string",
+            "example": "POLYGON((530000 181000, 531000 181000, 531000 182000, 530000 182000, 530000 181000))",
+            "nullable": true,
+            "description": "Geometry used to spatially filter D-TROs.\n\nThe supplied value must be a Polygon encoded as Well-Known Text (WKT),\nusing OSGB36 British National Grid (SRID 27700) coordinates.\n\nAn optional SRID prefix (for example, `SRID=27700;`) may be included,\nbut it is ignored. The service always assumes SRID 27700 regardless\nof any supplied coordinate reference system.\n\nThe spatial filter uses an INTERSECTS operation. A D-TRO is returned if\nany part of its geometry lies within or intersects the supplied search\npolygon, including cases where the geometry is only partially contained.\n\nD-TRO geometries of any supported type are considered during the\nspatial search; only the search geometry itself is restricted to a\nPolygon.\n"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Filtering.ValueCondition": {
+        "required": [
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/DfT.DTRO.Models.Filtering.ComparisonOperator"
+          },
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Metrics.FullMetricSummary": {
+        "type": "object",
+        "properties": {
+          "forDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemFailureCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionFailureCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deletionCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "searchCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Metrics.MetricRequest": {
+        "type": "object",
+        "properties": {
+          "dtroUserId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "dateFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "userGroup": {
+            "$ref": "#/components/schemas/UserGroup"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Metrics.MetricSummary": {
+        "type": "object",
+        "properties": {
+          "systemFailureCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionFailureCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deletionCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "searchCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Pagination.PaginatedResponse.Applications": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationInactiveListDto"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Pagination.PaginatedResponse.Users": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserListDto"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Pagination.PaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DfT.DTRO.Models.Search.DtroSearchResult"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.SchemaTemplate.SchemaVersion": {
+        "type": "string",
+        "example": "3.4.0"
+      },
+      "DfT.DTRO.Models.Search.DtroSearchResult": {
+        "type": "object",
+        "properties": {
+          "troName": {
+            "type": "string",
+            "nullable": true
+          },
+          "publicationTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trafficAuthorityCreatorId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trafficAuthorityOwnerId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "regulationType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "vehicleType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "orderReportingPoint": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "regulatedPlaceTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "regulationStart": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "regulationEnd": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.Search.Links": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.SharedResponse.GuidResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the created D-TRO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.SwaCode.DtroUserRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "traId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "userGroup": {
+            "$ref": "#/components/schemas/UserGroup"
+          },
+          "appId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DfT.DTRO.Models.SwaCode.DtroUserResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identification",
+            "format": "uuid"
+          },
+          "appId": {
+            "type": "string",
+            "description": "App-Id header unique identifier",
+            "format": "uuid"
+          },
+          "traId": {
+            "type": "integer",
+            "description": "Traffic regulation authority code",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "User name",
+            "nullable": true
+          },
+          "prefix": {
+            "type": "string",
+            "description": "User prefix",
+            "nullable": true
+          },
+          "userGroup": {
+            "$ref": "#/components/schemas/UserGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "D-TRO User data transfer object response"
+      },
+      "UserGroup": {
+        "type": "object",
+        "properties": {
+          "traId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserListDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "oAuth": {
+        "type": "oauth2",
+        "description": "This API uses OAuth 2.0 with the `clientCredentials` grant flow.",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://dtro-dft.gov.uk/oauth-generator",
+            "scopes": {
+              "dsp": "Digital Service Provider",
+              "dc": "Data Consumer"
+            }
+          }
+        }
+      },
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "oAuth": [
+        "dsp",
+        "dc"
+      ]
+    }
+  ]
+}
