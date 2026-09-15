@@ -1,85 +1,89 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "UK Bridge Height Restriction (Non-TRO Feature)",
-  "type": "object",
-  "required": [
-    "authority",
-    "heightLimit",
-    "location",
-    "structureType",
-    "surveyDate"
-  ],
-  "properties": {
-    "authority": {
-      "description": "SWA code of the Traffic Regulation Authority",
-      "type": "integer"
-    },
-    "heightLimit": {
-      "type": "object",
-      "properties": {
-        "imperial": {
-          "type": "object",
-          "properties": {
-            "feet": {
-              "type": "integer"
-            },
-            "inches": {
-              "inches": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 11
-              }
-            }
-          },
-          "required": ["feet", "inches"]
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "UK Bridge Height Restriction (Non-TRO Feature)",
+    "type": "object",
+    "required": [
+        "authority",
+        "heightLimit",
+        "location",
+        "structureType",
+        "surveyDate"
+    ],
+    "properties": {
+        "authority": {
+            "description": "SWA code of the Traffic Regulation Authority",
+            "type": "integer"
         },
-        "metres": {
-          "description": "Height limit in metres",
-          "type": "number",
-          "multipleOf": 0.01
+        "heightLimit": {
+            "type": "object",
+            "properties": {
+                "imperial": {
+                    "type": "object",
+                    "properties": {
+                        "feet": {
+                            "type": "integer"
+                        },
+                        "inches": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 11
+                        }
+                    },
+                    "required": [
+                        "feet",
+                        "inches"
+                    ]
+                },
+                "metres": {
+                    "description": "Height limit in metres",
+                    "type": "number",
+                    "multipleOf": 0.01
+                }
+            },
+            "required": [
+                "imperial",
+                "metres"
+            ]
+        },
+        "location": {
+            "description": "Spatial definition aligned with D-TRO principles",
+            "type": "string",
+            "pattern": "^(?:SRID=27700;)?(POINT ?\\(.*\\))"
+        },
+        "structureReference": {
+            "type": "string",
+            "description": "Local authority bridge reference"
+        },
+        "structureType": {
+            "description": "Type of bridge structure",
+            "type": "string",
+            "enum": [
+                "other",
+                "pedestrianBridge",
+                "railBridge",
+                "roadBridge",
+                "tunnel",
+                "underpass"
+            ]
+        },
+        "surveyDate": {
+            "description": "Date the last survey was conducted",
+            "type": "string",
+            "format": "date"
+        },
+        "trafficOrderReference": {
+            "description": "Reference of the linked Traffic Regulation Order, if one exists",
+            "type": "string"
+        },
+        "usrn": {
+            "description": "Unique street reference number of the road on which the height restriction applies/signage is located",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": 200001,
+                "maximum": 99999999
+            }
         }
-      },
-      "required": ["imperial", "metres"]
-    },
-    "location": {
-      "description": "Spatial definition aligned with D-TRO principles",
-      "type": "string",
-      "pattern": "^(?:SRID=27700;)?(POINT ?\\(.*\\))"
-    },
-    "structureReference": {
-      "type": "string",
-      "description": "Local authority bridge reference"
-    },
-    "structureType": {
-      "description": "Type of bridge structure",
-      "type": "string",
-      "enum": [
-        "other",
-        "pedestrianBridge",
-        "railBridge",
-        "roadBridge",
-        "tunnel",
-        "underpass"
-      ]
-    },
-    "surveyDate": {
-      "description": "Date the last survey was conducted",
-      "type": "string",
-      "format": "date"
-    },
-    "trafficOrderReference": {
-      "description": "Reference of the linked Traffic Regulation Order, if one exists",
-      "type": "string"
-    },
-    "usrn": {
-      "description": "Unique street reference number of the road on which the height restriction applies/signage is located",
-      "minItems": 1,
-      "type": "array",
-      "items": {
-        "type": "integer",
-        "minimum": 200001,
-        "maximum": 99999999
-      }
     }
-  }
 }
