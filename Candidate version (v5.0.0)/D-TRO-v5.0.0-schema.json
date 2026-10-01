@@ -1,0 +1,3230 @@
+{
+  "$defs": {
+    "accessCondition": {
+      "additionalProperties": false,
+      "description": "Object indicating condition controlling access",
+      "properties": {
+        "accessConditionType": {
+          "items": {
+            "$ref": "#/$defs/accessConditionType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "otherAccessRestriction": {
+          "description": "Free text description of other access restrictions.",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "accessConditionType"
+      ],
+      "type": "object"
+    },
+    "accessConditionType": {
+      "description": "Indicates access restriction type.",
+      "enum": [
+        "accessOnly",
+        "destinationTraffic",
+        "loadingAndUnloading",
+        "passengerLoadingAndUnloading",
+        "sourceAndDestinationTraffic",
+        "sourceTraffic",
+        "throughTraffic"
+      ],
+      "type": "string"
+    },
+    "actualStartOrStop": {
+      "additionalProperties": false,
+      "description": "Object supporting the recording of actual start and stop dates and times",
+      "properties": {
+        "eventAt": {
+          "description": "Indicates the date / time of the related event",
+          "format": "date-time",
+          "type": "string"
+        },
+        "eventType": {
+          "$ref": "#/$defs/eventType"
+        }
+      },
+      "required": [
+        "eventAt",
+        "eventType"
+      ],
+      "type": "object"
+    },
+    "authority": {
+      "additionalProperties": false,
+      "description": "Object indicating the authority issuing permits",
+      "properties": {
+        "name": {
+          "description": "Name of the authority issuing permits",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "bywayType": {
+      "description": "Indicates the nature byways",
+      "enum": [
+        "footpath",
+        "road",
+        "bridleway",
+        "cycleTrack",
+        "restrictedByway",
+        "bywayOpenToAllTraffic"
+      ],
+      "type": "string"
+    },
+    "calendarWeekInMonthType": {
+      "description": "Specification of periods defined by relevant calendar weeks in a month, see ISO 8601-1. Calendar  weeks  start  with  Monday.  First  week  is  the week containing the first of the month.",
+      "enum": [
+        "fifthWeekOfMonth",
+        "firstWeekOfMonth",
+        "fourthWeekOfMonth",
+        "secondWeekOfMonth",
+        "sixthWeekOfMonth",
+        "thirdWeekOfMonth",
+        "lastWeekOfMonth"
+      ],
+      "type": "string"
+    },
+    "changeableTimePeriodEnd": {
+      "additionalProperties": false,
+      "properties": {
+        "changeableTimePeriodEntry": {
+          "items": {
+            "properties": {
+              "entry": {
+                "format": "date-time",
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "changeableTimePeriodSource": {
+          "additionalProperties": false,
+          "properties": {
+            "definition": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sourceLocator": {
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "definition",
+            "sourceLocator"
+          ],
+          "type": "object"
+        },
+        "endType": {
+          "$ref": "#/$defs/changeableTimeType"
+        },
+        "specialDay": {
+          "$ref": "#/$defs/specialDay"
+        }
+      },
+      "required": [
+        "endType"
+      ],
+      "type": "object"
+    },
+    "changeableTimePeriodStart": {
+      "additionalProperties": false,
+      "properties": {
+        "changeableTimePeriodEntry": {
+          "items": {
+            "entry": {
+              "format": "date-time",
+              "type": "string"
+            }
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "changeableTimePeriodSource": {
+          "additionalProperties": false,
+          "properties": {
+            "definition": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sourceLocator": {
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "definition",
+            "sourceLocator"
+          ],
+          "type": "object"
+        },
+        "specialDay": {
+          "$ref": "#/$defs/specialDay"
+        },
+        "startType": {
+          "$ref": "#/$defs/changeableTimeType"
+        }
+      },
+      "required": [
+        "startType"
+      ],
+      "type": "object"
+    },
+    "changeableTimeType": {
+      "description": "List of available changeable time types",
+      "enum": [
+        "dawn",
+        "dusk",
+        "external",
+        "holiday"
+      ],
+      "type": "string"
+    },
+    "comparisonOperatorType": {
+      "description": "The operator to be used in the vehicle characteristic comparison operation.",
+      "enum": [
+        "equalTo",
+        "greaterThan",
+        "greaterThanOrEqualTo",
+        "lessThan",
+        "lessThanOrEqualTo"
+      ],
+      "type": "string"
+    },
+    "condition": {
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "roadCondition"
+          ]
+        },
+        {
+          "required": [
+            "otherCondition"
+          ]
+        },
+        {
+          "required": [
+            "occupantCondition"
+          ]
+        },
+        {
+          "required": [
+            "driverCondition"
+          ]
+        },
+        {
+          "required": [
+            "accessCondition"
+          ]
+        },
+        {
+          "required": [
+            "timeValidity"
+          ]
+        },
+        {
+          "required": [
+            "nonVehicularRoadUserCondition"
+          ]
+        },
+        {
+          "required": [
+            "permitCondition"
+          ]
+        },
+        {
+          "required": [
+            "vehicleCharacteristics"
+          ]
+        },
+        {
+          "required": [
+            "conditionSet"
+          ]
+        }
+      ],
+      "properties": {
+        "accessCondition": {
+          "additionalProperties": false,
+          "properties": {
+            "accessConditionType": {
+              "items": {
+                "$ref": "#/$defs/accessConditionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "otherAccessRestriction": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "accessConditionType"
+          ],
+          "type": "object"
+        },
+        "conditionSet": {
+          "$ref": "#/$defs/conditionSet"
+        },
+        "driverCondition": {
+          "additionalProperties": false,
+          "properties": {
+            "driverCharacteristics": {
+              "$ref": "#/$defs/driverCharacteristicsType"
+            }
+          },
+          "required": [
+            "driverCharacteristics"
+          ],
+          "type": "object"
+        },
+        "negate": {
+          "type": "boolean"
+        },
+        "nonVehicularRoadUserCondition": {
+          "$ref": "#/$defs/nonVehicularRoadUserCondition"
+        },
+        "occupantCondition": {
+          "$ref": "#/$defs/occupantCondition"
+        },
+        "operator": {
+          "$ref": "#/$defs/conditionOperatorType"
+        },
+        "otherCondition": {
+          "$ref": "#/$defs/otherCondition"
+        },
+        "permitCondition": {
+          "additionalProperties": false,
+          "else": {
+            "not": {
+              "required": [
+                "permitTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "type": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "properties": {
+            "authority": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "locationRelatedPermit": {
+              "type": "boolean"
+            },
+            "maxDurationOfPermit": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "maximumAccessDuration": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "minimumTimeToNextEntry": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "permitIdentifier": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "permitSubjectToFee": {
+              "additionalProperties": false,
+              "amountDue": {
+                "exclusiveMinimum": 0,
+                "multipleOf": 0.01,
+                "type": "number"
+              },
+              "paymentInformation": {
+                "format": "uri",
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "permitTypeExtension": {
+              "$ref": "#/$defs/extensionEnumeration"
+            },
+            "schemeIdentifier": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": {
+              "$ref": "#/$defs/permitType"
+            },
+            "whereToApplyForPermit": {
+              "format": "uri",
+              "type": "string"
+            },
+            "whereToCallForPermit": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "then": {
+            "required": [
+              "permitTypeExtension"
+            ]
+          },
+          "type": "object"
+        },
+        "rateTable": {
+          "$ref": "#/$defs/rateTable"
+        },
+        "roadCondition": {
+          "additionalProperties": false,
+          "properties": {
+            "roadType": {
+              "$ref": "#/$defs/roadType"
+            }
+          },
+          "required": [
+            "roadType"
+          ],
+          "type": "object"
+        },
+        "timeValidity": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "exceptionPeriod": {
+              "items": {
+                "$ref": "#/$defs/period"
+              },
+              "type": "array"
+            },
+            "isPlaceholderTro": {
+              "type": "boolean"
+            },
+            "start": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "validPeriod": {
+              "items": {
+                "$ref": "#/$defs/period"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "start",
+            "isPlaceholderTro"
+          ],
+          "type": "object"
+        },
+        "vehicleCharacteristics": {
+          "$ref": "#/$defs/vehicleCharacteristics"
+        }
+      },
+      "type": "object"
+    },
+    "conditionalOrderReportingPoints": {
+      "enum": [
+        "experimentalAmendment",
+        "experimentalMakingPermanent",
+        "experimentalNoticeOfMaking",
+        "experimentalRevocation",
+        "permanentAmendment",
+        "permanentNoticeOfMaking",
+        "permanentRevocation",
+        "specialEventOrderNoticeOfMaking",
+        "ttroTtmoByNotice",
+        "ttroTtmoExtension",
+        "ttroTtmoNoticeAfterMaking",
+        "ttroTtmoNoticeOfIntention",
+        "ttroTtmoRevocation",
+        "ttroTtmoByNoticeExtension",
+        "variationByNotice"
+      ],
+      "type": "string"
+    },
+    "conditionOperatorType": {
+      "description": "Logical operators",
+      "enum": [
+        "and",
+        "or",
+        "xOr"
+      ],
+      "type": "string"
+    },
+    "conditions": {
+      "items": {
+        "$ref": "#/$defs/condition"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "conditionSet": {
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "$ref": "#/$defs/conditions"
+        },
+        "operator": {
+          "$ref": "#/$defs/conditionOperatorType"
+        },
+        "rateTable": {
+          "$ref": "#/$defs/rateTable"
+        }
+      },
+      "required": [
+        "operator"
+      ],
+      "type": "object"
+    },
+    "consultation": {
+      "additionalProperties": false,
+      "properties": {
+        "consultationName": {
+          "description": "Free text descriptive name for the consultation given by the Traffic Regulation Authority.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "endOfConsultation": {
+          "description": "Time and date of the end of the consultation period",
+          "format": "date-time",
+          "type": "string"
+        },
+        "howToComment": {
+          "description": "Free text description detailing how to comment on the proposal which is the subject of the consultation.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "localReference": {
+          "description": "Free text reference to an identifier for the consultation defined by the Traffic Regulation Authority.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "pointOfContactAddress": {
+          "description": "Postal or office address location to support receipt of comments / objections to consultation proposals.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "pointOfContactEmail": {
+          "description": "Email address location to support receipt of comments / objections to consultation proposals.",
+          "format": "email",
+          "type": "string"
+        },
+        "source": {
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "startOfConsultation": {
+          "description": "Time and date of the start of the consultation period",
+          "format": "date-time",
+          "type": "string"
+        },
+        "statementOfReason": {
+          "description": "Statement of reason for the proposed traffic regulation measure",
+          "minLength": 1,
+          "type": "string"
+        },
+        "urlAdditionalInformation": {
+          "description": "Web address (URL) for where to find further information related to the consultation.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "consultationName",
+        "endOfConsultation",
+        "statementOfReason",
+        "source"
+      ],
+      "type": "object"
+    },
+    "currencyType": {
+      "description": "Standard specified three-letter (Alpha-3) codes for currencies worldwide in accordance with ISO 4217. Note this is a select subset based on UK usage but permits extension.",
+      "enum": [
+        "EUR",
+        "GBP"
+      ],
+      "type": "string"
+    },
+    "dayType": {
+      "description": "A list of days of the week",
+      "enum": [
+        "friday",
+        "monday",
+        "saturday",
+        "sunday",
+        "thursday",
+        "tuesday",
+        "wednesday"
+      ],
+      "type": "string"
+    },
+    "dayWithinMonth": {
+      "maximum": 31,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "directedLinear": {
+      "additionalProperties": false,
+      "properties": {
+        "destination": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "directedLineString": {
+          "pattern": "^SRID=27700;(MULTILINESTRING ?\\(\\(.*\\)\\)|LINESTRING ?\\(.*\\))",
+          "type": "string"
+        },
+        "diversionType": {
+          "$ref": "#/$defs/diversionType"
+        },
+        "intermediateLocation": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "origin": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "version": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "version",
+        "directedLineString"
+      ],
+      "type": "object"
+    },
+    "diversionRouteType": {
+      "description": "Indicates the nature of diversion route",
+      "enum": [
+        "hgvRoute",
+        "allTraffic",
+        "non-HGVRoute"
+      ],
+      "type": "string"
+    },
+    "diversionType": {
+      "additionalProperties": false,
+      "description": "An object linking to different forms of diversion route.",
+      "properties": {
+        "diversionType": {
+          "$ref": "#/$defs/diversionRouteType"
+        },
+        "geometryType": {
+          "type": "string",
+          "enum": [
+            "waypoint",
+            "full"
+          ]
+        }
+      },
+      "required": [
+        "diversionType",
+        "geometryType"
+      ],
+      "type": "object"
+    },
+    "driverCharacteristicsType": {
+      "description": "Indicates a specific type of driver characteristic",
+      "enum": [
+        "disabledWithPermit",
+        "hotelGuest",
+        "learnerDriver",
+        "localResident"
+      ],
+      "type": "string"
+    },
+    "driverCondition": {
+      "additionalProperties": false,
+      "description": "Object indicating condition related to driver characteristics",
+      "properties": {
+        "driverCharacteristics": {
+          "$ref": "#/$defs/driverCharacteristicsType"
+        }
+      },
+      "required": [
+        "driverCharacteristics"
+      ],
+      "type": "object"
+    },
+    "electricChargingCharacteristic": {
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "charging"
+          ]
+        },
+        {
+          "required": [
+            "vehicleConnectedToCharger"
+          ]
+        }
+      ],
+      "description": "Electric charging characteristics of a vehicle.",
+      "properties": {
+        "charging": {
+          "description": "That the connected vehicle is currently being charged.",
+          "type": "boolean"
+        },
+        "vehicleConnectedToCharger": {
+          "description": "That the vehicle is connected to the infrastructure electrical charging system.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "emissionClassificationEuroType": {
+      "description": "The minimum Euro emission classification the vehicle(s) have to comply with according to the 1970 Directive 70/220/EEC and its several amendments. Note that vehicle type and fuel type need to be provided in order to make this classification explicit.",
+      "enum": [
+        "euro5",
+        "euro5a",
+        "euro5b",
+        "euro6",
+        "euro6a",
+        "euro6b",
+        "euro6c",
+        "euroV",
+        "euroVI",
+        "other"
+      ],
+      "type": "string"
+    },
+    "emissions": {
+      "additionalProperties": false,
+      "description": "Emission characteristics of vehicles.",
+      "else": {
+        "not": {
+          "required": [
+            "emissionClassificationEuroTypeExtension"
+          ]
+        }
+      },
+      "if": {
+        "properties": {
+          "emissionClassificationEuro": {
+            "const": "other"
+          }
+        },
+        "required": [
+          "emissionClassificationEuro"
+        ]
+      },
+      "properties": {
+        "emissionClassificationEuro": {
+          "$ref": "#/$defs/emissionClassificationEuroType"
+        },
+        "emissionClassificationEuroTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "emissionClassificationOther": {
+          "description": "Locally defined value(s) for emission classification.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "valueRange": {
+          "items": {
+            "$ref": "#/$defs/valueRange",
+            "type": "object"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "then": {
+        "required": [
+          "emissionClassificationEuroTypeExtension"
+        ]
+      },
+      "type": "object"
+    },
+    "eventType": {
+      "description": "Indicates that the event represents an actual start or stop time",
+      "enum": [
+        "start",
+        "stop"
+      ],
+      "type": "string"
+    },
+    "experimentalCessation": {
+      "additionalProperties": false,
+      "description": "Object to enable the characteristic of an Experimental Order cessation to be defined",
+      "properties": {
+        "actualDateOfCessation": {
+          "description": "the date that the Experimental Order was ceased",
+          "format": "date",
+          "type": "string"
+        },
+        "natureOfCessation": {
+          "description": "description of the reason for the cessation of the Experimental Order",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actualDateOfCessation",
+        "natureOfCessation"
+      ],
+      "type": "object"
+    },
+    "experimentalVariation": {
+      "additionalProperties": false,
+      "description": "Object to enable the characteristic of an Experimental Order variation to be defined",
+      "properties": {
+        "effectOfChange": {
+          "description": "description of the effect of the change of the Experimental Order",
+          "minLength": 1,
+          "type": "string"
+        },
+        "expectedDuration": {
+          "description": "duration (in integer days) of the change of effect of the Experimental Order",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "effectOfChange",
+        "expectedDuration"
+      ],
+      "type": "object"
+    },
+    "extensionEnumeration": {
+      "additionalProperties": false,
+      "description": "Object supporting the user-definition of a new list entry - to permit exceptional extension of the data model",
+      "properties": {
+        "definition": {
+          "description": "User defined definition for the new list entry",
+          "minLength": 1,
+          "type": "string"
+        },
+        "enumeratedList": {
+          "$ref": "#/$defs/targetEnumeratedList",
+          "description": "Enumeration list of the data model that the next list entry is to be applied to"
+        },
+        "value": {
+          "description": "The user-defined value for the extended enumeration literal entry.",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "definition",
+        "enumeratedList",
+        "value"
+      ],
+      "type": "object"
+    },
+    "externalReference": {
+      "additionalProperties": false,
+      "properties": {
+        "lastUpdateDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "uniqueStreetReferenceNumber": {
+          "items": {
+            "$ref": "#/$defs/uniqueStreetReferenceNumber"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "lastUpdateDate",
+        "uniqueStreetReferenceNumber"
+      ],
+      "type": "object"
+    },
+    "fuelType": {
+      "description": "List of fuel types",
+      "enum": [
+        "all",
+        "battery",
+        "biodiesel",
+        "cng",
+        "diesel",
+        "dieselBatteryHybrid",
+        "electric",
+        "ethanol",
+        "fuelCell",
+        "hydrogen",
+        "liquidGas",
+        "lpg",
+        "methane",
+        "ng",
+        "other",
+        "petrol",
+        "petrol95Octane",
+        "petrol98Octane",
+        "petrolBatteryHybrid",
+        "petrolLeaded",
+        "petrolUnleaded",
+        "phev",
+        "reev",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "geometryType": {
+      "oneOf": [
+        {
+          "required": [
+            "pointGeometry"
+          ]
+        },
+        {
+          "required": [
+            "linearGeometry"
+          ]
+        },
+        {
+          "required": [
+            "polygon"
+          ]
+        },
+        {
+          "required": [
+            "directedLinear"
+          ]
+        }
+      ],
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "directedLinear": {
+          "$ref": "#/$defs/directedLinear"
+        },
+        "linearGeometry": {
+          "$ref": "#/$defs/linearGeometry"
+        },
+        "pointGeometry": {
+          "$ref": "#/$defs/pointGeometry"
+        },
+        "polygon": {
+          "$ref": "#/$defs/polygon"
+        },
+        "type": {
+          "$ref": "#/$defs/regulatedPlaceType"
+        }
+      },
+      "required": [
+        "description",
+        "type"
+      ],
+      "type": "object"
+    },
+    "heaviestAxleWeightCharacteristic": {
+      "additionalProperties": false,
+      "description": "Object indicating condition related to the heaviest axle of vehicle",
+      "properties": {
+        "heaviestAxleWeight": {
+          "description": "Indicates a characteristic relating to the heaviest axle of vehicle. Defined in metric tonnes, with one decimal place",
+          "maximum": 50,
+          "minimum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "heaviestAxleWeight"
+      ],
+      "type": "object"
+    },
+    "hhMMSSPattern": {
+      "pattern": "^([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$",
+      "type": "string"
+    },
+    "instanceOfDayInMonth": {
+      "description": "Specification  of  periods  defined  by  the  instance  of  a specific weekday within a month (e.g. 3rd Tuesday in May).",
+      "enum": [
+        "fifthInstance",
+        "firstInstance",
+        "fourthInstance",
+        "secondInstance",
+        "thirdInstance",
+        "lastInstance"
+      ],
+      "type": "string"
+    },
+    "linearDirectionType": {
+      "description": "Indicates the applicable direction for a linear direction",
+      "enum": [
+        "bidirectional",
+        "endToStart",
+        "startToEnd"
+      ],
+      "type": "string"
+    },
+    "linearGeometry": {
+      "additionalProperties": false,
+      "properties": {
+        "direction": {
+          "$ref": "#/$defs/linearDirectionType"
+        },
+        "diversionType": {
+          "$ref": "#/$defs/diversionType"
+        },
+        "externalReference": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "lateralPosition": {
+          "$ref": "#/$defs/linearLateralPositionType"
+        },
+        "linestring": {
+          "pattern": "^SRID=27700;(MULTILINESTRING ?\\(\\(.*\\)\\)|LINESTRING ?\\(.*\\))",
+          "type": "string"
+        },
+        "representation": {
+          "$ref": "#/$defs/linearType"
+        },
+        "version": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "version",
+        "direction",
+        "lateralPosition",
+        "linestring",
+        "representation"
+      ],
+      "type": "object"
+    },
+    "linearLateralPositionType": {
+      "description": "List of enumeration lists that may be extended",
+      "enum": [
+        "centreline",
+        "far",
+        "near",
+        "onKerb"
+      ],
+      "type": "string"
+    },
+    "linearType": {
+      "description": "List of representations derived from a linear location",
+      "enum": [
+        "linear",
+        "representingZone"
+      ],
+      "type": "string"
+    },
+    "maximumGrossWeightCharacteristic": {
+      "additionalProperties": false,
+      "description": "Gross weight characteristic of a vehicle.",
+      "properties": {
+        "grossVehicleWeight": {
+          "description": "The gross weight of the vehicle and its load, including any trailers. Defined in metric tonnes, with one decimal place",
+          "maximum": 50,
+          "minimum": 1,
+          "type": "number"
+        },
+        "typeOfWeight": {
+          "$ref": "#/$defs/weightType"
+        }
+      },
+      "required": [
+        "grossVehicleWeight",
+        "typeOfWeight"
+      ],
+      "type": "object"
+    },
+    "maximumHeightCharacteristic": {
+      "additionalProperties": false,
+      "description": "Height characteristic of a vehicle",
+      "properties": {
+        "vehicleHeight": {
+          "description": "Height of the highest part, excluding antennae, of an individual vehicle from the reference plane defined by the bottom of the wheels touching the ground, in metres, defined to two decimal places.",
+          "maximum": 6,
+          "minimum": 1,
+          "multipleOf": 0.01,
+          "type": "number"
+        }
+      },
+      "required": [
+        "vehicleHeight"
+      ],
+      "type": "object"
+    },
+    "maximumLengthCharacteristic": {
+      "additionalProperties": false,
+      "description": "Length characteristic of a vehicle.",
+      "properties": {
+        "vehicleLength": {
+          "description": "The overall distance between the front and back of an individual vehicle, including the length of any trailers, couplings, embedded features etc., in metres, to two decimal places.",
+          "maximum": 40,
+          "minimum": 1,
+          "multipleOf": 0.01,
+          "type": "number"
+        }
+      },
+      "required": [
+        "vehicleLength"
+      ],
+      "type": "object"
+    },
+    "maximumWidthCharacteristic": {
+      "additionalProperties": false,
+      "description": "Width characteristic of a vehicle.",
+      "properties": {
+        "vehicleWidth": {
+          "description": "The maximum width of an individual vehicle, including any features embedded or fixed on it, in metres, to two decimal places.",
+          "maximum": 6,
+          "minimum": 1,
+          "multipleOf": 0.01,
+          "type": "number"
+        }
+      },
+      "required": [
+        "vehicleWidth"
+      ],
+      "type": "object"
+    },
+    "maxStayNoReturn": {
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "maximumOccupancy"
+          ]
+        },
+        {
+          "required": [
+            "minimumPeriodForReturn"
+          ]
+        }
+      ],
+      "description": "Specifying conditions concerning the maximum duration for occupancy and the minimum time to be able to return to the same occupancy zone",
+      "properties": {
+        "maximumOccupancy": {
+          "description": "The maximum occupancy duration permitted",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        },
+        "minimumPeriodForReturn": {
+          "description": "Minimum time duration between previous occupancy and the next occupancy within a defined zone",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "monthType": {
+      "description": "List containing calendar months",
+      "enum": [
+        "april",
+        "august",
+        "december",
+        "february",
+        "january",
+        "july",
+        "june",
+        "march",
+        "may",
+        "november",
+        "october",
+        "september"
+      ],
+      "type": "string"
+    },
+    "nonVehicularRoadUserCondition": {
+      "additionalProperties": false,
+      "description": "Object indicating characteristics about non-vehicular road users",
+      "properties": {
+        "nonVehicularRoadUser": {
+          "$ref": "#/$defs/nonVehicularRoadUserType"
+        }
+      },
+      "required": [
+        "nonVehicularRoadUser"
+      ],
+      "type": "object"
+    },
+    "nonVehicularRoadUserType": {
+      "description": "List of non-vehicular road user types",
+      "enum": [
+        "cattleDrive",
+        "herdedAnimals",
+        "pedestrians",
+        "riddenOrAccompaniedHorses"
+      ],
+      "type": "string"
+    },
+    "numberOfAxlesCharacteristic": {
+      "additionalProperties": false,
+      "description": "Number of axles characteristic of a vehicle.",
+      "properties": {
+        "comparisonOperator": {
+          "$ref": "#/$defs/comparisonOperatorType"
+        },
+        "numberOfAxles": {
+          "description": "The total number of axles of an individual vehicle.",
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "numberOfAxles",
+        "comparisonOperator"
+      ],
+      "type": "object"
+    },
+    "numberOfOccupants": {
+      "additionalProperties": false,
+      "description": "Object indicating conditional restrictions based on the number of vehicle occupants",
+      "maxItems": 2,
+      "properties": {
+        "operator": {
+          "$ref": "#/$defs/comparisonOperatorType"
+        },
+        "value": {
+          "description": "Indicates the number of occupants.",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "operator",
+        "value"
+      ],
+      "type": "object"
+    },
+    "occupantCondition": {
+      "additionalProperties": false,
+      "description": "Object indicating specific vehicle occupant condition restrictions",
+      "properties": {
+        "disabledWithPermit": {
+          "description": "Indicates registered disabled permit holder",
+          "type": "boolean"
+        },
+        "numberOfOccupants": {
+          "items": {
+            "$ref": "#/$defs/numberOfOccupants"
+          },
+          "maxItems": 2,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "offListRegulation": {
+      "additionalProperties": false,
+      "properties": {
+        "legislationCrossReference": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "regulationFullText": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "regulationShortName": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "regulationFullText",
+        "regulationShortName"
+      ],
+      "type": "object"
+    },
+    "orderReportingPointType": {
+      "description": "Nature of the traffic regulation measure (TRO &amp; notice) process Reporting Point represented in this record",
+      "enum": [
+        "experimentalAmendment",
+        "experimentalMakingPermanent",
+        "experimentalNoticeOfMaking",
+        "experimentalRevocation",
+        "permanentAmendment",
+        "permanentNoticeOfMaking",
+        "permanentNoticeOfProposal",
+        "permanentRevocation",
+        "specialEventOrderNoticeOfMaking",
+        "troOnRoadActiveStatus",
+        "ttroTtmoByNotice",
+        "ttroTtmoExtension",
+        "ttroTtmoNoticeAfterMaking",
+        "ttroTtmoNoticeOfIntention",
+        "ttroTtmoRevocation",
+        "ttroTtmoByNoticeExtension",
+        "variationByNotice"
+      ],
+      "type": "string"
+    },
+    "otherCondition": {
+      "additionalProperties": false,
+      "description": "any other specified conditions or exceptions",
+      "properties": {
+        "otherConditionDescription": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "otherConditionDescription"
+      ],
+      "type": "object"
+    },
+    "payloadType": {
+      "description": "The type of load carried by the vehicle, especially in respect of hazardous loads.",
+      "enum": [
+        "dangerousGoods",
+        "empty",
+        "explosiveMaterials",
+        "other"
+      ],
+      "type": "string"
+    },
+    "period": {
+      "additionalProperties": false,
+      "properties": {
+        "endOfPeriod": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "maxStayNoReturn": {
+          "$ref": "#/$defs/maxStayNoReturn",
+          "type": "object"
+        },
+        "periodEnd": {
+          "$ref": "#/$defs/changeableTimePeriodEnd"
+        },
+        "periodName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "periodStart": {
+          "$ref": "#/$defs/changeableTimePeriodStart"
+        },
+        "recurrents": {
+          "type": "integer"
+        },
+        "recurringDayWeekMonthPeriod": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "applicableDay": {
+                "items": {
+                  "$ref": "#/$defs/dayType"
+                },
+                "maxItems": 7,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "applicableDayWithinMonth": {
+                "items": {
+                  "$ref": "#/$defs/dayWithinMonth"
+                },
+                "maxItems": 31,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "applicableInstanceOfDayWithinMonth": {
+                "$ref": "#/$defs/instanceOfDayInMonth"
+              },
+              "applicableMonth": {
+                "items": {
+                  "$ref": "#/$defs/monthType"
+                },
+                "maxItems": 12,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "applicableWeek": {
+                "$ref": "#/$defs/weekInMonthType"
+              },
+              "weekInMonth": {
+                "$ref": "#/$defs/calendarWeekInMonthType"
+              }
+            },
+            "type": "object"
+          },
+          "minLength": 1,
+          "type": "array"
+        },
+        "recurringPeriod": {
+          "type": "integer"
+        },
+        "recurringSpecialDay": {
+          "items": {
+            "$ref": "#/$defs/specialDay"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "recurringTimePeriodOfDay": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "endTimeOfPeriod": {
+                "$ref": "#/$defs/hhMMSSPattern"
+              },
+              "startTimeOfPeriod": {
+                "$ref": "#/$defs/hhMMSSPattern"
+              }
+            },
+            "required": [
+              "endTimeOfPeriod",
+              "startTimeOfPeriod"
+            ],
+            "type": "object"
+          },
+          "minLength": 1,
+          "type": "array"
+        },
+        "startOfPeriod": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "permitCondition": {
+      "additionalProperties": false,
+      "description": "Object supporting the characteristics of a permit related condition",
+      "properties": {
+        "authority": {
+          "$ref": "#/$defs/authority"
+        },
+        "locationRelatedPermit": {
+          "description": "Is the referenced permit related to a specified geography?",
+          "type": "boolean"
+        },
+        "maxDurationOfPermit": {
+          "description": "The maximum validity duration a permit has in minutes",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maximumAccessDuration": {
+          "description": "Maximum duration that is permitted in relationship to use of this permit. Defined in minutes.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "minimumTimeToNextEntry": {
+          "description": "Minimum duration between last use of permit and next permitted use of permit. Defined in minutes.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "permitIdentifier": {
+          "description": "Identifier for the permit scheme referenced (e.g. resident parking zone A)",
+          "minLength": 1,
+          "type": "string"
+        },
+        "permitSubjectToFee": {
+          "$ref": "#/$defs/permitSubjectToFee"
+        },
+        "schemeIdentifier": {
+          "description": "Free text name for the permit scheme referenced",
+          "minLength": 1,
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/permitType"
+        },
+        "whereToApplyForPermit": {
+          "description": "URL of the competent authority where an application for a permit can be requested",
+          "format": "uri",
+          "type": "string"
+        },
+        "whereToCallForPermit": {
+          "description": "Contact telephone number of the competent authority where an application for a permit can be requested",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "permitSubjectToFee": {
+      "additionalProperties": false,
+      "description": "Object containing information relating to the cost and restrictions relating to use of a permit",
+      "properties": {
+        "amountDue": {
+          "description": "Monetary amount related to use of or purchase of permit. Defined in Pounds Sterling, to two decimal places (pence)",
+          "type": "number"
+        },
+        "paymentInformation": {
+          "description": "URL for further information on permit and related payment",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "permitType": {
+      "description": "The type of the referenced permit",
+      "enum": [
+        "business",
+        "doctor",
+        "other",
+        "resident",
+        "residentExcludesNonResidentBlueBadge",
+        "residentNotBlueBadgeHolders",
+        "residentPlusBadgeHolders",
+        "residentWithNonResidentBlueBadge"
+      ],
+      "type": "string"
+    },
+    "pointGeometry": {
+      "additionalProperties": false,
+      "description": "Object indicating characteristic for a point geometry location",
+      "properties": {
+        "diversionType": {
+          "$ref": "#/$defs/diversionType"
+        },
+        "externalReference": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "point": {
+          "pattern": "^SRID=27700;(MULTIPOINT ?\\(\\(.*\\)\\)|POINT ?\\(.*\\))",
+          "type": "string"
+        },
+        "representation": {
+          "$ref": "#/$defs/pointType",
+          "description": "Indicates the nature of the point location for a point representation of a regulated place."
+        },
+        "version": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "version",
+        "point",
+        "representation"
+      ],
+      "type": "object"
+    },
+    "pointType": {
+      "description": "List of representations derived from a point location",
+      "enum": [
+        "centreLinePoint",
+        "other",
+        "trafficSignLocation"
+      ],
+      "type": "string"
+    },
+    "polygon": {
+      "additionalProperties": false,
+      "properties": {
+        "diversionType": {
+          "$ref": "#/$defs/diversionType"
+        },
+        "externalReference": {
+          "items": {
+            "$ref": "#/$defs/externalReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "polygon": {
+          "pattern": "^SRID=27700;(MULTIPOLYGON ?\\(\\(\\(.*\\)\\)\\)|POLYGON ?\\(\\(.*\\)\\))",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "type": "integer"
+        }
+        
+      },
+      "required": [
+        "version",
+        "polygon"
+      ],
+      "type": "object"
+    },
+    "provision": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "allOf": [
+              {
+                "contains": {
+                  "properties": {
+                    "orderReportingPoint": {
+                      "enum": [
+                        "troOnRoadActiveStatus",
+                        "permanentNoticeOfProposal"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "contains": {
+                  "properties": {
+                    "orderReportingPoint": {
+                      "enum": [
+                        "experimentalAmendment",
+                        "experimentalMakingPermanent",
+                        "experimentalNoticeOfMaking",
+                        "experimentalRevocation",
+                        "permanentAmendment",
+                        "permanentNoticeOfMaking",
+                        "permanentRevocation",
+                        "specialEventOrderNoticeOfMaking",
+                        "ttroTtmoByNotice",
+                        "ttroTtmoExtension",
+                        "ttroTtmoNoticeAfterMaking",
+                        "ttroTtmoNoticeOfIntention",
+                        "ttroTtmoRevocation",
+                        "ttroTtmoByNoticeExtension",
+                        "variationByNotice"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "errorMessage": {
+              "allOf": "Mixing different types of orderReportingPoint is not allowed."
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "orderReportingPoint": {
+                "enum": [
+                  "troOnRoadActiveStatus",
+                  "permanentNoticeOfProposal"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "comingIntoForceDate"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "orderReportingPoint": {
+                "not": {
+                  "pattern": "^experimental.*$"
+                }
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "experimentalCessation",
+                "experimentalVariation"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "orderReportingPoint": {
+                "$ref": "#/$defs/conditionalOrderReportingPoints"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "regulatedPlace": {
+                "items": {
+                  "required": [
+                    "concession",
+                    "assignment",
+                    "tramcar",
+                    "busRoute",
+                    "bywayType"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "orderReportingPoint": {
+                "not": {
+                  "enum": [
+                    "troOnRoadActiveStatus",
+                    "ttroTtmoByNotice",
+                    "ttroTtmoExtension",
+                    "ttroTtmoNoticeAfterMaking",
+                    "ttroTtmoNoticeOfIntention"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "actualStartOrStop"
+              ]
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/restrictPointGeometryForSpeedLimits"
+        },
+        {
+           "$ref": "#/$defs/enforceDirectedLinearForCertainRegulationTypes"
+        }
+      ],
+      "description": "Object identifying the characteristics of a traffic regulation measure (TRO &amp; notice) specified Provision.",
+      "properties": {
+        "actionType": {
+          "$ref": "#/$defs/provisionActionType"
+        },
+        "actualStartOrStop": {
+          "items": {
+            "$ref": "#/$defs/actualStartOrStop"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "comingIntoForceDate": {
+          "description": "the date that the provision is coming into force",
+          "format": "date",
+          "minLength": 1,
+          "type": "string"
+        },
+        "expectedOccupancyDuration": {
+          "description": "expected duration (in integer days) of the provision occupancy",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        },
+        "experimentalCessation": {
+          "$ref": "#/$defs/experimentalCessation"
+        },
+        "experimentalVariation": {
+          "$ref": "#/$defs/experimentalVariation"
+        },
+        "orderReportingPoint": {
+          "$ref": "#/$defs/orderReportingPointType"
+        },
+        "provisionDescription": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "reference": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "regulatedPlace": {
+          "items": {
+            "$ref": "#/$defs/regulatedPlace"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "regulation": {
+          "$ref": "#/$defs/regulation"
+        }
+      },
+      "required": [
+        "actionType",
+        "orderReportingPoint",
+        "provisionDescription",
+        "reference",
+        "regulatedPlace",
+        "regulation"
+      ],
+      "type": "object"
+    },
+    "provisionActionType": {
+      "description": "Indicates the nature of update between D-TRO records or their constituent parts",
+      "enum": [
+        "amendment",
+        "errorFix",
+        "fullAmendment",
+        "fullRevoke",
+        "new",
+        "noChange",
+        "partialAmendment",
+        "partialRevoke",
+        "informationUpdate"
+      ],
+      "type": "string"
+    },
+    "publicEventType": {
+      "description": "List of public event types",
+      "enum": [
+        "agriculturalShow",
+        "airShow",
+        "artEvent",
+        "athleticsMeeting",
+        "ballGame",
+        "baseballGame",
+        "basketballGame",
+        "beerFestival",
+        "bicycleRace",
+        "boatRace",
+        "boatShow",
+        "boxingTournament",
+        "bullFight",
+        "ceremonialEvent",
+        "commercialEvent",
+        "concert",
+        "cricketMatch",
+        "culturalEvent",
+        "exhibition",
+        "fair",
+        "festival",
+        "filmFestival",
+        "filmTVMaking",
+        "fireworkDisplay",
+        "flowerEvent",
+        "foodFestival",
+        "footballMatch",
+        "funfair",
+        "gardeningOrFlowerShow",
+        "golfTournament",
+        "hockeyGame",
+        "horseRaceMeeting",
+        "internationalSportsMeeting",
+        "majorEvent",
+        "marathon",
+        "market",
+        "match",
+        "motorShow",
+        "motorSportRaceMeeting",
+        "openAirConcert",
+        "other",
+        "parade",
+        "procession",
+        "raceMeeting",
+        "rugbyMatch",
+        "severalMajorEvents",
+        "show",
+        "showJumping",
+        "soundAndLightShow",
+        "sportsMeeting",
+        "stateOccasion",
+        "streetFestival",
+        "tennisTournament",
+        "theatricalEvent",
+        "tournament",
+        "tradeFair",
+        "unknown",
+        "waterSportsMeeting",
+        "wineFestival",
+        "winterSportsMeeting"
+      ],
+      "type": "string"
+    },
+    "rateLine": {
+      "additionalProperties": false,
+      "description": "Object indicating characteristics for a rate line within a rate table",
+      "properties": {
+        "description": {
+          "description": "Free-text description associated with this rate line.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "durationEnd": {
+          "$ref": "#/$defs/hhMMSSPattern",
+          "description": "If used, indicates the end time for the applicability of the specific rate line, generally with respect to the start of the parking or other mobility session. e.g. the end of a time-based tier charge rate."
+        },
+        "durationStart": {
+          "$ref": "#/$defs/hhMMSSPattern",
+          "description": "If used, indicates the start time for the applicability of the specific rate line, generally with respect to the start of the parking or other mobility session. e.g. the start of a time-based tier charge rate."
+        },
+        "incrementPeriod": {
+          "description": "The time period for incrementing the rate line charge. If set to the same as the duration of the period between the duration start and duration end the increment will occur once per period, i.e. a flat rate time-based tier charge rate. The duration is defined in integer minutes.",
+          "minValue": 1,
+          "type": "integer"
+        },
+        "maxValue": {
+          "description": "The maximum monetary amount to be applied in conjunction with use of this rate line collection, regardless of the actual calculated value of the rate line. Defined in applicable currency with 2 decimal places.",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        },
+        "minValue": {
+          "description": "The minimum monetary amount to be applied in conjunction with use of this rate line collection, regardless of the actual calculated value of the rate line. Defined in applicable currency with 2 decimal places.",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        },
+        "sequence": {
+          "description": "The ordered sequence of this rate line instance within the rate line collection. Used to define the order of operation of multiple rate lines. Typically used to ensure taxes and surcharges are applied correctly.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "type": {
+          "$ref": "#/$defs/rateLineType",
+          "description": "Indicates the nature of the rate line."
+        },
+        "usageCondition": {
+          "$ref": "#/$defs/rateUsageConditionsType",
+          "description": "Indicates conditions on the use of this rate line."
+        },
+        "value": {
+          "description": "The value of the fee to be charged in respect of this rate line.  Defined in applicable currency with 2 decimal places.",
+          "minimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        }
+      },
+      "required": [
+        "sequence",
+        "type",
+        "value"
+      ],
+      "type": "object"
+    },
+    "rateLineCollection": {
+      "additionalProperties": false,
+      "description": "Group of rate line elements that logically group together within one rate table, e.g. such as the rate lines for the different tiers of a time based tier rate table",
+      "properties": {
+        "applicableCurrency": {
+          "$ref": "#/$defs/currencyType",
+          "description": "The monetary currency that rates are specified in this rate line collection. [Defined by APDS - ISO/TS 5206-1]"
+        },
+        "endValidUsagePeriod": {
+          "description": "The end time for the validity of this rate line collection.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "maxTime": {
+          "description": "A maximum session duration to be applied to this rate line collection, represented as an ISO 8601-compliant duration",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        },
+        "maxValueCollection": {
+          "description": "The maximum monetary amount to be applied in conjunction with use of this rate line collection.  Defined in applicable currency with 2 decimal places.",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        },
+        "minTime": {
+          "description": "A minimum session duration to be applied to this rate line collection, represented as an ISO 8601-compliant duration",
+          "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$",
+          "type": "string"
+        },
+        "minValueCollection": {
+          "description": "The minimum monetary amount to be applied in conjunction with use of this rate line collection. Defined in applicable currency with 2 decimal places.",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        },
+        "rateLine": {
+          "items": {
+            "$ref": "#/$defs/rateLine"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "resetTime": {
+          "$ref": "#/$defs/hhMMSSPattern",
+          "description": "Time that rate resets. Example a rate table that charges £2 per hour with a max value collection of £10, resets at 2AM.  At 2AM the £2 per hour fee would start to charge until the £10 is reached."
+        },
+        "sequence": {
+          "description": "An indicator giving the place in sequence of this rate line collection.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "startValidUsagePeriod": {
+          "description": "The start time for the validity of this rate line collection.",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicableCurrency",
+        "sequence",
+        "rateLine",
+        "startValidUsagePeriod"
+      ],
+      "type": "object"
+    },
+    "rateLineType": {
+      "description": "List of rate line types",
+      "enum": [
+        "flatRate",
+        "flatRateTier",
+        "incrementingRate",
+        "perUnit"
+      ],
+      "type": "string"
+    },
+    "rateTable": {
+      "additionalProperties": false,
+      "description": "Specific set of rate charges relating to one or more locations and optionally one set of eligibility criteria",
+      "properties": {
+        "additionalInformation": {
+          "description": "URI locator for supplementary additional information concerning use of the rate table.",
+          "format": "uri",
+          "type": "string"
+        },
+        "rateLineCollection": {
+          "items": {
+            "$ref": "#/$defs/rateLineCollection"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "type": {
+          "$ref": "#/$defs/rateType",
+          "description": "Defines the type of rate in use. [Defined by APDS - ISO/TS 5206-1]"
+        }
+      },
+      "required": [
+        "rateLineCollection"
+      ],
+      "type": "object"
+    },
+    "rateType": {
+      "description": "List of rate types",
+      "enum": [
+        "daily",
+        "hourly"
+      ],
+      "type": "string"
+    },
+    "rateUsageConditionsType": {
+      "description": "List of rate usage condition types",
+      "enum": [
+        "fixedDuration",
+        "fixedNumber",
+        "once",
+        "unlimited"
+      ],
+      "type": "string"
+    },
+    "regulatedPlace": {
+      "additionalProperties": false,
+      "description": "Object indicating the geographical and spatial location subject to a regulation",
+      "oneOf": [
+        {
+          "required": [
+            "polygon"
+          ]
+        },
+        {
+          "required": [
+            "directedLinear"
+          ]
+        },
+        {
+          "required": [
+            "linearGeometry"
+          ]
+        },
+        {
+          "required": [
+            "pointGeometry"
+          ]
+        }
+      ],
+      "properties": {
+        "assignment": {
+          "description": "Indicates that the regulated place is subject to an assignment has been granted under section 28(1) of the New Roads and Street Works Act 1991",
+          "type": "boolean"
+        },
+        "busRoute": {
+          "description": "Indicates that the regulated place relates to (1) a road outside Greater London which is included in the route of a local service or (2) a road in Greater London which is included in the route of a London bus service",
+          "type": "boolean"
+        },
+        "bywayType": {
+          "$ref": "#/$defs/bywayType",
+          "description": "indicates whether the provision relates to a footpath, bridle way, cycle track, restricted byway or byway open to all traffic"
+        },
+        "concession": {
+          "description": "Free text description of the regulated place",
+          "type": "boolean"
+        },
+        "description": {
+          "description": "Free text description of the regulated place",
+          "minLength": 1,
+          "type": "string"
+        },
+        "directedLinear": {
+          "$ref": "#/$defs/directedLinear"
+        },
+        "linearGeometry": {
+          "$ref": "#/$defs/linearGeometry"
+        },
+        "pointGeometry": {
+          "$ref": "#/$defs/pointGeometry"
+        },
+        "polygon": {
+          "$ref": "#/$defs/polygon"
+        },
+        "tramcar": {
+          "description": "Indicates that the regulated place relates to a road on which a tramcar or trolley service vehicle is provided",
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/$defs/regulatedPlaceType",
+          "description": "Free text description of the regulated place"
+        }
+      },
+      "required": [
+        "description",
+        "type"
+      ],
+      "type": "object"
+    },
+    "regulatedPlaceType": {
+      "description": "indicates the nature of RegulatedPlace - location of the Regulation or Diversion Route.",
+      "enum": [
+        "diversionRoute",
+        "regulationLocation"
+      ],
+      "type": "string"
+    },
+    "regulation": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "condition"
+              ]
+            },
+            {
+              "required": [
+                "conditionSet"
+              ]
+            }
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "regulationType": {
+                "const": "speedLimitValueBased"
+              }
+            },
+            "required": [
+              "regulationType"
+            ]
+          },
+          "then": {
+            "required": [
+              "speedLimitValueBased"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "speedLimitValueBased"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "regulationType": {
+                "const": "speedLimitProfileBased"
+              }
+            },
+            "required": [
+              "regulationType"
+            ]
+          },
+          "then": {
+            "required": [
+              "speedLimitProfileBased"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "speedLimitProfileBased"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "regulationType": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "regulationType"
+            ]
+          },
+          "then": {
+            "required": [
+              "offListRegulation"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "offListRegulation"
+              ]
+            }
+          }
+        }
+      ],
+      "description": "Object indicating the characteristics of a regulation",
+      "properties": {
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "conditionSet": {
+          "$ref": "#/$defs/conditionSet"
+        },
+        "isDynamic": {
+          "description": "Indicates if the regulation is dynamic in nature",
+          "type": "boolean"
+        },
+        "regulationType": {
+          "$ref": "#/$defs/regulationType"
+        },
+        "offListRegulation": {
+          "$ref": "#/$defs/offListRegulation"
+        },
+        "speedLimitProfileBased": {
+          "$ref": "#/$defs/speedLimitProfileBased"
+        },
+        "speedLimitValueBased": {
+          "$ref": "#/$defs/speedLimitValueBased"
+        },
+        "temporaryProvision": {
+          "items": {
+            "$ref": "#/$defs/temporaryProvision"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "timeZone": {
+          "const": "Europe/London",
+          "description": "IANA time-zone (see http://www.iana.org/time-zones)",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "isDynamic",
+        "timeZone"
+      ],
+      "type": "object"
+    },
+    "regulationType": {
+      "enum": [
+        "bannedMovementNoEntry",
+        "bannedMovementNoLeftTurn",
+        "bannedMovementNoRightTurn",
+        "bannedMovementNoUTurn",
+        "dimensionMaximumHeightStructural",
+        "dimensionMaximumHeightWithTRO",
+        "dimensionMaximumLength",
+        "dimensionMaximumWeightEnvironmental",
+        "dimensionMaximumWeightStructural",
+        "dimensionMaximumWidth",
+        "kerbsideControlledParkingZone",
+        "kerbsideDisabledBadgeHoldersOnly",
+        "kerbsideDoubleRedLines",
+        "kerbsideFootwayParking",
+        "kerbsideFootwayParkingProhibited",
+        "kerbsideLimitedWaiting",
+        "kerbsideLoadingBay",
+        "kerbsideLoadingBayPassengerSetDownPermitted",
+        "kerbsideLoadingBayPassengerSetDownProhibited",
+        "kerbsideLoadingPlace",
+        "kerbsideLoadingPlacePassengerSetDownPermitted",
+        "kerbsideLoadingPlacePassengerSetDownProhibited",
+        "kerbsideNoLoadingPassengerSetDownPermitted",
+        "kerbsideNoLoadingPassengerSetDownProhibited",
+        "kerbsideMotorcycleParkingPlace",
+        "kerbsideNoLoading",
+        "kerbsideNoStopping",
+        "kerbsideNoWaiting",
+        "kerbsideOtherYellowZigZagMandatory",
+        "kerbsideParkingPlace",
+        "kerbsidePaymentParkingPlace",
+        "kerbsidePermitParkingArea",
+        "kerbsidePermitParkingPlace",
+        "kerbsideRedRouteClearway",
+        "kerbsideRestrictedParkingZone",
+        "kerbsideRedRouteBusStopClearway",
+        "kerbsideRuralClearway",
+        "kerbsideSchoolKeepClearYellowZigZagMandatory",
+        "kerbsideSingleRedLines",
+        "kerbsideTaxiRank",
+        "kerbsideUrbanClearway",
+        "mandatoryDirectionAheadOnly",
+        "mandatoryDirectionLeftTurnOnly",
+        "mandatoryDirectionOneWay",
+        "mandatoryDirectionRightTurnOnly",
+        "motorVehiclesProhibited",
+        "miscBaySuspension",
+        "miscBusGate",
+        "miscBusLaneWithTrafficFlow",
+        "miscBusOnlyStreet",
+        "miscCongestionLowEmissionZone",
+        "miscContraflow",
+        "miscContraflowBusLane",
+        "miscCycleHireParking",
+        "miscCycleLane",
+        "miscCycleLaneClosure",
+        "miscCycleParking",
+        "miscFootpathClosure",
+        "miscFootwayClosure",
+        "miscLaneClosure",
+        "miscPROWClosure",
+        "miscPedestrianZone",
+        "miscRoadClosure",
+        "miscRoadClosureCrossingPoint",
+        "miscSuspensionOfBusway",
+        "miscSuspensionOfOneWay",
+        "miscSuspensionOfParkingRestriction",
+        "miscSuspensionOfWeightRestriction",
+        "miscTemporaryParkingBay",
+        "miscTemporaryParkingRestriction",
+        "movementOrderNoOvertaking",
+        "movementOrderPriorityOverOncomingTraffic",
+        "movementOrderProhibitedAccess",
+        "nonOrderKerbsideBusStop",
+        "nonOrderKerbsidePedestrianCrossing",
+        "nonOrderMovementBoxJunction",
+        "speedLimitValueBased",
+        "speedLimitProfileBased",
+        "other"
+      ],
+      "type": "string"
+    },
+    "roadCondition": {
+      "additionalProperties": false,
+      "description": "Object indicating characteristics concerning the type of road.",
+      "properties": {
+        "roadType": {
+          "$ref": "#/$defs/roadType",
+          "description": "Indicates the type of road"
+        }
+      },
+      "required": [
+        "roadType"
+      ],
+      "type": "object"
+    },
+    "roadType": {
+      "description": "List of road types",
+      "enum": [
+        "aRoad",
+        "bRoad",
+        "cRoad",
+        "motorway",
+        "other",
+        "trunkRoad"
+      ],
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "else": {
+            "not": {
+              "required": [
+                "madeDate",
+                "comingIntoForceDate"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "provision": {
+                "items": {
+                  "properties": {
+                    "orderReportingPoint": {
+                      "not": {
+                        "enum": [
+                          "troOnRoadActiveStatus",
+                          "permanentNoticeOfProposal"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "madeDate",
+              "comingIntoForceDate"
+            ]
+          }
+        },
+        {
+          "else": {
+            "errorMessage": {
+              "allOf": "Mixing different types of actionType is not allowed."
+            }
+          },
+          "if": {
+            "properties": {
+              "actionType": {
+                "const": "fullRevoke"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "provision": {
+                "items": {
+                  "properties": {
+                    "actionType": {
+                      "const": "fullRevoke"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "actionType": {
+          "$ref": "#/$defs/sourceActionType"
+        },
+        "comingIntoForceDate": {
+          "description": "the date that the TRO is coming into force",
+          "format": "date",
+          "minLength": 1,
+          "type": "string"
+        },
+        "currentTraOwner": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "madeDate": {
+          "description": "If appropriate, the date that the TRO is made",
+          "format": "date",
+          "minLength": 1,
+          "type": "string"
+        },
+        "provision": {
+          "items": {
+            "$ref": "#/$defs/provision"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "reference": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "section": {
+          "description": "Reference to the section of the TRO",
+          "minLength": 1,
+          "type": "string"
+        },
+        "statementDescription": {
+          "description": "statement of the overall nature of the prohibition, regulation or restriction imposed",
+          "minLength": 1,
+          "type": "string"
+        },
+        "traAffected": {
+          "description": "Traffic Regulation Authorities whose roads are affected by this TRO",
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "traCreator": {
+          "description": "Highway Regulation Authority (SWA-like code)",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "troName": {
+          "description": "Published title of the Traffic Regulation Order",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "actionType",
+        "currentTraOwner",
+        "reference",
+        "section",
+        "traAffected",
+        "traCreator",
+        "troName",
+        "provision",
+        "statementDescription"
+      ],
+      "type": "object"
+    },
+    "sourceActionType": {
+      "enum": [
+        "amendment",
+        "errorFix",
+        "new",
+        "noChange",
+        "informationUpdate",
+        "fullRevoke"
+      ],
+      "type": "string"
+    },
+    "specialDay": {
+      "additionalProperties": false,
+      "properties": {
+        "intersectWithApplicableDays": {
+          "type": "boolean"
+        },
+        "publicEvent": {
+          "$ref": "#/$defs/publicEventType"
+        },
+        "publicHolidayName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "specialDayType": {
+          "$ref": "#/$defs/specialDayType"
+        }
+      },
+      "required": [
+        "intersectWithApplicableDays",
+        "specialDayType"
+      ],
+      "type": "object"
+    },
+    "specialDayType": {
+      "description": "Collection of special types of days.",
+      "enum": [
+        "easter",
+        "eventDay",
+        "goodFriday",
+        "marketDay",
+        "matchDay",
+        "nonSchoolDay",
+        "other",
+        "publicHoliday",
+        "schoolDay"
+      ],
+      "type": "string"
+    },
+    "speedLimitNatureType": {
+      "description": "type of speed limit value indicated",
+      "enum": [
+        "permanent",
+        "temporary"
+      ],
+      "type": "string"
+    },
+    "speedLimitProfileBased": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/speedLimitProfileType"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "speedLimitProfileType": {
+      "description": "List of speed limit profiles",
+      "enum": [
+        "nationalSpeedLimitDualCarriageway",
+        "nationalSpeedLimitMotorway",
+        "nationalSpeedLimitSingleCarriageway",
+        "nationalSpeedLimit"
+      ],
+      "type": "string"
+    },
+    "speedLimitValueBased": {
+      "additionalProperties": false,
+      "properties": {
+        "mphValue": {
+          "enum": [
+            10,
+            20,
+            30,
+            40,
+            50,
+            60,
+            70
+          ],
+          "type": "integer"
+        },
+        "nature": {
+          "$ref": "#/$defs/speedLimitNatureType"
+        },
+        "type": {
+          "$ref": "#/$defs/speedLimitValueType"
+        }
+      },
+      "required": [
+        "mphValue",
+        "nature",
+        "type"
+      ],
+      "type": "object"
+    },
+    "speedLimitValueType": {
+      "description": "List of speed limit value types",
+      "enum": [
+        "maximumSpeedLimit",
+        "minimumSpeedLimit",
+        "nationalSpeedLimitWellLitStreetDefault"
+      ],
+      "type": "string"
+    },
+    "targetEnumeratedList": {
+      "description": "List of enumeration lists that may be extended",
+      "enum": [
+        "permitType",
+        "payloadType",
+        "vehicleUsageType",
+        "emissionsClassificationEuroType",
+        "fuelType",
+        "vehicleEquipmentType",
+        "vehicleType"
+      ],
+      "type": "string"
+    },
+    "temporaryProvision": {
+      "additionalProperties": false,
+      "properties": {
+        "temporaryOverriddenProvision": {
+          "additionalProperties": false,
+          "properties": {
+            "reference": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "reference"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "timeValidity": {
+      "additionalProperties": false,
+      "description": "A continuous or discontinuous period of validity defined by overall bounding start and end times and the possible intersection of valid periods (potentially recurring) with the complement of exception periods (also potentially recurring).",
+      "properties": {
+        "end": {
+          "description": "End of time validity.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "exceptionPeriod": {
+          "items": {
+            "$ref": "#/$defs/period"
+          },
+          "type": "array"
+        },
+        "isPlaceholderTro": {
+          "description": "Specifies if the record is a placeholder one. When set to true, start should be set at the midnight of 1st of January 1970.",
+          "type": "boolean"
+        },
+        "start": {
+          "description": "Start of time validity.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "validPeriod": {
+          "items": {
+            "$ref": "#/$defs/period"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "start",
+        "isPlaceholderTro"
+      ],
+      "type": "object"
+    },
+    "uniqueStreetReferenceNumber": {
+      "additionalProperties": false,
+      "properties": {
+        "nsgStreetName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "nsgStreetNumber": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "usrn": {
+          "maximum": 99999999,
+          "minimum": 200001,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "usrn"
+      ],
+      "type": "object"
+    },
+    "unitOfMeasureEnum": {
+      "description": "Defines the unit used for the measure.",
+      "enum": [
+        "cubicCentimetres",
+        "year",
+        "gkm",
+        "kWh",
+        "eurolevel"
+      ],
+      "type": "string"
+    },
+    "valueRange": {
+      "additionalProperties": false,
+      "description": "Class defining a measurable quantity and related units.",
+      "properties": {
+        "class": {
+          "$ref": "#/$defs/valueRangeClassEnum"
+        },
+        "unit": {
+          "$ref": "#/$defs/unitOfMeasureEnum"
+        },
+        "valueRangeBoundary": {
+          "items": {
+            "$ref": "#/$defs/valueRangeBoundary",
+            "type": "object"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "class",
+        "unit"
+      ],
+      "type": "object"
+    },
+    "valueRangeBoundary": {
+      "additionalProperties": false,
+      "description": "Object defining a range boundary value and operator related to that boundary.",
+      "properties": {
+        "comparisonOperator": {
+          "$ref": "#/$defs/comparisonOperatorType"
+        },
+        "value": {
+          "description": "The quantify measure forming a measure boundary.",
+          "minimum": 0,
+          "multipleOf": 0.01,
+          "type": "number"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "value"
+      ],
+      "type": "object"
+    },
+    "valueRangeClassEnum": {
+      "description": "Typifies the type of measured value under consideration.",
+      "enum": [
+        "batteryCapacity",
+        "engineCapacityPetrol",
+        "emissionStandard",
+        "engineCapacityDiesel",
+        "manufactureDate",
+        "emissionValue"
+      ],
+      "type": "string"
+    },
+    "vehicleCharacteristics": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "else": {
+            "not": {
+              "required": [
+                "fuelTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "fuelType": {
+                "contains": {
+                  "const": "other"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "fuelType"
+            ]
+          },
+          "then": {
+            "required": [
+              "fuelTypeExtension"
+            ]
+          }
+        },
+        {
+          "else": {
+            "not": {
+              "required": [
+                "payloadTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "loadType": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "loadType"
+            ]
+          },
+          "then": {
+            "required": [
+              "payloadTypeExtension"
+            ]
+          }
+        },
+        {
+          "else": {
+            "not": {
+              "required": [
+                "vehicleEquipmentTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "vehicleEquipment": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "vehicleEquipment"
+            ]
+          },
+          "then": {
+            "required": [
+              "vehicleEquipmentTypeExtension"
+            ]
+          }
+        },
+        {
+          "else": {
+            "not": {
+              "required": [
+                "vehicleTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "vehicleType": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "vehicleType"
+            ]
+          },
+          "then": {
+            "required": [
+              "vehicleTypeExtension"
+            ]
+          }
+        },
+        {
+          "else": {
+            "not": {
+              "required": [
+                "vehicleUsageTypeExtension"
+              ]
+            }
+          },
+          "if": {
+            "properties": {
+              "vehicleUsage": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "vehicleUsage"
+            ]
+          },
+          "then": {
+            "required": [
+              "vehicleUsageTypeExtension"
+            ]
+          }
+        }
+      ],
+      "description": "The characteristics of a vehicle, e.g. lorry of gross weight greater than 30 tonnes.",
+      "properties": {
+        "electricChargingCharacteristic": {
+          "$ref": "#/$defs/electricChargingCharacteristic"
+        },
+        "emissions": {
+          "$ref": "#/$defs/emissions"
+        },
+        "fuelType": {
+          "items": {
+            "$ref": "#/$defs/fuelType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "fuelTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "heaviestAxleWeightCharacteristic": {
+          "$ref": "#/$defs/heaviestAxleWeightCharacteristic"
+        },
+        "loadType": {
+          "$ref": "#/$defs/payloadType"
+        },
+        "maximumGrossWeightCharacteristic": {
+          "$ref": "#/$defs/maximumGrossWeightCharacteristic"
+        },
+        "maximumHeightCharacteristic": {
+          "$ref": "#/$defs/maximumHeightCharacteristic"
+        },
+        "maximumLengthCharacteristic": {
+          "$ref": "#/$defs/maximumLengthCharacteristic"
+        },
+        "maximumWidthCharacteristic": {
+          "$ref": "#/$defs/maximumWidthCharacteristic"
+        },
+        "numberOfAxlesCharacteristic": {
+          "items": {
+            "$ref": "#/$defs/numberOfAxlesCharacteristic"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "payloadTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "vehicleEquipment": {
+          "$ref": "#/$defs/vehicleEquipmentType"
+        },
+        "vehicleEquipmentTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "vehicleType": {
+          "$ref": "#/$defs/vehicleType"
+        },
+        "vehicleTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "vehicleUsage": {
+          "$ref": "#/$defs/vehicleUsageType"
+        },
+        "vehicleUsageTypeExtension": {
+          "$ref": "#/$defs/extensionEnumeration"
+        },
+        "yearOfFirstRegistration": {
+          "description": "Year of first registration of the vehicle",
+          "minimum": 1900,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "vehicleEquipmentType": {
+      "description": "The type of equipment in use or on board the vehicle.",
+      "enum": [
+        "dippedHeadlightsInUse",
+        "electronicTollEquipment",
+        "filterInUse",
+        "notUsingSnowChains",
+        "notUsingSnowChainsOrTyres",
+        "other",
+        "snowChainsInUse",
+        "snowChainsOrTyresInUse",
+        "snowTyresInUse",
+        "speedLimiterInUse",
+        "studdedTyresInUse",
+        "wheelchairSystem",
+        "withoutSnowTyresOrChainsOnBoard"
+      ],
+      "type": "string"
+    },
+    "vehicleType": {
+      "description": "Types of vehicle.",
+      "enum": [
+        "agriculturalVehicle",
+        "ambulance",
+        "anyVehicle",
+        "articulatedVehicle",
+        "bus",
+        "car",
+        "caravan",
+        "goodsVehicle",
+        "horseDrawnVehicle",
+        "heavyGoodsVehicle",
+        "lightRailTram",
+        "mopedSmallMotorcycle",
+        "motorcycle",
+        "motorVehicle",
+        "other",
+        "pedalCycle",
+        "poweredVehicleUsedByDisabledPeople",
+        "soloMotorcycle",
+        "taxi",
+        "trackedLayingVehicle",
+        "vehicleWithTrailer",
+        "eScooter"
+      ],
+      "type": "string"
+    },
+    "vehicleUsageType": {
+      "description": "List of vehicle usage types",
+      "enum": [
+        "access",
+        "accessToOffStreetPremises",
+        "authorisedVehicles",
+        "busOperationPurpose",
+        "coastguardVehicle",
+        "dialARide",
+        "diplomaticVehicle",
+        "emergencyAndIncidentSupportVehicle",
+        "emergencyServicesVehicle",
+        "fireServiceVehicle",
+        "guidedBuses",
+        "highwayAuthorityPurpose",
+        "localBuses",
+        "locallyRegisteredPrivateHireVehicle",
+        "military",
+        "other",
+        "policeVehicle",
+        "privateHireVehicle",
+        "publicServiceVehicle",
+        "schoolBus",
+        "statutoryUndertakerPurpose"
+      ],
+      "type": "string"
+    },
+    "weekInMonthType": {
+      "description": "Week of month, where the first week starts on first of month, and each subsequent week starts on the same day of the week.",
+      "enum": [
+        "fifthWeek",
+        "firstWeek",
+        "fourthWeek",
+        "secondWeek",
+        "sixthWeek",
+        "thirdWeek",
+        "lastWeek"
+      ],
+      "type": "string"
+    },
+    "weightType": {
+      "description": "The meaning of the weight value",
+      "enum": [
+        "actual",
+        "combinedMaximumPermitted",
+        "maximumPermitted",
+        "unladen"
+      ],
+      "type": "string"
+    },
+    "restrictPointGeometryForSpeedLimits": {
+      "if": {
+        "properties": {
+          "regulation": {
+            "type": "object",
+            "properties": {
+              "regulationType": {
+                "enum": [
+                  "speedLimitValueBased",
+                  "speedLimitProfileBased"
+                ]
+              }
+            },
+            "required": [
+              "regulationType"
+            ]
+          }
+        },
+        "required": [
+          "regulation"
+        ]
+      },
+      "then": {
+        "properties": {
+          "regulatedPlace": {
+            "items": {
+              "not": {
+                "required": [
+                  "pointGeometry"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "enforceDirectedLinearForCertainRegulationTypes": {
+      "if": {
+        "properties": {
+          "regulation": {
+            "type": "object",
+            "properties": {
+              "regulationType": {
+                "enum": [
+                  "bannedMovementNoEntry",
+                  "bannedMovementNoLeftTurn",
+                  "bannedMovementNoRightTurn",
+                  "bannedMovementNoUTurn",
+                  "mandatoryDirectionAheadOnly",
+                  "mandatoryDirectionLeftTurnOnly",
+                  "mandatoryDirectionOneWay",
+                  "mandatoryDirectionRightTurnOnly",
+                  "miscBusGate",
+                  "miscBusLaneWithTrafficFlow",
+                  "miscBusOnlyStreet",
+                  "miscSuspensionOfBusway",
+                  "miscSuspensionOfOneWay",
+                  "movementOrderPriorityOverOncomingTraffic"
+                ]
+              }
+            },
+            "required": [
+              "regulationType"
+            ]
+          }
+        },
+        "required": [
+          "regulation"
+        ]
+      },
+      "then": {
+        "properties": {
+          "regulatedPlace": {
+            "items": {
+                "required": [
+                  "directedLinear"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+  "additionalProperties": false,
+  "description": "DTRO v4.0.0 Data Specification JSON schema",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "consultation": {
+          "$ref": "#/$defs/consultation"
+        }
+      },
+      "required": [
+        "consultation"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "consultation": {
+      "$ref": "#/$defs/consultation"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    }
+  },
+  "type": "object"
+}

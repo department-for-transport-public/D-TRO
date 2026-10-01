@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Regulations</title>
+<link href="../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Regulations </h1>
+			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="EA1.htm">Model</a> / <a href="./EA1/EA26.htm">Regulations</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA1/EA84.htm">condition</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA2/EA113.htm">rates</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA3/EA129.htm">timeValidity</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA4/EA169.htm">vehicleCharacteristics</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA16.htm">consultation</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA18.htm">enumerations</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA20.htm">extensionEnumeration</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA4.htm">full_model</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA6.htm">highLevelKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA8.htm">locationKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA10.htm">locationReferencingKeyConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA12.htm">overview</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA14.htm">recordsManagementConcepts</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA1/EA24.htm">regulations</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA29.htm">actualStartOrStop</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA41.htm">consultation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA42.htm">directedLinear</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA44.htm">diversionType</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA30.htm">experimentalCessation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA31.htm">experimentalVariation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA46.htm">extensionEnumeration</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA47.htm">externalReference</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA48.htm">generalRegulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA49.htm">geometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA52.htm">linearGeometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA56.htm">offListRegulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA58.htm">pointGeometry</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA60.htm">polygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA61.htm">provision</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA64.htm">regulatedPlace</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA66.htm">regulation</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA68.htm">source</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA71.htm">speedLimitProfileBased</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA73.htm">speedLimitValueBased</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA76.htm">temporaryProvision</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA1/EA77.htm">uniqueStreetReferenceNumber</a></li>
+<li><img src="../images/202.png" alt="Constraint"/> <a href="./EA1/EA28.htm"></a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA39.htm">bywayType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA43.htm">diversionRouteType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA45.htm">eventType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA50.htm">geometryType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA51.htm">linearDirectionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA53.htm">linearLateralPositionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA54.htm">linearType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA55.htm">mphValueType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA57.htm">orderReportingPointType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA59.htm">pointType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA62.htm">provisionActionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA65.htm">regulatedPlaceType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA67.htm">regulationType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA69.htm">sourceActionType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA70.htm">speedLimitNatureType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA72.htm">speedLimitProfileType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA74.htm">speedLimitValueType</a></li>
+<li><img src="../images/247.png" alt="Enumeration"/> <a href="./EA1/EA75.htm">targetEnumeratedList</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">Regulations  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">28/01/2021 08:10:34</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">23/05/2025 03:58:04</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">D-TRO</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{48FE9699-A332-401d-8E99-B7AE947DCFBE}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">Model package containing regulations&lt;br/&gt;</div>
+
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+
