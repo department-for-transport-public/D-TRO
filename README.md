@@ -1,12 +1,14 @@
 The Digital Traffic Regulation Orders (D-TRO) Beta project is currently underway with enhancements proposed to the Data Specification, being conducted by Harrod Booth Consulting Ltd and PA Consulting, working alongside the DfT. Welcome to our Public External GitHub repository.
 
-Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025.
+Private Beta was launched on Tuesday 15 October 2024. Public Beta was launched on 24 September 2025 and we celebrated the first year of Public Beta on 24 September 2026.
 
 Version 4.0.0 is live in Production as of 29 May 2026 having been released in the Integration environment on 30 April 2026.
 
+Documentation for version 5.0.0 was launched on 1 October 2026. 
+
 Versions 3.4.0 and 3.4.1 were deprecated on 1 June 2026. 
 
-See Issue #1 which contains full details of the v4.0.0 documentation and supporting artefacts. 
+See Issue #1 which contains full details of the v4.0.0 and v5.0.0 documentation and supporting artefacts. 
 
 Documentation is at https://d-tro.dft.gov.uk
 
