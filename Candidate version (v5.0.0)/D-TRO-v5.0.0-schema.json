@@ -361,17 +361,19 @@
               "type": "string"
             },
             "permitSubjectToFee": {
+              "type": "object",
               "additionalProperties": false,
-              "amountDue": {
-                "exclusiveMinimum": 0,
-                "multipleOf": 0.01,
-                "type": "number"
+              "properties": {
+                "amountDue": {
+                  "exclusiveMinimum": 0,
+                  "multipleOf": 0.01,
+                  "type": "number"
               },
-              "paymentInformation": {
-                "format": "uri",
-                "type": "string"
-              },
-              "type": "object"
+                "paymentInformation": {
+                  "format": "uri",
+                  "type": "string"
+                }
+              }
             },
             "permitTypeExtension": {
               "$ref": "#/$defs/extensionEnumeration"
@@ -1381,7 +1383,13 @@
                 "uniqueItems": true
               },
               "applicableInstanceOfDayWithinMonth": {
-                "$ref": "#/$defs/instanceOfDayInMonth"
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/instanceOfDayInMonth"
+                },
+                "maxItems": 6,
+                "minItems": 1,
+                "uniqueItems": true
               },
               "applicableMonth": {
                 "items": {
@@ -1393,10 +1401,22 @@
                 "uniqueItems": true
               },
               "applicableWeek": {
-                "$ref": "#/$defs/weekInMonthType"
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/weekInMonthType"
+                },
+                "maxItems": 5,
+                "minItems": 1,
+                "uniqueItems": true
               },
               "weekInMonth": {
-                "$ref": "#/$defs/calendarWeekInMonthType"
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/calendarWeekInMonthType"
+                },
+                "maxItems": 6,
+                "minItems": 1,
+                "uniqueItems": true
               }
             },
             "type": "object"
@@ -1522,10 +1542,8 @@
         "doctor",
         "other",
         "resident",
-        "residentExcludesNonResidentBlueBadge",
         "residentNotBlueBadgeHolders",
-        "residentPlusBadgeHolders",
-        "residentWithNonResidentBlueBadge"
+        "residentPlusBadgeHolders"
       ],
       "type": "string"
     },
@@ -1593,7 +1611,6 @@
           "minimum": 1,
           "type": "integer"
         }
-        
       },
       "required": [
         "version",
@@ -1743,7 +1760,7 @@
           "$ref": "#/$defs/restrictPointGeometryForSpeedLimits"
         },
         {
-           "$ref": "#/$defs/enforceDirectedLinearForCertainRegulationTypes"
+          "$ref": "#/$defs/enforceDirectedLinearForCertainRegulationTypes"
         }
       ],
       "description": "Object identifying the characteristics of a traffic regulation measure (TRO &amp; notice) specified Provision.",
@@ -2280,7 +2297,8 @@
       },
       "required": [
         "isDynamic",
-        "timeZone"
+        "timeZone",
+        "regulationType"
       ],
       "type": "object"
     },
@@ -2400,9 +2418,17 @@
         {
           "else": {
             "not": {
-              "required": [
-                "madeDate",
-                "comingIntoForceDate"
+              "anyOf": [
+                {
+                  "required": [
+                    "madeDate"
+                  ]
+                },
+                {
+                  "required": [
+                    "comingIntoForceDate"
+                  ]
+                }
               ]
             }
           },
@@ -3181,17 +3207,17 @@
         "properties": {
           "regulatedPlace": {
             "items": {
-                "required": [
-                  "directedLinear"
-                ]
-              }
+              "required": [
+                "directedLinear"
+              ]
             }
           }
         }
       }
-    },
+    }
+  },
   "additionalProperties": false,
-  "description": "DTRO v4.0.0 Data Specification JSON schema",
+  "description": "DTRO v5.0.0 Data Specification JSON schema",
   "oneOf": [
     {
       "additionalProperties": false,
