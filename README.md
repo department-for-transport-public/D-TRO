@@ -6,6 +6,8 @@ Version 4.0.0 is live in Production as of 29 May 2026 having been released in th
 
 Documentation for version 5.0.0 was launched on 1 October 2026. 
 
+v5.0.0 of the D-TRO Data Model was launched on 3 November 2026 in the Integration environment, alongside v1.7.0 of the D-TRO application. 
+
 Versions 3.4.0 and 3.4.1 were deprecated on 1 June 2026. 
 
 See Issue #1 which contains full details of the v4.0.0 and v5.0.0 documentation and supporting artefacts. 
